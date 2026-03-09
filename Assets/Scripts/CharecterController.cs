@@ -12,15 +12,27 @@ public class CharecterController : MonoBehaviour
     public float checkRadius = 0.2f;
 
     [Header("Interaction")]
-    public List<GameObject> nearbyFlowers = new List<GameObject>();
+    public List<GameObject> nearbyFlowers = new();
 
     private Rigidbody2D rb;
     private bool isGrounded;
 
+    private void OnEnable()
+    {
+        // Subscribe to InputHandler events if needed (not strictly necessary with the current design)
+         InputHandler.Instance.OnJump += Jump;
+         InputHandler.Instance.OnInteract += TryCollectFlower;
+    }
+    private void OnDisable()
+    {
+        // Unsubscribe to prevent memory leaks
+         InputHandler.Instance.OnJump -= Jump;
+         InputHandler.Instance.OnInteract -= TryCollectFlower;
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // Ensure Ruby doesn't tip over like a domino
+
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
@@ -31,24 +43,12 @@ public class CharecterController : MonoBehaviour
 
         // 2. Handle Movement
         ApplyMovement();
-
-        // 3. Handle Jump (Only if grounded and trigger is active)
-        if (InputHandler.Instance.JumpTriggered && isGrounded)
-        {
-            Jump();
-        }
-
-        // 4. Handle Interaction
-        if (InputHandler.Instance.InteractTriggered)
-        {
-            TryCollectFlower();
-        }
     }
 
     private void ApplyMovement()
     {
         // We take the X from our InputHandler's Vector2
-        float moveInput = InputHandler.Instance.MoveInput.x;
+        float moveInput = InputHandler.Instance.MoveDirection.x;
 
         // Apply velocity but KEEP the current Y velocity (so gravity still works!)
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
@@ -60,6 +60,8 @@ public class CharecterController : MonoBehaviour
 
     private void Jump()
     {
+        if (!isGrounded) return;
+
         // Reset Y velocity before jumping for consistent height
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);

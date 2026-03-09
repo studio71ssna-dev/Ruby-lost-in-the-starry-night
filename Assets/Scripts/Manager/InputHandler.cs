@@ -1,40 +1,42 @@
 using Singleton;
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.PlayerInput;
 
 public class InputHandler : SingletonPersistent
 {
     public static InputHandler Instance => GetInstance<InputHandler>();
 
-    public Vector2 MoveInput { get; private set; }
-    public bool JumpTriggered { get; private set; }
-    public bool InteractTriggered { get; private set; }
+    private InputAction MoveInput;
+    public Vector2 MoveDirection { get; private set; }
 
-    public void OnMove(InputAction.CallbackContext context)
+    public event Action OnInteract;
+    public event Action OnJump;
+
+
+    private void Start()
     {
-        MoveInput = context.ReadValue<Vector2>();
+        MoveInput = gameObject.GetComponent<PlayerInput>().actions.FindAction("Move");
+        if (MoveInput == null) { print($"Input System is missing on {gameObject.name}"); }
+    }
+    private void Update()
+    {
+        MoveAction();
+    }
+    public void MoveAction()
+    {
+        MoveDirection = MoveInput.ReadValue<Vector2>();
     }
 
-    public void OnJump(InputAction.CallbackContext context)
+    public void JumpAction(InputAction.CallbackContext context)
     {
-        if (context.performed) JumpTriggered = true;
-        else if (context.canceled) JumpTriggered = false;
+        if (context.performed) OnJump?.Invoke();
     }
 
-    public void OnInteract(InputAction.CallbackContext context)
+    public void InteractAction(InputAction.CallbackContext context)
     {
-        // Only trigger on the "Down" press
-        if (context.started)
-        {
-            InteractTriggered = true;
-            Debug.Log("InputHandler: Interact Pressed");
-        }
-    }
-
-    private void LateUpdate()
-    {
-        // Very important: Clear the trigger so it doesn't stay true
-        InteractTriggered = false;
-        JumpTriggered = false;
+        if (context.performed) OnInteract?.Invoke();
     }
 }
