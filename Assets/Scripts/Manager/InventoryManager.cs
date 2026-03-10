@@ -23,22 +23,29 @@ public class InventoryManager : SingletonPersistent
     // Method to handle purchases (called by the Merchant/Shop)
     public bool TryPurchaseItem(string itemName, int cost)
     {
+        // Check if already owned
+        bool alreadyOwned = itemName switch
+        {
+            "GildedFlute" => hasGildedFlute,
+            "SilverStrings" => hasSilverStrings,
+            "LogicLens" => hasLogicLens,
+            _ => false
+        };
+
+        if (alreadyOwned)
+        {
+            Debug.Log("You already own this item!");
+            return false;
+        }
+
         if (stardustFlowers >= cost)
         {
             stardustFlowers -= cost;
-
-            switch (itemName)
-            {
-                case "GildedFlute": hasGildedFlute = true; break;
-                case "SilverStrings": hasSilverStrings = true; break;
-                case "LogicLens": hasLogicLens = true; break;
-            }
-
-            Debug.Log($"Purchased {itemName}! Flowers remaining: {stardustFlowers}");
+            // ... (rest of your switch logic)
             return true;
         }
-
-        Debug.Log("Not enough Stardust Flowers!");
         return false;
     }
+
+
 }

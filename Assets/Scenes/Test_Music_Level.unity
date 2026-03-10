@@ -573,10 +573,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 400170381434894398, guid: 64875a2e8c72a1348894421f1ab5a2c2, type: 3}
-  m_Color: {r: 0.5566038, g: 0.49621752, b: 0.49621752, a: 0.69411767}
+  m_Color: {r: 0.25983915, g: 0.23429155, b: 0.3679245, a: 0.89411765}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -595,7 +595,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.36927, y: -0.27, z: 0}
-  m_LocalScale: {x: 51.8, y: 29.90625, z: 27.5}
+  m_LocalScale: {x: 51.8, y: 29.90625, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1075,7 +1075,6 @@ MonoBehaviour:
     m_Bits: 8
   groundCheck: {fileID: 852399427}
   checkRadius: 0.2
-  nearbyFlowers: []
 --- !u!1 &1331013289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   gamestate: 0
+  shopPanel: {fileID: 0}
 --- !u!1 &1932755963
 GameObject:
   m_ObjectHideFlags: 0
