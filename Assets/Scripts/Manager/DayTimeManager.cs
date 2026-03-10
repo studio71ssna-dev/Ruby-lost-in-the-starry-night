@@ -1,33 +1,65 @@
 using UnityEngine;
+using Cysharp.Threading.Tasks;
+using System.Threading;
 
 public class DayTimeManager : MonoBehaviour
 {
-    public bool isDayTime = true;
-    public int collectedFlowers = 0;
+    [Header("Day Settings")]
+    public float dayDuration = 60f;
+    private int sessionFlowers = 0;
+    private CancellationTokenSource _phaseCts;
 
-    void CollectFlower()
+    private async void Start()
     {
-        collectedFlowers++;
-        Debug.Log("Flower collected! Total: " + collectedFlowers);
+        _phaseCts = new CancellationTokenSource();
+
+        // Start the day cycle
+        await RunDayCycle();
     }
 
-    void Update()
+    private async UniTask RunDayCycle()
     {
-        CheckDayTimeTimer();
-    }
+        Debug.Log("The sun rises. Day phase started.");
+        float remainingTime = dayDuration;
 
-    void CheckDayTimeTimer()
-    {
-        if (!isDayTime)
+        while (remainingTime > 0)
         {
-            // 1. Transfer collected flowers to the persistent Inventory
-            if (InventoryManager.Instance != null)
-            {
-                InventoryManager.Instance.AddFlowers(collectedFlowers);
-            }
+            remainingTime -= Time.deltaTime;
 
-            // 2. Change state to Shop
-            GameManager.Instance.gamestate = GameManager.GameState.Shop;
+            // Send normalized value (0 to 1) to UI for the progress bar
+            if (UIManager.Instance != null)
+                UIManager.Instance.UpdateTimer(remainingTime / dayDuration);
+
+            // Wait for the next frame
+            await UniTask.Yield(PlayerLoopTiming.Update, _phaseCts.Token);
         }
+
+        await EndDayTransition();
+    }
+
+    public void AddFlowerToSession()
+    {
+        sessionFlowers++;
+        if (UIManager.Instance != null)
+            UIManager.Instance.UpdateFlowerCount(sessionFlowers);
+    }
+
+    private async UniTask EndDayTransition()
+    {
+        // Save flowers to the permanent inventory
+        InventoryManager.Instance.AddFlowers(sessionFlowers);
+
+        // Tell the GameManager to open the shop
+        // We don't need to 'await' here unless you have a fade-out animation first
+        GameManager.Instance.EnterShopPhase().Forget();
+
+        // Destroy the day manager or disable the player movement
+        this.gameObject.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        _phaseCts?.Cancel();
+        _phaseCts?.Dispose();
     }
 }

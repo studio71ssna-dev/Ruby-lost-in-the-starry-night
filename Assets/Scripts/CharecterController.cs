@@ -13,7 +13,7 @@ public class CharecterController : MonoBehaviour
     public float checkRadius = 0.2f;
 
     [Header("Interaction")]
-    public List<GameObject> nearbyFlowers = new();
+    private List<GameObject> nearbyFlowers = new();
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -98,9 +98,10 @@ public class CharecterController : MonoBehaviour
             GameObject flower = nearbyFlowers[0];
             nearbyFlowers.RemoveAt(0);
 
-            InventoryManager.Instance?.AddFlowers(1);
+            // Tell the DayTimeManager we got one!
+            FindObjectOfType<DayTimeManager>().AddFlowerToSession();
+
             Destroy(flower);
-            Debug.Log("Flower Collected via E!");
         }
     }
 
