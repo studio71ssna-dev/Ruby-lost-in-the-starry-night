@@ -3,7 +3,7 @@
     "name": "PlayerInputSystem",
     "maps": [
         {
-            "name": "Player",
+            "name": "Player_Movement",
             "id": "df70fa95-8a34-4494-b137-73ab6b9c7d37",
             "actions": [
                 {
@@ -808,6 +808,134 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Player_Music",
+            "id": "4acb2eff-1273-492e-a117-71e52dd9f951",
+            "actions": [
+                {
+                    "name": "Lane 1",
+                    "type": "Button",
+                    "id": "d405edd6-ec74-4949-9bd1-a456db1326b4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Lane 2",
+                    "type": "Button",
+                    "id": "07f82639-ae1d-4ded-934b-86c84394aa35",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Lane 3",
+                    "type": "Button",
+                    "id": "36d83631-cfd2-44b9-8382-5ca5b6c55065",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fret 1",
+                    "type": "Button",
+                    "id": "04d774dd-e3b4-4acd-b744-a77e3f477282",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fret 2",
+                    "type": "Button",
+                    "id": "257a0746-7c79-4186-8a98-5c5f6cddfbac",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fret 3",
+                    "type": "Button",
+                    "id": "a20d9a43-499f-4a42-80dd-33fbba18d515",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bbf9d51b-72c2-4184-bc09-c94276af6deb",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Lane 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f58d635-8da4-4183-b0d2-9b0d36672bdf",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Lane 2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "37a75373-b11c-453c-b0e1-ef53bb9d0ec8",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Lane 3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9bfc603e-8a09-456b-98e1-ded23cb188b8",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fret 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43711099-3498-4a74-aaa8-5864926dc125",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fret 2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3b036c3e-8a0f-44db-b174-e11d950c6512",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fret 3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

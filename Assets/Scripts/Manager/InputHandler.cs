@@ -9,12 +9,27 @@ public class InputHandler : SingletonPersistent
 {
     public static InputHandler Instance => GetInstance<InputHandler>();
 
+    private PlayerInput playerInput;
     private InputAction MoveInput;
+
     public Vector2 MoveDirection { get; private set; }
+
+    public event Action OnLane1;
+    public event Action OnLane2;
+    public event Action OnLane3;
+    public event Action<bool> OnFret1;
+    public event Action<bool> OnFret2;
+    public event Action<bool> OnFret3;
+
 
     public event Action OnInteract;
     public event Action OnJump;
 
+    private void OnEnable()
+    {
+        playerInput = GetComponent<PlayerInput>();
+        if (playerInput == null) { print($"PlayerInput component is missing on {gameObject.name}"); }
+    }
 
     private void Start()
     {
@@ -38,5 +53,42 @@ public class InputHandler : SingletonPersistent
     public void InteractAction(InputAction.CallbackContext context)
     {
         if (context.performed) OnInteract?.Invoke();
+    }
+
+    public void Lane1Trigger(InputAction.CallbackContext context)
+    {
+        if (context.performed) OnLane1?.Invoke();
+    }
+    public void Lane2Trigger(InputAction.CallbackContext context)
+    {
+        if (context.performed) OnLane2?.Invoke();
+    }
+    public void Lane3Trigger(InputAction.CallbackContext context)
+    {
+        if (context.performed) OnLane3?.Invoke();
+    }
+
+    /*public void Fret1Trigger(InputAction.CallbackContext context)
+    {
+        if (context.performed) OnFret1?.Invoke(true);
+        else if (context.canceled) OnFret1?.Invoke(false);
+    }*/
+    public void Fret1Trigger(InputAction.CallbackContext context)
+    {
+        OnFret1?.Invoke(context.performed);
+    }
+    public void Fret2Trigger(InputAction.CallbackContext context)
+    {
+        OnFret2?.Invoke(context.performed);
+    }
+    public void Fret3Trigger(InputAction.CallbackContext context)
+    {
+        OnFret3?.Invoke(context.performed);
+    }
+
+
+    public void SwitchActionMap()
+    {
+        playerInput.SwitchCurrentActionMap(playerInput.currentActionMap.name == "Player_Movement" ? "Player_Music" : "Player_Movement");
     }
 }

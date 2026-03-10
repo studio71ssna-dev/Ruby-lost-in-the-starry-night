@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharecterController : MonoBehaviour
@@ -17,17 +18,32 @@ public class CharecterController : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
 
+
+    [SerializeField] PlayerInput playerInput;
+
     private void OnEnable()
     {
         // Subscribe to InputHandler events if needed (not strictly necessary with the current design)
          InputHandler.Instance.OnJump += Jump;
          InputHandler.Instance.OnInteract += TryCollectFlower;
+         InputHandler.Instance.OnLane1 += Lane1;
+         InputHandler.Instance.OnLane2 += Lane2;
+         InputHandler.Instance.OnLane3 += Lane3;
+         InputHandler.Instance.OnFret1 += Fret1;
+         InputHandler.Instance.OnFret2 += Fret2;
+         InputHandler.Instance.OnFret3 += Fret3;
     }
     private void OnDisable()
     {
         // Unsubscribe to prevent memory leaks
          InputHandler.Instance.OnJump -= Jump;
          InputHandler.Instance.OnInteract -= TryCollectFlower;
+         InputHandler.Instance.OnLane1 -= Lane1;
+         InputHandler.Instance.OnLane2 -= Lane2;
+         InputHandler.Instance.OnLane3 -= Lane3;
+         InputHandler.Instance.OnFret1 -= Fret1;
+         InputHandler.Instance.OnFret2 -= Fret2;
+         InputHandler.Instance.OnFret3 -= Fret3;
     }
     void Start()
     {
@@ -43,6 +59,14 @@ public class CharecterController : MonoBehaviour
 
         // 2. Handle Movement
         ApplyMovement();
+
+        if (Keyboard.current.jKey.wasPressedThisFrame)
+        {
+            InputHandler.Instance.SwitchActionMap();
+             Debug.Log("Switched Action Map via J!");
+        }
+
+
     }
 
     private void ApplyMovement()
@@ -57,7 +81,6 @@ public class CharecterController : MonoBehaviour
         if (moveInput > 0.1f) transform.localScale = new Vector3(1, 1, 1);
         else if (moveInput < -0.1f) transform.localScale = new Vector3(-1, 1, 1);
     }
-
     private void Jump()
     {
         if (!isGrounded) return;
@@ -68,7 +91,6 @@ public class CharecterController : MonoBehaviour
 
         Debug.Log("Ruby Jumped!");
     }
-
     private void TryCollectFlower()
     {
         if (nearbyFlowers.Count > 0 && nearbyFlowers[0] != null)
@@ -80,6 +102,33 @@ public class CharecterController : MonoBehaviour
             Destroy(flower);
             Debug.Log("Flower Collected via E!");
         }
+    }
+
+    private void Lane1()
+    {
+         Debug.Log("Lane 1 Triggered!");
+    }
+    private void Lane2()
+    {
+         Debug.Log("Lane 2 Triggered!");
+    }
+    private void Lane3()
+    {
+         Debug.Log("Lane 3 Triggered!");
+    }
+
+    private void Fret1(bool isPressed)
+    {
+         if(isPressed) Debug.Log("Fret 1 Pressed!");
+         else Debug.Log("Fret 1 Released!");
+    }
+    private void Fret2(bool isPressed)
+    {
+         Debug.Log($"Fret 2 {(isPressed ? "Pressed" : "Released")}!");
+    }
+    private void Fret3(bool isPressed)
+    {
+         Debug.Log($"Fret 3 {(isPressed ? "Pressed" : "Released")}!");
     }
 
     // Trigger Logic stays the same
