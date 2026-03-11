@@ -4,6 +4,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerMusic : MonoBehaviour
 {
+    private void Update()
+    {
+        if(Keyboard.current.jKey.wasPressedThisFrame)
+            InputHandler.Instance.SwitchActionMap();
+    }
     private void OnEnable()
     {
         InputHandler.Instance.OnLane1 += Lane1;
