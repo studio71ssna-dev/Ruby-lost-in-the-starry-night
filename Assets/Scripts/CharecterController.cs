@@ -65,8 +65,6 @@ public class CharecterController : MonoBehaviour
             InputHandler.Instance.SwitchActionMap();
              Debug.Log("Switched Action Map via J!");
         }
-
-
     }
 
     private void ApplyMovement()

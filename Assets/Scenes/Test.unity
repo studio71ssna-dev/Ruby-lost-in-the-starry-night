@@ -1405,9 +1405,33 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d405edd6-ec74-4949-9bd1-a456db1326b4
+    m_ActionName: 'Player_Music/Lane 1[/Keyboard/1]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 07f82639-ae1d-4ded-934b-86c84394aa35
+    m_ActionName: 'Player_Music/Lane 2[/Keyboard/2]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 36d83631-cfd2-44b9-8382-5ca5b6c55065
+    m_ActionName: 'Player_Music/Lane 3[/Keyboard/3]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 04d774dd-e3b4-4acd-b744-a77e3f477282
+    m_ActionName: 'Player_Music/Fret 1[/Keyboard/leftArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 257a0746-7c79-4186-8a98-5c5f6cddfbac
+    m_ActionName: 'Player_Music/Fret 2[/Keyboard/downArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a20d9a43-499f-4a42-80dd-33fbba18d515
+    m_ActionName: 'Player_Music/Fret 3[/Keyboard/rightArrow]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: df70fa95-8a34-4494-b137-73ab6b9c7d37
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1212067051
@@ -1664,6 +1688,7 @@ MonoBehaviour:
     m_Bits: 8
   groundCheck: {fileID: 852399427}
   checkRadius: 0.2
+  playerInput: {fileID: 0}
 --- !u!1 &1272207757
 GameObject:
   m_ObjectHideFlags: 0
