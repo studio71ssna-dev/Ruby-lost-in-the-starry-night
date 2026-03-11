@@ -1,28 +1,39 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 
 public class ShopManager : MonoBehaviour
 {
+    [Header("UI References")]
     [SerializeField] private TextMeshProUGUI currencyText;
     [SerializeField] private Button leaveButton;
+    [SerializeField] private Transform slotContainer;
 
-    // To tell the GameManager when we are done shopping
+    [Header("Prefabs & Data")]
+    [SerializeField] private ShopSlotUI slotPrefab;
+    [SerializeField] private List<ItemData> itemsToSell; // ScriptableObjects go here
+
+    // DECLARATION: This was the missing line causing your error
     private UniTaskCompletionSource _shopTaskSource;
 
     private void Start()
     {
-        UpdateUI();
+        UpdateCurrencyUI();
+        // Setup the leave button to trigger the completion of the task
         leaveButton.onClick.AddListener(() => _shopTaskSource?.TrySetResult());
     }
 
     public async UniTask StartShopping()
     {
-        gameObject.SetActive(true); // Show Shop UI
+        gameObject.SetActive(true);
+        UpdateCurrencyUI();
+        PopulateShop();
+
         _shopTaskSource = new UniTaskCompletionSource();
 
-        // The code execution stops here until leaveButton is pressed
+        // The game loop waits here until the leaveButton is pressed
         await _shopTaskSource.Task;
 
         gameObject.SetActive(false);
@@ -30,39 +41,22 @@ public class ShopManager : MonoBehaviour
         GameManager.Instance.TransitionToNight();
     }
 
-    public void BuyGildedFlute() => BuyItem("GildedFlute");
-    public void BuySilverStrings() => BuyItem("SilverStrings");
-    public void BuyLogicLens() => BuyItem("LogicLens");
-
-
-    public void BuyItem(string itemName)
+    private void PopulateShop()
     {
-        int price = 0;
+        // Clear existing slots to prevent duplicates
+        foreach (Transform child in slotContainer) Destroy(child.gameObject);
 
-        // Set prices based on GDD
-        switch (itemName)
+        // Instantiate a slot for every ScriptableObject in the list
+        foreach (var item in itemsToSell)
         {
-            case "GildedFlute": price = 12; break;
-            case "SilverStrings": price = 8; break;
-            case "LogicLens": price = 5; break;
-        }
-
-        // Call your InventoryManager
-        bool success = InventoryManager.Instance.TryPurchaseItem(itemName, price);
-
-        if (success)
-        {
-            UpdateUI();
-            //PlayPurchaseSound(); // Optional: Add some juice!
-        }
-        else
-        {
-            Debug.Log("Not enough flowers or already owned!");
+            var slot = Instantiate(slotPrefab, slotContainer);
+            slot.Setup(item);
         }
     }
 
-    private void UpdateUI()
+    public void UpdateCurrencyUI()
     {
-        currencyText.text = $"Flowers: {InventoryManager.Instance.stardustFlowers}";
+        if (currencyText != null)
+            currencyText.text = InventoryManager.Instance.totalStardust.ToString();
     }
 }

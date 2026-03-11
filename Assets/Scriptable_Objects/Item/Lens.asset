@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76aad1e9378f5a7478d9328333d38edb, type: 3}
+  m_Name: Lens
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  itemName: Lens
+  description: 
+  cost: 20
+  icon: {fileID: -2758448031277389751, guid: e6c53b48f8a4471479a878854b745e4f, type: 3}
+  statModifier: 5
