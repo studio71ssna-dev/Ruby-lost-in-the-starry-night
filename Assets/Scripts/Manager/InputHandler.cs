@@ -68,11 +68,6 @@ public class InputHandler : SingletonPersistent
         if (context.performed) OnLane3?.Invoke();
     }
 
-    /*public void Fret1Trigger(InputAction.CallbackContext context)
-    {
-        if (context.performed) OnFret1?.Invoke(true);
-        else if (context.canceled) OnFret1?.Invoke(false);
-    }*/
     public void Fret1Trigger(InputAction.CallbackContext context)
     {
         OnFret1?.Invoke(context.performed);

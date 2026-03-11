@@ -212,7 +212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &223204792
 Transform:
   m_ObjectHideFlags: 0
@@ -240,7 +240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ae0601c7fe2bf4e8a8998bfc218185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicTimer
-  music: {fileID: 223204794}
 --- !u!82 &223204794
 AudioSource:
   m_ObjectHideFlags: 0
@@ -452,7 +451,7 @@ GameObject:
   - component: {fileID: 519210633}
   - component: {fileID: 519210632}
   m_Layer: 5
-  m_Name: HitCircle 1
+  m_Name: HitCircle 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1084,7 +1083,7 @@ GameObject:
   - component: {fileID: 1074025694}
   - component: {fileID: 1074025693}
   m_Layer: 5
-  m_Name: HitCircle 1
+  m_Name: HitCircle 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1631,6 +1630,7 @@ GameObject:
   - component: {fileID: 1268499903}
   - component: {fileID: 1268499902}
   - component: {fileID: 1268499901}
+  - component: {fileID: 1268499907}
   - component: {fileID: 1268499906}
   m_Layer: 0
   m_Name: Ruby
@@ -1654,7 +1654,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1797,7 +1797,18 @@ MonoBehaviour:
     m_Bits: 8
   groundCheck: {fileID: 852399427}
   checkRadius: 0.2
-  playerInput: {fileID: 0}
+--- !u!114 &1268499907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268499900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a961e313a13c47d44a85c1df6c318125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMusic
 --- !u!1 &1331013289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,6 +1855,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   gamestate: 0
   shopPanel: {fileID: 0}
+--- !u!1 &1395522794
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1395522796}
+  - component: {fileID: 1395522795}
+  m_Layer: 0
+  m_Name: NoteSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1395522795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395522794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c6b923610feae429d4fd4ff263b261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NoteSpawner
+  song: {fileID: 0}
+  musicTimer: {fileID: 223204793}
+  spawnLeadTime: 1
+  notePrefab: {fileID: 4545306395004640995, guid: 7221a89e5a391244bb9daf7f167a15f6, type: 3}
+  lanes:
+  - {fileID: 1512516739}
+  - {fileID: 1512516739}
+  - {fileID: 1512516739}
+  hitCircles:
+  - {fileID: 1972719858}
+  - {fileID: 1074025692}
+  - {fileID: 519210631}
+  notesContainer: {fileID: 1395522796}
+--- !u!4 &1395522796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395522794}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1512516738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,3 +2304,4 @@ SceneRoots:
   - {fileID: 1932755966}
   - {fileID: 1209235525}
   - {fileID: 223204792}
+  - {fileID: 1395522796}
