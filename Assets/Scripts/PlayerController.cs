@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -17,85 +16,122 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded;
+    private PlayerAnimationManager animManager;
+    private PlayerAnimationManager.PlayerAnimState currentState;
 
     private void OnEnable()
     {
-        // Subscribe to InputHandler events if needed (not strictly necessary with the current design)
-         InputHandler.Instance.OnJump += Jump;
-         InputHandler.Instance.OnInteract += TryCollectFlower;
+        // Subscribing to events from your InputHandler
+        InputHandler.Instance.OnJump += Jump;
+        InputHandler.Instance.OnInteract += TryCollectFlower;
     }
+
     private void OnDisable()
     {
-        // Unsubscribe to prevent memory leaks
-         InputHandler.Instance.OnJump -= Jump;
-         InputHandler.Instance.OnInteract -= TryCollectFlower;
+        if (InputHandler.Instance != null)
+        {
+            InputHandler.Instance.OnJump -= Jump;
+            InputHandler.Instance.OnInteract -= TryCollectFlower;
+        }
     }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        animManager = GetComponent<PlayerAnimationManager>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     void Update()
     {
-        // 1. Check Ground Status
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
-
-        // 2. Handle Movement
         ApplyMovement();
-
-        if (Keyboard.current.jKey.wasPressedThisFrame)
-        {
-            InputHandler.Instance.SwitchActionMap();
-             Debug.Log("Switched Action Map via J!");
-        }
+        DetermineAnimationState();
     }
 
     private void ApplyMovement()
     {
-        // We take the X from our InputHandler's Vector2
-        float moveInput = InputHandler.Instance.MoveDirection.x;
-
-        // Apply velocity but KEEP the current Y velocity (so gravity still works!)
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+        // Accessing MoveDirection from your InputHandler
+        Vector2 moveDir = InputHandler.Instance.MoveDirection;
+        rb.linearVelocity = new Vector2(moveDir.x * moveSpeed, rb.linearVelocity.y);
 
         // Flip Sprite based on direction
-        if (moveInput > 0.1f) transform.localScale = new Vector3(1, 1, 1);
-        else if (moveInput < -0.1f) transform.localScale = new Vector3(-1, 1, 1);
+        if (moveDir.x != 0)
+        {
+            transform.localScale = new Vector3(Mathf.Sign(moveDir.x), 1, 1);
+        }
     }
+
+    private void DetermineAnimationState()
+    {
+        // Priority-based animation switching
+        if (!isGrounded)
+        {
+            SetState(PlayerAnimationManager.PlayerAnimState.Jump);
+        }
+        else if (Mathf.Abs(rb.linearVelocity.x) > 0.1f)
+        {
+            SetState(PlayerAnimationManager.PlayerAnimState.Walk);
+        }
+        else
+        {
+            // Only go back to Idle if we aren't in a special state like Rest or Pickup
+            if (currentState != PlayerAnimationManager.PlayerAnimState.Pickup &&
+                currentState != PlayerAnimationManager.PlayerAnimState.Rest)
+            {
+                SetState(PlayerAnimationManager.PlayerAnimState.Idle);
+            }
+        }
+    }
+
+    private void SetState(PlayerAnimationManager.PlayerAnimState newState)
+    {
+        if (currentState == newState) return;
+        currentState = newState;
+        animManager.UpdateAnimation(newState);
+    }
+
     private void Jump()
     {
         if (!isGrounded) return;
-
-        // Reset Y velocity before jumping for consistent height
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-
-        Debug.Log("Ruby Jumped!");
     }
+
     private void TryCollectFlower()
     {
         if (nearbyFlowers.Count > 0 && nearbyFlowers[0] != null)
         {
-            GameObject flower = nearbyFlowers[0];
-            nearbyFlowers.RemoveAt(0);
+            // Play Pickup Animation
+            SetState(PlayerAnimationManager.PlayerAnimState.Pickup);
 
-            // Tell the DayTimeManager we got one!
-            FindObjectOfType<DayTimeManager>().AddFlowerToSession();
+            GameObject flowerObj = nearbyFlowers[0];
+            FlowerItem flowerScript = flowerObj.GetComponent<FlowerItem>();
 
-            Destroy(flower);
+            if (flowerScript != null && flowerScript.data != null)
+            {
+                // Communication with DayTimeManager and UIManager remains intact
+                FindObjectOfType<DayTimeManager>().AddFlowerToSession(flowerScript.data);
+                nearbyFlowers.RemoveAt(0);
+                Destroy(flowerObj);
+
+                // Return to idle after a delay or via Animation Event
+                Invoke(nameof(ResetToIdle), 0.5f);
+            }
         }
     }
 
-    // Trigger Logic stays the same
+    private void ResetToIdle() => SetState(PlayerAnimationManager.PlayerAnimState.Idle);
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Flower") && !nearbyFlowers.Contains(col.gameObject))
             nearbyFlowers.Add(col.gameObject);
     }
+
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.CompareTag("Flower")) nearbyFlowers.Remove(col.gameObject);
+        if (col.CompareTag("Flower"))
+            nearbyFlowers.Remove(col.gameObject);
     }
 }

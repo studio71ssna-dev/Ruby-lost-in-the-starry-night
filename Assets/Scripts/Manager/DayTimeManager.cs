@@ -6,14 +6,14 @@ public class DayTimeManager : MonoBehaviour
 {
     [Header("Day Settings")]
     public float dayDuration = 60f;
-    private int sessionFlowers = 0;
+
+    // Change: Track currency value instead of just count
+    private int sessionStardust = 0;
     private CancellationTokenSource _phaseCts;
 
     private async void Start()
     {
         _phaseCts = new CancellationTokenSource();
-
-        // Start the day cycle
         await RunDayCycle();
     }
 
@@ -26,34 +26,30 @@ public class DayTimeManager : MonoBehaviour
         {
             remainingTime -= Time.deltaTime;
 
-            // Send normalized value (0 to 1) to UI for the progress bar
             if (UIManager.Instance != null)
                 UIManager.Instance.UpdateTimer(remainingTime / dayDuration);
 
-            // Wait for the next frame
             await UniTask.Yield(PlayerLoopTiming.Update, _phaseCts.Token);
         }
 
         await EndDayTransition();
     }
 
-    public void AddFlowerToSession()
+    // Change: Accept FlowerData so we can add its specific value
+    public void AddFlowerToSession(FlowerData flower)
     {
-        sessionFlowers++;
+        sessionStardust += flower.value;
+
         if (UIManager.Instance != null)
-            UIManager.Instance.UpdateFlowerCount(sessionFlowers);
+            UIManager.Instance.UpdateFlowerCount(sessionStardust);
     }
 
     private async UniTask EndDayTransition()
     {
-        // Save flowers to the permanent inventory
-        InventoryManager.Instance.AddFlowers(sessionFlowers);
+        // Fix: Use the new method name 'AddStardust' from our refactored InventoryManager
+        InventoryManager.Instance.AddStardust(sessionStardust);
 
-        // Tell the GameManager to open the shop
-        // We don't need to 'await' here unless you have a fade-out animation first
         GameManager.Instance.EnterShopPhase().Forget();
-
-        // Destroy the day manager or disable the player movement
         this.gameObject.SetActive(false);
     }
 

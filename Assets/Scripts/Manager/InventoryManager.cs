@@ -1,51 +1,32 @@
-using UnityEngine;
+using NUnit.Framework.Interfaces;
 using Singleton;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class InventoryManager : SingletonPersistent
 {
     public static InventoryManager Instance => GetInstance<InventoryManager>();
 
-    [Header("Currency")]
-    public int stardustFlowers = 0;
+    public int totalStardust { get; private set; }
 
-    [Header("Upgrades Purchased")]
-    public bool hasGildedFlute = false;   // Increases rhythm timing window
-    public bool hasSilverStrings = false; // Lowers Chaos Meter faster
-    public bool hasLogicLens = false;     // Provides hints during the Safety Quiz
+    // We store the actual Data Assets we've bought
+    private HashSet<ItemData> ownedItems = new HashSet<ItemData>();
 
-    // Method to add flowers (called by DayTimeManager)
-    public void AddFlowers(int amount)
+    public void AddStardust(int amount)
     {
-        stardustFlowers += amount;
-        Debug.Log($"Inventory Updated: {stardustFlowers} Stardust Flowers total.");
+        totalStardust += amount;
+        Debug.Log($"Total Stardust: {totalStardust}");
     }
 
-    // Method to handle purchases (called by the Merchant/Shop)
-    public bool TryPurchaseItem(string itemName, int cost)
+    public bool HasItem(ItemData item) => ownedItems.Contains(item);
+
+    public bool TryPurchase(ItemData item)
     {
-        // Check if already owned
-        bool alreadyOwned = itemName switch
-        {
-            "GildedFlute" => hasGildedFlute,
-            "SilverStrings" => hasSilverStrings,
-            "LogicLens" => hasLogicLens,
-            _ => false
-        };
+        if (HasItem(item)) return false;
+        if (totalStardust < item.cost) return false;
 
-        if (alreadyOwned)
-        {
-            Debug.Log("You already own this item!");
-            return false;
-        }
-
-        if (stardustFlowers >= cost)
-        {
-            stardustFlowers -= cost;
-            // ... (rest of your switch logic)
-            return true;
-        }
-        return false;
+        totalStardust -= item.cost;
+        ownedItems.Add(item);
+        return true;
     }
-
-
 }
