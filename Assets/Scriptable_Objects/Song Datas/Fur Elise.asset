@@ -12,5 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4c661d823f2394a8b1b28011b13e3d, type: 3}
   m_Name: Fur Elise
   m_EditorClassIdentifier: Assembly-CSharp::SongData
-  music: {fileID: 0}
-  notes: []
+  music: {fileID: 8300000, guid: 34f5126a40c11d9438c2c62d0e665a01, type: 3}
+  notes:
+  - time: 5
+    lane: 0
+    noteFret: 0
+  - time: 8
+    lane: 1
+    noteFret: 1
+  - time: 10
+    lane: 2
+    noteFret: 2
+  - time: 12
+    lane: 0
+    noteFret: 3

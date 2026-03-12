@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 256765754680760694}
   - component: {fileID: 8093448059141999567}
   - component: {fileID: 1071941401163669506}
+  - component: {fileID: 4956627154260832194}
   m_Layer: 0
   m_Name: Note
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.25459, y: -3.59148, z: 0}
-  m_LocalScale: {x: 0.84, y: 0.84, z: 0.84}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -104,3 +105,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792c5aa7b068a9e4cab10071dff5f87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Note
+--- !u!111 &4956627154260832194
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4545306395004640995}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: bce937f1394457b49810398fe553a6ed, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: bce937f1394457b49810398fe553a6ed, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0

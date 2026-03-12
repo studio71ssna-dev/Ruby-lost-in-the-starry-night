@@ -154,9 +154,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -490}
+  m_AnchoredPosition: {x: -960, y: -497.5}
   m_SizeDelta: {x: 1920, y: 15}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &147210932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.24313726}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -212,7 +212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &223204792
 Transform:
   m_ObjectHideFlags: 0
@@ -405,8 +405,8 @@ Canvas:
   m_GameObject: {fileID: 344590461}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -417,7 +417,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &344590465
 RectTransform:
@@ -686,9 +686,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -390}
+  m_AnchoredPosition: {x: -960, y: -397.5}
   m_SizeDelta: {x: 1920, y: 15}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &587714819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,7 +702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.24313726}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -922,7 +922,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6629984481025592963, guid: fa0b9fced05a2804494dd4d44368ee9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1044,10 +1044,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 400170381434894398, guid: 64875a2e8c72a1348894421f1ab5a2c2, type: 3}
-  m_Color: {r: 0.5566038, g: 0.49621752, b: 0.49621752, a: 0.69411767}
+  m_Sprite: {fileID: -7287098671815670099, guid: a7f4a27c988e962429fa84a07d47c5ad, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1065,9 +1065,9 @@ Transform:
   m_GameObject: {fileID: 1044716675}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.36927, y: -0.27, z: 0}
-  m_LocalScale: {x: 51.8, y: 29.90625, z: 27.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.36927, y: -0.44, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1454,10 +1454,6 @@ MonoBehaviour:
     m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
     m_ActionName: 'Player/Interact[/Keyboard/e]'
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 27c5f898-bc57-4ee1-8800-db469aca5fe3
-    m_ActionName: 'Player/Crouch[/Keyboard/c]'
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1209235524}
         m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
@@ -1513,10 +1509,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 641cd816-40e6-41b4-8c3d-04687c349290
-    m_ActionName: 'Player/Sprint[/Keyboard/leftShift]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1209235524}
@@ -1809,6 +1801,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a961e313a13c47d44a85c1df6c318125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMusic
+  spawner: {fileID: 1395522795}
+  song: {fileID: 11400000, guid: 5a28d31785d30cb4da41c663c7f317f9, type: 2}
 --- !u!1 &1331013289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,6 +1849,81 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   gamestate: 0
   shopPanel: {fileID: 0}
+--- !u!1 &1350988135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1350988136}
+  - component: {fileID: 1350988138}
+  - component: {fileID: 1350988137}
+  m_Layer: 5
+  m_Name: music BG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1350988136
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350988135}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1527987167}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -384.6}
+  m_SizeDelta: {x: 1953.4, y: 286.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1350988137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350988135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.09803922}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1350988138
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350988135}
+  m_CullTransparentMesh: 1
 --- !u!1 &1395522794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,7 +1940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1395522795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1886,17 +1955,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NoteSpawner
   song: {fileID: 0}
   musicTimer: {fileID: 223204793}
-  spawnLeadTime: 1
+  spawnLeadTime: 3
   notePrefab: {fileID: 4545306395004640995, guid: 7221a89e5a391244bb9daf7f167a15f6, type: 3}
   lanes:
   - {fileID: 1512516739}
-  - {fileID: 1512516739}
-  - {fileID: 1512516739}
+  - {fileID: 587714818}
+  - {fileID: 147210931}
   hitCircles:
   - {fileID: 1972719858}
   - {fileID: 1074025692}
   - {fileID: 519210631}
   notesContainer: {fileID: 1395522796}
+  fretColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.70980394, g: 0.5529412, b: 0.19607845, a: 1}
+  - {r: 0.5621728, g: 0.13484512, b: 0.6679245, a: 1}
+  - {r: 0.47519472, g: 0.6754716, b: 0.16185826, a: 1}
+  gameCamera: {fileID: 519420031}
 --- !u!4 &1395522796
 Transform:
   m_ObjectHideFlags: 0
@@ -1947,9 +2022,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -290}
+  m_AnchoredPosition: {x: -960, y: -297.5}
   m_SizeDelta: {x: 1920, y: 15}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1512516740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1963,7 +2038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.24313726}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1997,6 +2072,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1527987167}
+  - component: {fileID: 1527987168}
+  - component: {fileID: 1527987169}
   m_Layer: 5
   m_Name: Lanes
   m_TagString: Untagged
@@ -2019,13 +2096,46 @@ RectTransform:
   - {fileID: 1512516739}
   - {fileID: 587714818}
   - {fileID: 147210931}
+  - {fileID: 1350988136}
   m_Father: {fileID: 344590465}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 26.2}
+  m_AnchoredPosition: {x: 0, y: 700}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1527987168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527987166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec90835db835fc49ac3a0237d29c6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FretColorChange
+  lane_HitCirclesImages:
+  - {fileID: 1512516740}
+  - {fileID: 1972719859}
+  - {fileID: 587714819}
+  - {fileID: 1074025693}
+  - {fileID: 147210932}
+  - {fileID: 519210632}
+  colors:
+  - {r: 1, g: 1, b: 1, a: 0.8509804}
+  - {r: 0.70980394, g: 0.5529412, b: 0.19607845, a: 1}
+  - {r: 0.5621728, g: 0.13484512, b: 0.6679245, a: 1}
+  - {r: 0.47519472, g: 0.6754716, b: 0.16185826, a: 1}
+--- !u!222 &1527987169
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527987166}
+  m_CullTransparentMesh: 1
 --- !u!1 &1932755963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2137,7 +2247,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6629984481025592963, guid: fa0b9fced05a2804494dd4d44368ee9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2268,10 +2378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb6b3dc7207d884ebfac7dd0eb368e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
-  stardustFlowers: 0
-  hasGildedFlute: 0
-  hasSilverStrings: 0
-  hasLogicLens: 0
 --- !u!4 &2098060540
 Transform:
   m_ObjectHideFlags: 0

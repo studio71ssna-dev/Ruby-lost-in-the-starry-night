@@ -10,11 +10,17 @@ public class NoteSpawner : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private GameObject notePrefab;
-    [SerializeField] private Transform[] lanes;
-    [SerializeField] private Transform[] hitCircles;
-    [SerializeField] private Transform notesContainer; // parent for all spawned notes
+    [SerializeField] private RectTransform[] lanes;
+    [SerializeField] private RectTransform[] hitCircles;
+    [SerializeField] private Transform notesContainer;
+    [SerializeField] private Color[] fretColors; // 0=open, 1=fret1, 2=fret2, 3=fret3
+
+    [SerializeField] private Camera gameCamera;
 
     private int nextNoteIndex = 0;
+
+    public MusicTimer MusicTimer => musicTimer;
+    public Transform NotesContainer => notesContainer;
 
     void Update()
     {
@@ -32,32 +38,41 @@ public class NoteSpawner : MonoBehaviour
 
     private void Spawn(NoteData note)
     {
-        Vector3 spawnPos = lanes[note.lane].position;
-        Vector3 hitPos = hitCircles[note.lane].position;
+        Vector3 spawnPos = UIToWorld(lanes[note.lane]);
+        Vector3 hitPos = UIToWorld(hitCircles[note.lane]);
 
         GameObject obj = Instantiate(notePrefab, spawnPos, Quaternion.identity, notesContainer);
+        Color fretColor = fretColors[note.noteFret];
+
         obj.GetComponent<Note>().Init(
             note.time,
             note.time - spawnLeadTime,
             spawnPos,
             hitPos,
-            musicTimer
+            musicTimer,
+            fretColor,
+            note.noteFret,
+            note.lane
         );
     }
 
-    /// <summary>
-    /// Loads a new song, clears old notes, and starts music immediately.
-    /// </summary>
     public void LoadSong(SongData newSong)
     {
         song = newSong;
         nextNoteIndex = 0;
 
-        // Clear all previously spawned notes
         foreach (Transform child in notesContainer)
             Destroy(child.gameObject);
 
-        // Start music
         musicTimer.StartSong(newSong);
+    }
+
+    private Vector3 UIToWorld(RectTransform ui)
+    {
+        Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(gameCamera, ui.position);
+        Vector3 worldPos = gameCamera.ScreenToWorldPoint(
+            new Vector3(screenPos.x, screenPos.y, gameCamera.nearClipPlane + 0.1f)
+        );
+        return worldPos;
     }
 }
