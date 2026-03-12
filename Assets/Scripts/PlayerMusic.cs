@@ -5,6 +5,7 @@ public class PlayerMusic : MonoBehaviour
 {
     [SerializeField] private NoteSpawner spawner;
     [SerializeField] private SongData song;
+    [SerializeField] private ScoreManager scoreManager;
 
     private int activeFret = 0; // 0=open, 1=fret1, 2=fret2, 3=fret3
 
@@ -56,6 +57,7 @@ public class PlayerMusic : MonoBehaviour
         if (Keyboard.current != null && Keyboard.current.jKey.wasPressedThisFrame)
         {
             InputHandler.Instance.SwitchActionMap();
+            scoreManager.ActivateBarUI();
             spawner.LoadSong(song);
         }
     }
@@ -72,6 +74,7 @@ public class PlayerMusic : MonoBehaviour
         if (closestNote == null)
         {
             Debug.Log("Miss");
+            scoreManager.Miss();
             return;
         }
 
@@ -81,21 +84,25 @@ public class PlayerMusic : MonoBehaviour
         if (closestNote.NoteFret != activeFret)
         {
             Debug.Log("Miss (Wrong Fret)");
+            scoreManager.Miss();
             return;
         }
 
         if (diff < 0.05f)
         {
             Debug.Log("Perfect");
+            scoreManager.Perfect();
             Destroy(closestNote.gameObject);
         }
         else if (diff < 0.1f)
         {
             Debug.Log("Good");
+            scoreManager.Good();
             Destroy(closestNote.gameObject);
         }
         else
         {
+            scoreManager.Miss();
             Debug.Log("Miss");
         }
     }
