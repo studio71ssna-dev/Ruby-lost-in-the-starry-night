@@ -18,18 +18,17 @@ public class ParallaxBackground : MonoBehaviour
         textureUnitSizeX = texture.width / sprite.pixelsPerUnit;
     }
 
-    void LateUpdate()
+    // Change LateUpdate to FixedUpdate to match the physics-based camera
+    void FixedUpdate()
     {
         Vector3 deltaMovement = cameraTransform.position - lastCameraPosition;
 
-        // Move the background based on camera movement * multiplier
         transform.position += new Vector3(deltaMovement.x * parallaxEffectMultiplier.x,
                                         deltaMovement.y * parallaxEffectMultiplier.y);
 
         lastCameraPosition = cameraTransform.position;
 
-        // Infinite Looping Logic:
-        // If the background has moved far enough, reset its position to create a loop
+        // Infinite Looping Logic...
         if (Mathf.Abs(cameraTransform.position.x - transform.position.x) >= textureUnitSizeX)
         {
             float offsetPositionX = (cameraTransform.position.x - transform.position.x) % textureUnitSizeX;

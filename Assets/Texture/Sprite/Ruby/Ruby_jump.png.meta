@@ -197,12 +197,12 @@ TextureImporter:
       name: Ruby_jump_0
       rect:
         serializedVersion: 2
-        x: 62
-        y: 529
-        width: 121
-        height: 192
+        x: 42
+        y: 298
+        width: 132
+        height: 237
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,12 +219,12 @@ TextureImporter:
       name: Ruby_jump_1
       rect:
         serializedVersion: 2
-        x: 321
-        y: 529
-        width: 117
-        height: 192
+        x: 346
+        y: 305
+        width: 133
+        height: 245
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: Ruby_jump_2
       rect:
         serializedVersion: 2
-        x: 579
-        y: 529
-        width: 115
-        height: 202
+        x: 599
+        y: 317
+        width: 144
+        height: 238
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -263,12 +263,12 @@ TextureImporter:
       name: Ruby_jump_3
       rect:
         serializedVersion: 2
-        x: 836
-        y: 535
-        width: 115
-        height: 210
+        x: 826
+        y: 325
+        width: 136
+        height: 234
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -285,12 +285,12 @@ TextureImporter:
       name: Ruby_jump_4
       rect:
         serializedVersion: 2
-        x: 1092
-        y: 553
-        width: 117
-        height: 203
+        x: 1050
+        y: 317
+        width: 136
+        height: 234
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -307,12 +307,12 @@ TextureImporter:
       name: Ruby_jump_5
       rect:
         serializedVersion: 2
-        x: 67
-        y: 303
-        width: 119
-        height: 201
+        x: 38
+        y: 19
+        width: 141
+        height: 239
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -329,12 +329,12 @@ TextureImporter:
       name: Ruby_jump_6
       rect:
         serializedVersion: 2
-        x: 323
-        y: 303
-        width: 119
-        height: 201
+        x: 345
+        y: 22
+        width: 145
+        height: 243
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -351,12 +351,12 @@ TextureImporter:
       name: Ruby_jump_7
       rect:
         serializedVersion: 2
-        x: 578
-        y: 298
-        width: 120
-        height: 204
+        x: 643
+        y: 41
+        width: 148
+        height: 238
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -373,12 +373,12 @@ TextureImporter:
       name: Ruby_jump_8
       rect:
         serializedVersion: 2
-        x: 830
-        y: 284
-        width: 124
-        height: 210
+        x: 949
+        y: 54
+        width: 138
+        height: 224
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -391,143 +391,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Ruby_jump_9
-      rect:
-        serializedVersion: 2
-        x: 1082
-        y: 273
-        width: 129
-        height: 203
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 14ac9afbe16c6ca90800000000000000
-      internalID: -7293924711113045439
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ruby_jump_10
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 17
-        width: 126
-        height: 193
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cdad9f385affc97b0800000000000000
-      internalID: -5216013182053000484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ruby_jump_11
-      rect:
-        serializedVersion: 2
-        x: 321
-        y: 16
-        width: 118
-        height: 193
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 535445600f1087970800000000000000
-      internalID: 8752748006204523829
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ruby_jump_12
-      rect:
-        serializedVersion: 2
-        x: 578
-        y: 18
-        width: 116
-        height: 201
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0425de616001004b0800000000000000
-      internalID: -5476359528542023104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ruby_jump_13
-      rect:
-        serializedVersion: 2
-        x: 835
-        y: 22
-        width: 116
-        height: 210
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b73b0cb83881f3de0800000000000000
-      internalID: -1351334409923415173
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ruby_jump_14
-      rect:
-        serializedVersion: 2
-        x: 1091
-        y: 30
-        width: 116
-        height: 210
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9b9ce6f561fd10020800000000000000
-      internalID: 2306369771373775289
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f155ad7b41353c243aee8226b8828ca1
     internalID: 0
     vertices: []
     indices: 
@@ -535,15 +403,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Ruby_jump_0: -5156716069641814923
       Ruby_jump_1: 8896201039765656721
-      Ruby_jump_10: -5216013182053000484
-      Ruby_jump_11: 8752748006204523829
-      Ruby_jump_12: -5476359528542023104
-      Ruby_jump_13: -1351334409923415173
-      Ruby_jump_14: 2306369771373775289
       Ruby_jump_2: 3883856085927922301
       Ruby_jump_3: 5550965682941015730
       Ruby_jump_4: -2497916424997506788
@@ -551,7 +416,6 @@ TextureImporter:
       Ruby_jump_6: 5157568661454284198
       Ruby_jump_7: 6297265305290167422
       Ruby_jump_8: -1384244923744145694
-      Ruby_jump_9: -7293924711113045439
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
