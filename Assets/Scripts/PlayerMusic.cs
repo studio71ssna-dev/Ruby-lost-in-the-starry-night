@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerMusic : MonoBehaviour
 {
     [SerializeField] private NoteSpawner spawner;
+    [SerializeField] private ChoiceManager choiceManager;
     [SerializeField] private SongData song;
     [SerializeField] private ScoreManager scoreManager;
 
@@ -60,6 +61,10 @@ public class PlayerMusic : MonoBehaviour
             InputHandler.Instance.SwitchActionMap();
             scoreManager.ActivateBarUI();
             spawner.LoadSong(song);
+        }
+        if(Keyboard.current != null && Keyboard.current.kKey.wasPressedThisFrame)
+        {
+            choiceManager.ShowRandomQuestion();
         }
     }
 
