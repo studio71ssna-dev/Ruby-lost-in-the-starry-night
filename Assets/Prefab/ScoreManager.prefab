@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3ac8fa203f15c409340b27e2be9d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
-  scoreText: {fileID: 0}
-  comboText: {fileID: 0}
-  scoreUI: {fileID: 0}
-  PerfectScore: 300
-  GoodScore: 100
+  pressureBar: {fileID: 0}
+  fillSpeed: 0.1
+  perfectReduction: 0.2
+  goodReduction: 0.1

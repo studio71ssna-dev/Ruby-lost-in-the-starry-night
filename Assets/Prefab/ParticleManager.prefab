@@ -45,5 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SingletonManagers.ParticleManager
   particlePrefabs:
-  - name: 
-    prefab: {fileID: 0}
+  - name: NoteHit
+    prefab: {fileID: 4007921317578898842, guid: a13a86865f855204484c266b37e90746, type: 3}
+  - name: PickUp
+    prefab: {fileID: 5848212497268052239, guid: fb51995ad1c91bd4f9201330aba4657b, type: 3}
+  - name: Walk
+    prefab: {fileID: 6360919174994527828, guid: e3ccf7e841bd3684885ae4c297751499, type: 3}

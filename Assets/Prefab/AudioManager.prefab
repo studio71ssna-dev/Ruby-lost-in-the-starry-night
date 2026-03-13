@@ -45,9 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   audioClips:
-  - name: 
-    clip: {fileID: 0}
+  - name: NoteHit
+    clip: {fileID: 8300000, guid: a4fd5a1072c082e4f848704ef3fb78f5, type: 3}
     loop: 0
-    spatialBlend: 0
   initialPoolSize: 5
   audioSourceParent: {fileID: 0}
