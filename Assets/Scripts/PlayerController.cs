@@ -113,8 +113,7 @@ public class PlayerController : MonoBehaviour
                 // Communication with DayTimeManager and UIManager remains intact
                 FindObjectOfType<DayTimeManager>().AddFlowerToSession(flowerScript.data);
                 nearbyFlowers.RemoveAt(0);
-                Destroy(flowerObj);
-
+                Destroy(flowerObj,0.25f);
                 // Return to idle after a delay or via Animation Event
                 Invoke(nameof(ResetToIdle), 0.5f);
             }
