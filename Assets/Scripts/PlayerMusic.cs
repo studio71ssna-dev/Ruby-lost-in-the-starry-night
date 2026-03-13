@@ -1,3 +1,4 @@
+using SingletonManagers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -65,7 +66,6 @@ public class PlayerMusic : MonoBehaviour
     private void HandleFret(int fretIndex, bool isPressed)
     {
         activeFret = isPressed ? fretIndex : 0; // 0=open when released
-        //Debug.Log($"Fret {fretIndex} {(isPressed ? "Pressed" : "Released")}, ActiveFret={activeFret}");
     }
 
     private void HandleLane(int laneIndex)
@@ -83,7 +83,6 @@ public class PlayerMusic : MonoBehaviour
 
         if (closestNote.NoteFret != activeFret)
         {
-            Debug.Log("Miss (Wrong Fret)");
             scoreManager.Miss();
             return;
         }
@@ -92,18 +91,21 @@ public class PlayerMusic : MonoBehaviour
         {
             Debug.Log("Perfect");
             scoreManager.Perfect();
+            ParticleManager.Instance.PlayParticle("NoteHit", closestNote.transform.position, closestNote.gameObject.GetComponent<SpriteRenderer>().color);
+            AudioManager.Instance.Play("NoteHit", closestNote.transform.position);
             Destroy(closestNote.gameObject);
         }
         else if (diff < 0.1f)
         {
             Debug.Log("Good");
             scoreManager.Good();
+            ParticleManager.Instance.PlayParticle("NoteHit", closestNote.transform.position, closestNote.gameObject.GetComponent<SpriteRenderer>().color);
+            AudioManager.Instance.Play("NoteHit", closestNote.transform.position);
             Destroy(closestNote.gameObject);
         }
         else
         {
             scoreManager.Miss();
-            Debug.Log("Miss");
         }
     }
 
