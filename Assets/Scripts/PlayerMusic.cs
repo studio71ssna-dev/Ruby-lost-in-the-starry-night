@@ -1,53 +1,131 @@
 using UnityEngine;
-using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
 public class PlayerMusic : MonoBehaviour
 {
+    [SerializeField] private NoteSpawner spawner;
+    [SerializeField] private SongData song;
+    [SerializeField] private ScoreManager scoreManager;
+
+    private int activeFret = 0; // 0=open, 1=fret1, 2=fret2, 3=fret3
+
+    private System.Action lane1Delegate;
+    private System.Action lane2Delegate;
+    private System.Action lane3Delegate;
+
+    private System.Action<bool> fret1Delegate;
+    private System.Action<bool> fret2Delegate;
+    private System.Action<bool> fret3Delegate;
+
     private void OnEnable()
     {
-        InputHandler.Instance.OnLane1 += Lane1;
-        InputHandler.Instance.OnLane2 += Lane2;
-        InputHandler.Instance.OnLane3 += Lane3;
-        InputHandler.Instance.OnFret1 += Fret1;
-        InputHandler.Instance.OnFret2 += Fret2;
-        InputHandler.Instance.OnFret3 += Fret3;
+        if (InputHandler.Instance == null) return;
+
+        lane1Delegate = () => HandleLane(0);
+        lane2Delegate = () => HandleLane(1);
+        lane3Delegate = () => HandleLane(2);
+
+        fret1Delegate = (p) => HandleFret(1, p);
+        fret2Delegate = (p) => HandleFret(2, p);
+        fret3Delegate = (p) => HandleFret(3, p);
+
+        InputHandler.Instance.OnLane1 += lane1Delegate;
+        InputHandler.Instance.OnLane2 += lane2Delegate;
+        InputHandler.Instance.OnLane3 += lane3Delegate;
+
+        InputHandler.Instance.OnFret1 += fret1Delegate;
+        InputHandler.Instance.OnFret2 += fret2Delegate;
+        InputHandler.Instance.OnFret3 += fret3Delegate;
     }
 
     private void OnDisable()
     {
-        InputHandler.Instance.OnLane1 -= Lane1;
-        InputHandler.Instance.OnLane2 -= Lane2;
-        InputHandler.Instance.OnLane3 -= Lane3;
-        InputHandler.Instance.OnFret1 -= Fret1;
-        InputHandler.Instance.OnFret2 -= Fret2;
-        InputHandler.Instance.OnFret3 -= Fret3;
+        if (InputHandler.Instance == null) return;
+
+        InputHandler.Instance.OnLane1 -= lane1Delegate;
+        InputHandler.Instance.OnLane2 -= lane2Delegate;
+        InputHandler.Instance.OnLane3 -= lane3Delegate;
+
+        InputHandler.Instance.OnFret1 -= fret1Delegate;
+        InputHandler.Instance.OnFret2 -= fret2Delegate;
+        InputHandler.Instance.OnFret3 -= fret3Delegate;
     }
 
-    private void Lane1()
+    private void Update()
     {
-        Debug.Log("Lane 1 Triggered!");
-    }
-    private void Lane2()
-    {
-        Debug.Log("Lane 2 Triggered!");
-    }
-    private void Lane3()
-    {
-        Debug.Log("Lane 3 Triggered!");
+        // For placeholder testing: switch action map / load song
+        if (Keyboard.current != null && Keyboard.current.jKey.wasPressedThisFrame)
+        {
+            InputHandler.Instance.SwitchActionMap();
+            scoreManager.ActivateBarUI();
+            spawner.LoadSong(song);
+        }
     }
 
-    private void Fret1(bool isPressed)
+    private void HandleFret(int fretIndex, bool isPressed)
     {
-        if (isPressed) Debug.Log("Fret 1 Pressed!");
-        else Debug.Log("Fret 1 Released!");
+        activeFret = isPressed ? fretIndex : 0; // 0=open when released
+        //Debug.Log($"Fret {fretIndex} {(isPressed ? "Pressed" : "Released")}, ActiveFret={activeFret}");
     }
-    private void Fret2(bool isPressed)
+
+    private void HandleLane(int laneIndex)
     {
-        Debug.Log($"Fret 2 {(isPressed ? "Pressed" : "Released")}!");
+        Note closestNote = FindClosestNoteInLane(laneIndex);
+        if (closestNote == null)
+        {
+            Debug.Log("Miss");
+            scoreManager.Miss();
+            return;
+        }
+
+        float currentTime = spawner.MusicTimer.SongTime;
+        float diff = Mathf.Abs(closestNote.HitTime - currentTime);
+
+        if (closestNote.NoteFret != activeFret)
+        {
+            Debug.Log("Miss (Wrong Fret)");
+            scoreManager.Miss();
+            return;
+        }
+
+        if (diff < 0.05f)
+        {
+            Debug.Log("Perfect");
+            scoreManager.Perfect();
+            Destroy(closestNote.gameObject);
+        }
+        else if (diff < 0.1f)
+        {
+            Debug.Log("Good");
+            scoreManager.Good();
+            Destroy(closestNote.gameObject);
+        }
+        else
+        {
+            scoreManager.Miss();
+            Debug.Log("Miss");
+        }
     }
-    private void Fret3(bool isPressed)
+
+    private Note FindClosestNoteInLane(int lane)
     {
-        Debug.Log($"Fret 3 {(isPressed ? "Pressed" : "Released")}!");
+        Note closest = null;
+        float minDiff = float.MaxValue;
+        float currentTime = spawner.MusicTimer.SongTime;
+
+        foreach (Transform child in spawner.NotesContainer)
+        {
+            Note note = child.GetComponent<Note>();
+            if (note == null || note.Lane != lane) continue;
+
+            float diff = Mathf.Abs(note.HitTime - currentTime);
+            if (diff < minDiff && diff < 0.15f) // 150ms hit window
+            {
+                minDiff = diff;
+                closest = note;
+            }
+        }
+
+        return closest;
     }
 }
