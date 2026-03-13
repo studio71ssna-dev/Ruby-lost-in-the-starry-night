@@ -1142,28 +1142,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3862950129383285288, guid: 64886951a73f1a6409f1273ae81e44f9, type: 3}
-      propertyPath: scoreUI
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3862950129383285288, guid: 64886951a73f1a6409f1273ae81e44f9, type: 3}
-      propertyPath: comboText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3862950129383285288, guid: 64886951a73f1a6409f1273ae81e44f9, type: 3}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3862950129383285288, guid: 64886951a73f1a6409f1273ae81e44f9, type: 3}
       propertyPath: pressureBar
       value: 
       objectReference: {fileID: 128561082}
     - target: {fileID: 5554245953484875950, guid: 64886951a73f1a6409f1273ae81e44f9, type: 3}
       propertyPath: m_Name
       value: ScoreManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5554245953484875950, guid: 64886951a73f1a6409f1273ae81e44f9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8882727715339060421, guid: 64886951a73f1a6409f1273ae81e44f9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1262,10 +1246,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InputHandler
       objectReference: {fileID: 0}
-    - target: {fileID: 1691534184544901040, guid: 6c0167fcbae8a274995411c03e6f2076, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1283,38 +1263,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParticleManager
       objectReference: {fileID: 0}
-    - target: {fileID: 1409431759455487753, guid: 110e0f175e058b34e965132ef9612c1b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355648466520948859, guid: 110e0f175e058b34e965132ef9612c1b, type: 3}
-      propertyPath: particlePrefabs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355648466520948859, guid: 110e0f175e058b34e965132ef9612c1b, type: 3}
-      propertyPath: particlePrefabs.Array.data[0].name
-      value: NoteHit
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355648466520948859, guid: 110e0f175e058b34e965132ef9612c1b, type: 3}
-      propertyPath: particlePrefabs.Array.data[1].name
-      value: PickUp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355648466520948859, guid: 110e0f175e058b34e965132ef9612c1b, type: 3}
-      propertyPath: particlePrefabs.Array.data[2].name
-      value: Walk
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355648466520948859, guid: 110e0f175e058b34e965132ef9612c1b, type: 3}
-      propertyPath: particlePrefabs.Array.data[0].prefab
-      value: 
-      objectReference: {fileID: 4007921317578898842, guid: a13a86865f855204484c266b37e90746, type: 3}
-    - target: {fileID: 4355648466520948859, guid: 110e0f175e058b34e965132ef9612c1b, type: 3}
-      propertyPath: particlePrefabs.Array.data[1].prefab
-      value: 
-      objectReference: {fileID: 5848212497268052239, guid: fb51995ad1c91bd4f9201330aba4657b, type: 3}
-    - target: {fileID: 4355648466520948859, guid: 110e0f175e058b34e965132ef9612c1b, type: 3}
-      propertyPath: particlePrefabs.Array.data[2].prefab
-      value: 
-      objectReference: {fileID: 6360919174994527828, guid: e3ccf7e841bd3684885ae4c297751499, type: 3}
     - target: {fileID: 6360955525833775582, guid: 110e0f175e058b34e965132ef9612c1b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1505,21 +1453,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1898488698303908628, guid: f1c936ae292fea54a98a025656398960, type: 3}
-      propertyPath: audioClips.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: a4fd5a1072c082e4f848704ef3fb78f5, type: 3}
-    - target: {fileID: 1898488698303908628, guid: f1c936ae292fea54a98a025656398960, type: 3}
-      propertyPath: audioClips.Array.data[0].name
-      value: NoteHit
-      objectReference: {fileID: 0}
     - target: {fileID: 2547297534766970066, guid: f1c936ae292fea54a98a025656398960, type: 3}
       propertyPath: m_Name
       value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 2547297534766970066, guid: f1c936ae292fea54a98a025656398960, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1537,10 +1473,6 @@ PrefabInstance:
     - target: {fileID: 1635918506714251176, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
       propertyPath: m_Name
       value: MusicHandler
-      objectReference: {fileID: 0}
-    - target: {fileID: 1635918506714251176, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3941089929834738497, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
       propertyPath: m_LocalPosition.x
