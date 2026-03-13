@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76aad1e9378f5a7478d9328333d38edb, type: 3}
   m_Name: Yellow_Tulip
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: Yellow_Tulip
+  itemName: Yellow Tulip
   description: 
-  cost: 5
+  cost: 10
   icon: {fileID: 21300000, guid: f82c25c96c0309e49bc2e7026fba73c3, type: 3}
   statModifier: 0

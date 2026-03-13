@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76aad1e9378f5a7478d9328333d38edb, type: 3}
   m_Name: Violet_Rose
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: Violet_Rose
+  itemName: Violet Rose
   description: 
   cost: 5
   icon: {fileID: 21300000, guid: ae2cae4e4448cbb428dd4faecb98cc8c, type: 3}

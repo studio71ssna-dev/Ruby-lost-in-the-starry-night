@@ -4,7 +4,7 @@ using UnityEngine;
 public class GroundTileGenerator : MonoBehaviour
 {
     [Header("Generation Settings")]
-    public GameObject[] chunkPrefabs; // Your hand-designed Van Gogh segments
+    public GameObject[] chunkPrefabs;
     public Transform playerTransform;
     public float spawnDistance = 20f; // How far ahead to spawn
     public float chunkLength = 30f;   // Length of each prefab
@@ -38,7 +38,7 @@ public class GroundTileGenerator : MonoBehaviour
 
     void DeleteOldChunk()
     {
-        if (activeChunks.Count > 4) // Keep a few behind the player just in case
+        if (activeChunks.Count > 4)
         {
             Destroy(activeChunks[0]);
             activeChunks.RemoveAt(0);

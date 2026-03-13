@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76aad1e9378f5a7478d9328333d38edb, type: 3}
   m_Name: Blue_Orchid
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: Blue_Orchid
+  itemName: Blue Orchid
   description: 
-  cost: 5
+  cost: 7
   icon: {fileID: 21300000, guid: 3ee8870aa939abf4b870a9784fd6dbc5, type: 3}
   statModifier: 0
