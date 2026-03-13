@@ -4,7 +4,7 @@ using UnityEngine;
 public class NoteSpawner : MonoBehaviour
 {
     [Header("Song Settings")]
-    [SerializeField] private SongData song;
+    private SongData song;
     [SerializeField] private MusicTimer musicTimer;
     [SerializeField] private float spawnLeadTime = 1f;
 
@@ -63,8 +63,6 @@ public class NoteSpawner : MonoBehaviour
 
         foreach (Transform child in notesContainer)
             Destroy(child.gameObject);
-
-        musicTimer.StartSong(newSong);
     }
 
     private Vector3 UIToWorld(RectTransform ui)
