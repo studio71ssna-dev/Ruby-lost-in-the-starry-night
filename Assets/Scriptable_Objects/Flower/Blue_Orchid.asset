@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlowerData
   flowerName: Blue_Orchid
   value: 7
-  icon: {fileID: -1427717689803857563, guid: 668063d1eb61d014fba46d9fca673217, type: 3}
+  icon: {fileID: 21300000, guid: 3ee8870aa939abf4b870a9784fd6dbc5, type: 3}
   glowColor: {r: 0.12105229, g: 0.0990566, b: 1, a: 1}

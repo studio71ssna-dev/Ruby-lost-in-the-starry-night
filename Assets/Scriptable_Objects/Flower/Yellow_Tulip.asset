@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlowerData
   flowerName: Yellow_Tulip
   value: 10
-  icon: {fileID: 2599165426581469512, guid: bbb0c46456b489e4d9f7a9b9f6d832d8, type: 3}
+  icon: {fileID: 21300000, guid: f82c25c96c0309e49bc2e7026fba73c3, type: 3}
   glowColor: {r: 0.9716981, g: 0.8797358, b: 0.14208792, a: 1}
