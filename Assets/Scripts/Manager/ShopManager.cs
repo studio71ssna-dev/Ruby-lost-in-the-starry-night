@@ -41,16 +41,16 @@ public class ShopManager : MonoBehaviour
         GameManager.Instance.TransitionToNight();
     }
 
+    // ShopManager.cs
     private void PopulateShop()
     {
-        // Clear existing slots to prevent duplicates
         foreach (Transform child in slotContainer) Destroy(child.gameObject);
 
-        // Instantiate a slot for every ScriptableObject in the list
         foreach (var item in itemsToSell)
         {
             var slot = Instantiate(slotPrefab, slotContainer);
-            slot.Setup(item);
+            // Pass 'this' so the slot can talk back to the manager
+            slot.Setup(item, this);
         }
     }
 

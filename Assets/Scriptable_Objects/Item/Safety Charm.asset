@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76aad1e9378f5a7478d9328333d38edb, type: 3}
-  m_Name: Lens
+  m_Name: Safety Charm
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: Lens
-  description: 
-  cost: 20
-  icon: {fileID: -2758448031277389751, guid: e6c53b48f8a4471479a878854b745e4f, type: 3}
-  statModifier: 5
+  itemName: Safety Charm
+  description: Allows the player to miss 3 notes in the rhythm game without penalty.
+  cost: 10
+  icon: {fileID: 21300000, guid: 07c66d7e81b1a7241984ce536349dbc5, type: 3}
+  statModifier: 3

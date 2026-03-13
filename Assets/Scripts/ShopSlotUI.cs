@@ -12,9 +12,13 @@ public class ShopSlotUI : MonoBehaviour
 
     private ItemData _data;
 
-    public void Setup(ItemData item)
+    private ShopManager _manager;
+
+    public void Setup(ItemData item, ShopManager manager) // Add manager to parameters
     {
         _data = item;
+        _manager = manager; // Store the reference
+
         icon.sprite = item.icon;
         nameText.text = item.itemName;
         priceText.text = item.cost.ToString();
@@ -30,7 +34,8 @@ public class ShopSlotUI : MonoBehaviour
         if (InventoryManager.Instance.TryPurchase(_data))
         {
             RefreshState();
-            // Optional: Trigger a UI refresh on the ShopManager
+            // CALL THE MANAGER TO UPDATE THE TEXT
+            _manager.UpdateCurrencyUI();
         }
     }
 

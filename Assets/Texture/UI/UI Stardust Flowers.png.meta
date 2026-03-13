@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 41b2460c8c0feba4e962756a0443da18
+guid: cccadace7008d99498dc6056d2796324
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1492314839085384544
-    second: panel_brown_damaged_dark_0
+      213: -8566767923200687320
+    second: UI Stardust Flowers_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: panel_brown_damaged_dark_0
+      name: UI Stardust Flowers_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0638ab48074c5b410800000000000000
-      internalID: 1492314839085384544
+      spriteID: 823896866f9bc1980800000000000000
+      internalID: -8566767923200687320
       vertices: []
       indices: 
       edges: []
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      panel_brown_damaged_dark_0: 1492314839085384544
+      UI Stardust Flowers_0: -8566767923200687320
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
