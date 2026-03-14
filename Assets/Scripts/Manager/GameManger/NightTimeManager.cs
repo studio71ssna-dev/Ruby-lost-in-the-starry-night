@@ -2,19 +2,13 @@ using UnityEngine;
 
 public class NightTimeManager : MonoBehaviour
 {
-    public bool isWolfEncounter = false;
 
-    void Update()
+    public void CheckWolfEncounter()
     {
-        CheckWolfEncounter();
-    }
-
-    void CheckWolfEncounter()
-    {
-        if (isWolfEncounter)
-        {
+       
             // Accessing the Dictionary-based Singleton
-            GameManager.Instance.gamestate = GameManager.GameState.GameOver;
-        }
+            //Amio , Put you system here to trigger the wolf encounter, e.g., show UI, play sound, etc.
+            //GameManager.Instance.gamestate = GameManager.GameState.GameOver;
+        
     }
 }

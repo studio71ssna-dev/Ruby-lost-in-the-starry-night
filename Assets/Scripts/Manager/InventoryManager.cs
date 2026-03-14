@@ -1,4 +1,3 @@
-using NUnit.Framework.Interfaces;
 using Singleton;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +8,6 @@ public class InventoryManager : SingletonPersistent
 
     public int totalStardust { get; private set; }
 
-    // We store the actual Data Assets we've bought
     private HashSet<ItemData> ownedItems = new HashSet<ItemData>();
 
     public void AddStardust(int amount)

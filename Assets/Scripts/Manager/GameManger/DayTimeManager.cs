@@ -11,11 +11,6 @@ public class DayTimeManager : MonoBehaviour
     private int sessionStardust = 0;
     private CancellationTokenSource _phaseCts;
 
-    private async void Start()
-    {
-        _phaseCts = new CancellationTokenSource();
-        await RunDayCycle();
-    }
 
     private async UniTask RunDayCycle()
     {
@@ -44,13 +39,28 @@ public class DayTimeManager : MonoBehaviour
             UIManager.Instance.UpdateFlowerCount(sessionStardust);
     }
 
-    private async UniTask EndDayTransition()
+    private async Cysharp.Threading.Tasks.UniTask EndDayTransition()
     {
-        // Fix: Use the new method name 'AddStardust' from our refactored InventoryManager
         InventoryManager.Instance.AddStardust(sessionStardust);
 
-        GameManager.Instance.EnterShopPhase().Forget();
-        this.gameObject.SetActive(false);
+        GameManager.Instance.OnDayEnded();
+
+        gameObject.SetActive(false);
+    }
+
+    public void StartNewDay()
+    {
+        // Reset the session stardust for the new day
+        sessionStardust = 0;
+
+        if (UIManager.Instance != null)
+            UIManager.Instance.UpdateFlowerCount(sessionStardust);
+
+        _phaseCts?.Cancel(); // Clean up old token if it exists
+        _phaseCts = new CancellationTokenSource();
+
+        // Fire and forget the task
+        RunDayCycle().Forget();
     }
 
     private void OnDestroy()

@@ -33,12 +33,12 @@ public class ShopManager : MonoBehaviour
 
         _shopTaskSource = new UniTaskCompletionSource();
 
-        // The game loop waits here until the leaveButton is pressed
         await _shopTaskSource.Task;
 
         gameObject.SetActive(false);
+
         Debug.Log("Exiting Shop. Transitioning to Night...");
-        GameManager.Instance.TransitionToNight();
+
     }
 
     // ShopManager.cs

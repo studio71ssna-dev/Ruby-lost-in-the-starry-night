@@ -3,42 +3,102 @@ using UnityEngine;
 
 public class GroundTileGenerator : MonoBehaviour
 {
-    [Header("Generation Settings")]
-    public GameObject[] chunkPrefabs;
-    public Transform playerTransform;
-    public float spawnDistance = 20f; // How far ahead to spawn
-    public float chunkLength = 30f;   // Length of each prefab
+    [Header("Chunks")]
+    public GameObject[] dayChunks;
+    public GameObject[] nightChunks;
+    public GameObject shopChunk;
+    public GameObject nightStartChunk;
 
-    private List<GameObject> activeChunks = new List<GameObject>();
-    private float spawnZ = 0f;
+    public Transform playerTransform;
+
+    public float spawnDistance = 20f;
+    public float chunkLength = 30f;
+
+    private GameObject[] activeSet;
+    private List<GameObject> activeChunks = new();
+
+    private float spawnX = 0f;
 
     void Start()
     {
-        // Spawn initial 3 chunks
-        for (int i = 0; i < 3; i++) { SpawnChunk(); }
+        SwitchToDayChunks();
+
+        for (int i = 0; i < 3; i++)
+            SpawnRandomChunk();
     }
 
     void Update()
     {
-        // Check if player is close to the end of the current chunks
-        if (playerTransform.position.x > spawnZ - (spawnDistance * 2))
+        if (playerTransform.position.x > spawnX - spawnDistance * 2)
         {
-            SpawnChunk();
+            SpawnRandomChunk();
             DeleteOldChunk();
         }
     }
 
-    void SpawnChunk()
+    // ---------- MODE SWITCH ----------
+
+    public void SwitchToDayChunks()
     {
-        int randomIndex = Random.Range(0, chunkPrefabs.Length);
-        GameObject go = Instantiate(chunkPrefabs[randomIndex], transform.right * spawnZ, Quaternion.identity);
+        activeSet = dayChunks;
+    }
+
+    public void SwitchToNightChunks()
+    {
+        activeSet = nightChunks;
+    }
+
+    // ---------- SPAWNING ----------
+
+    public void ForceSpawnNext(GameObject targetChunk)
+    {
+        // Keep the chunk the player is on (and maybe the one immediately next), destroy the rest
+        while (activeChunks.Count > 2)
+        {
+            int lastIndex = activeChunks.Count - 1;
+            Destroy(activeChunks[lastIndex]);
+            activeChunks.RemoveAt(lastIndex);
+        }
+
+        // Recalculate spawnX based on the last remaining chunk
+        if (activeChunks.Count > 0)
+        {
+            spawnX = activeChunks[activeChunks.Count - 1].transform.position.x + chunkLength;
+        }
+
+        // Spawn the requested chunk and track it! (This fixes the memory leak we discussed earlier)
+        GameObject go = Instantiate(targetChunk, Vector3.right * spawnX, Quaternion.identity);
         activeChunks.Add(go);
-        spawnZ += chunkLength;
+        spawnX += chunkLength;
+    }
+
+    public void SpawnShopChunk()
+    {
+        ForceSpawnNext(shopChunk);
+    }
+
+    public void SpawnNightChunk()
+    {
+        ForceSpawnNext(nightStartChunk);
+    }
+    void SpawnRandomChunk()
+    {
+        if (activeSet == null || activeSet.Length == 0) return;
+
+        int index = Random.Range(0, activeSet.Length);
+
+        GameObject go =
+            Instantiate(activeSet[index],
+            Vector3.right * spawnX,
+            Quaternion.identity);
+
+        activeChunks.Add(go);
+        spawnX += chunkLength;
     }
 
     void DeleteOldChunk()
     {
-        if (activeChunks.Count > 4)
+        if (activeChunks.Count > 5)
         {
             Destroy(activeChunks[0]);
             activeChunks.RemoveAt(0);

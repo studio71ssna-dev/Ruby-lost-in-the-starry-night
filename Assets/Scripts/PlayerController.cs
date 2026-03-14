@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
         DetermineAnimationState();
     }
 
+
     private void ApplyMovement()
     {
         // Accessing MoveDirection from your InputHandler

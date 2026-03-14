@@ -1,50 +1,116 @@
 using Cysharp.Threading.Tasks;
-using Singleton;
+using System;
+using System.Threading;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using static UnityEngine.EventSystems.EventTrigger;
 
-
-// Now inheriting from the generic version we just fixed
-public class GameManager : SingletonPersistent
+public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
     public enum GameState
     {
-        DayTime,
-        Shop,
-        NightTime,
+        Morning,
+        ShopArrival,
+        Shopping,
+        Night,
         Quiz,
-        Garden,
         GameOver
     }
 
-    public GameState gamestate;
-    public static GameManager Instance => GetInstance<GameManager>();
+    public GameState State { get; private set; }
+    public int DayCount => dayCount;
+    public event Action<int> OnDayChanged;
+    [Header("References")]
+    public GroundTileGenerator tileGenerator;
+    public GameObject shopUI;
+    public ChoiceManager choiceManager;
+    public ParallaxBackground background;
+    public DayTimeManager dayTimeManager;
+    [SerializeField] private ShopManager shopManager;
 
-    [SerializeField] private GameObject shopPanel; // Drag your inactive Shop UI here
+    private int dayCount = 1;
 
-    public async UniTask EnterShopPhase()
+    private void Awake()
     {
-        gamestate = GameState.Shop;
-
-        // 1. Show the UI
-        if (shopPanel != null)
-        {
-            shopPanel.SetActive(true);
-
-            // 2. Use the ShopManager to handle the shopping logic
-            // We 'await' this so the game doesn't move to Night until shopping is done
-            await shopPanel.GetComponent<ShopManager>().StartShopping();
-        }
-
-        // 3. Once StartShopping() finishes, move to the next state
-        TransitionToNight();
+        Instance = this;
     }
 
-    public async UniTask TransitionToNight()
+    private void Start()
     {
-        gamestate = GameState.NightTime;
-        SceneManager.LoadScene("Test_Music_Level");
+        StartMorning();
+    }
+
+    // ======================
+    // MORNING
+    // ======================
+
+    public void StartMorning()
+    {
+        State = GameState.Morning;
+        background.SetMorning();
+        tileGenerator.SwitchToDayChunks();
+
+        // Wake up the timer and start it
+        dayTimeManager.gameObject.SetActive(true);
+        dayTimeManager.StartNewDay();
+
+        OnDayChanged?.Invoke(dayCount);
+        Debug.Log($"DAY {dayCount} STARTED");
+    }
+
+    // Called by DayTimeManager
+    public void OnDayEnded()
+    {
+        State = GameState.ShopArrival;
+        tileGenerator.SpawnShopChunk();
+    }
+
+    // ======================
+    // SHOP
+    // ======================
+
+    public async void OpenShop()
+    {
+        State = GameState.Shopping;
+
+        // The code pauses here until the player clicks the Leave button in the shop
+        await shopManager.StartShopping();
+
+        // ONCE THE SHOP IS CLOSED, TRIGGER THE NIGHT
+        StartNight();
+    }
+
+    // ======================
+    // NIGHT
+    // ======================
+
+    public void StartNight()
+    {
+        State = GameState.Night;
+
+        background.SetNight();
+        tileGenerator.SwitchToNightChunks();
+        tileGenerator.SpawnNightChunk();
+    }
+
+    // ======================
+    // QUIZ
+    // ======================
+
+    public void StartQuiz()
+    {
+        State = GameState.Quiz;
+        choiceManager.ShowRandomQuestion();
+    }
+
+    // ======================
+    // NEXT DAY
+    // ======================
+
+    public void SleepAndNextDay()
+    {
+        dayCount++;
+        StartMorning();
     }
 
 }
