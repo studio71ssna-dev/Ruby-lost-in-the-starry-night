@@ -7,6 +7,7 @@ public class ItemData : ScriptableObject
     [TextArea] public string description;
     public int cost;
     public Sprite icon;
+    public Sprite gardenSprite;
 
     // You can add logic specific to the item here
     public float statModifier;

@@ -9,7 +9,7 @@ public class FlowerItem : MonoBehaviour
     private void OnDestroy()
     {
         //play particle effect or sound effect here if needed
-        collectEffectPrefab.SetActive(false);
+        //collectEffectPrefab.SetActive(false);
 
     }
 }

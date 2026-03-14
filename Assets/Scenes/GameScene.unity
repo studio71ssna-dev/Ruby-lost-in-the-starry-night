@@ -629,7 +629,7 @@ Transform:
   m_GameObject: {fileID: 560460727}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.72, z: 0}
+  m_LocalPosition: {x: 0, y: -1.62, z: 0}
   m_LocalScale: {x: 1.1002611, y: 0.5775, z: 1.1000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1246,8 +1246,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '     0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7ec101a3ff962e4186411279aa484e3, type: 2}
+  m_sharedMaterial: {fileID: 8683806953779631687, guid: e7ec101a3ff962e4186411279aa484e3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.75
+  m_fontSize: 40
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1391,8 +1391,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 43129dae03ceb6a4ab0372a48875b5ba, type: 3}
-  m_Color: {r: 0.8018868, g: 0.76266104, b: 0.6694998, a: 1}
+  m_Sprite: {fileID: 202548625855567581, guid: 848e791e82c2dda4d9db0816d5d1bb87, type: 3}
+  m_Color: {r: 0.7264151, g: 0.65269375, b: 0.48313457, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -1410,9 +1410,9 @@ Transform:
   m_GameObject: {fileID: 1044716675}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.6, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalScale: {x: 1.4999999, y: 1.7, z: 1.4999999}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 872872613}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1428,7 +1428,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24138403f64f82846aaca3916042a9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParallaxBackground
-  parallaxEffectMultiplier: {x: 0.9, y: 0.05}
+  parallaxEffectMultiplier: {x: 0.9, y: 0.5}
+--- !u!1001 &1061196668
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 446874269098006509, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+      propertyPath: m_Name
+      value: GardenManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029271825148062256, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960.2147
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029271825148062256, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 538.77814
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029271825148062256, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029271825148062256, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029271825148062256, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029271825148062256, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029271825148062256, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029271825148062256, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029271825148062256, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029271825148062256, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+--- !u!114 &1061196669 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7916163356560693448, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+  m_PrefabInstance: {fileID: 1061196668}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e711823db9ae8940a8a37c9ca795a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GardenManager
 --- !u!1 &1156782378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,6 +1804,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: a20d9a43-499f-4a42-80dd-33fbba18d515
     m_ActionName: 'Player_Music/Fret 3[/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1209235524}
+        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
+        m_MethodName: PauseAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ed0ae588-5042-42f5-8fdc-26832c4f7495
+    m_ActionName: 'Player_Movement/Pause[/Keyboard/backspace,/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player_Movement
@@ -1945,7 +2029,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1367364062}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1061196669}
+        m_TargetAssemblyTypeName: GardenManager, Assembly-CSharp
+        m_MethodName: GenerateNewGardenData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1367364062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2159,7 +2255,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1200, y: 0}
+  m_AnchoredPosition: {x: 1620, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1543938421
@@ -2464,14 +2560,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.83137256}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4828770799117906769, guid: e7d9f7326dd6b7b4b83cb8e551576d54, type: 3}
+  m_Sprite: {fileID: -5473676506100213679, guid: 9a8cceb2bbc695d4c8c5759189899ed9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3136,3 +3232,4 @@ SceneRoots:
   - {fileID: 2071268823}
   - {fileID: 787714688}
   - {fileID: 872872613}
+  - {fileID: 1061196668}

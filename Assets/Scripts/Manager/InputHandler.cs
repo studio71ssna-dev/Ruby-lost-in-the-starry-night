@@ -24,6 +24,8 @@ public class InputHandler : SingletonPersistent
 
     public event Action OnInteract;
     public event Action OnJump;
+    public event Action OnPause;
+
 
     private void OnEnable()
     {
@@ -53,6 +55,11 @@ public class InputHandler : SingletonPersistent
     public void InteractAction(InputAction.CallbackContext context)
     {
         if (context.performed) OnInteract?.Invoke();
+    }
+
+    public void PauseAction(InputAction.CallbackContext context)
+    {
+        if (context.performed) OnPause?.Invoke();
     }
 
     public void Lane1Trigger(InputAction.CallbackContext context)
