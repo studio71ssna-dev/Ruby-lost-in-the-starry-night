@@ -19,6 +19,6 @@ public class PlayerAnimationManager : MonoBehaviour
     // Special case for one-shot triggers like 'Hurt'
     public void PlayTrigger(string triggerName)
     {
-        anim.SetTrigger(triggerName);
+        anim.SetTrigger("Interacting");
     }
 }

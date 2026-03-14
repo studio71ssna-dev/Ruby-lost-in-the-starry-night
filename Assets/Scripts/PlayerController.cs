@@ -55,6 +55,13 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyMovement()
     {
+        // Stop movement if we are currently in the middle of a Pickup animation
+        if (currentState == PlayerAnimationManager.PlayerAnimState.Pickup)
+        {
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // Keep falling if in air, but stop horizontal
+            return;
+        }
+
         // Accessing MoveDirection from your InputHandler
         Vector2 moveDir = InputHandler.Instance.MoveDirection;
         rb.linearVelocity = new Vector2(moveDir.x * moveSpeed, rb.linearVelocity.y);
@@ -68,6 +75,10 @@ public class PlayerController : MonoBehaviour
 
     private void DetermineAnimationState()
     {
+        // GUARD CLAUSE: If we are picking something up, lock the state until it finishes.
+        if (currentState == PlayerAnimationManager.PlayerAnimState.Pickup)
+            return;
+
         // Priority-based animation switching
         if (!isGrounded)
         {
@@ -79,9 +90,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            // Only go back to Idle if we aren't in a special state like Rest or Pickup
-            if (currentState != PlayerAnimationManager.PlayerAnimState.Pickup &&
-                currentState != PlayerAnimationManager.PlayerAnimState.Rest)
+            // We removed the Pickup check here because the guard clause above handles it
+            if (currentState != PlayerAnimationManager.PlayerAnimState.Rest)
             {
                 SetState(PlayerAnimationManager.PlayerAnimState.Idle);
             }
@@ -109,6 +119,7 @@ public class PlayerController : MonoBehaviour
             // Play Pickup Animation
             SetState(PlayerAnimationManager.PlayerAnimState.Pickup);
 
+
             GameObject flowerObj = nearbyFlowers[0];
             FlowerItem flowerScript = flowerObj.GetComponent<FlowerItem>();
 
@@ -127,7 +138,6 @@ public class PlayerController : MonoBehaviour
             musicTimer.PlayRandomSong();
         }
     }
-
     private void ResetToIdle() => SetState(PlayerAnimationManager.PlayerAnimState.Idle);
 
     private void OnTriggerEnter2D(Collider2D col)
