@@ -54,11 +54,7 @@ public class PlayerMusic : MonoBehaviour
 
     private void Update()
     {
-
-        if (Keyboard.current != null && Keyboard.current.kKey.wasPressedThisFrame)
-        {
-            choiceManager.ShowRandomQuestion();
-        }
+        musicTimer.SongFinished();
     }
 
     private void HandleFret(int fretIndex, bool isPressed)
@@ -71,8 +67,6 @@ public class PlayerMusic : MonoBehaviour
         Note closestNote = FindClosestNoteInLane(laneIndex);
         if (closestNote == null)
         {
-            Debug.Log("Miss");
-            scoreManager.Miss();
             return;
         }
 
@@ -81,7 +75,6 @@ public class PlayerMusic : MonoBehaviour
 
         if (closestNote.NoteFret != activeFret)
         {
-            scoreManager.Miss();
             return;
         }
 
@@ -100,10 +93,6 @@ public class PlayerMusic : MonoBehaviour
             ParticleManager.Instance.PlayParticle("NoteHit", closestNote.transform.position, closestNote.gameObject.GetComponent<SpriteRenderer>().color);
             AudioManager.Instance.Play("NoteHit", closestNote.transform.position);
             Destroy(closestNote.gameObject);
-        }
-        else
-        {
-            scoreManager.Miss();
         }
     }
 

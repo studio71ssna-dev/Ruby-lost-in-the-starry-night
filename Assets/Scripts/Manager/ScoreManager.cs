@@ -31,17 +31,17 @@ public class ScoreManager : MonoBehaviour
     {
         ReduceBar(goodReduction);
     }
-
-    public void Miss()
-    {
-        // intentionally empty
-    }
-
     public void ActivateBarUI()
     {
         if (pressureBar == null) return;
         barActive=true;
         pressureBar.gameObject.SetActive(true);
+    }
+    public void DeactivateBarUI()
+    {
+        if (pressureBar == null) return;
+        barActive=false;
+        pressureBar.gameObject.SetActive(false);
     }
     private void ReduceBar(float amount)
     {

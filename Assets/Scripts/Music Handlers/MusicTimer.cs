@@ -1,25 +1,5 @@
-/*using UnityEngine;
-
-public class MusicTimer : MonoBehaviour
-{
-    [SerializeField] SongData[] songs;
-    private AudioSource music;
-
-    public float SongTime => music.time;
-
-    private void Awake()
-    {
-        music = GetComponent<AudioSource>();
-    }
-    public void StartSong(SongData song)
-    {
-
-        music.clip = song.music;
-        music.time = 0f;
-        music.Play();
-    }
-}*/
 using UnityEngine;
+using UnityEngine.Events;
 public class MusicTimer : MonoBehaviour
 {
     [SerializeField] private SongData[] songs; // all available songs
@@ -28,6 +8,7 @@ public class MusicTimer : MonoBehaviour
     [SerializeField] private ScoreManager scoreManager; // assign in inspector
     private AudioSource music;
     private SongData currentSong;
+    public UnityEvent songFinished;
 
     public float SongTime => music.time;
 
@@ -64,5 +45,20 @@ public class MusicTimer : MonoBehaviour
             MusicUI.SetActive(true);
 
         InputHandler.Instance.SwitchActionMap();
+    }
+
+    public void SongFinished()
+    {
+        Debug.Log("Checking if song finished: " + music.clip?.name);
+        if (!music.isPlaying && music.clip != null)
+        {
+            Debug.Log("Song finished: " + currentSong.music.name);
+            scoreManager.DeactivateBarUI();
+                if (MusicUI != null)
+                    MusicUI.SetActive(false);
+                songFinished.Invoke();
+
+            
+        }
     }
 }
