@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: ae2cae4e4448cbb428dd4faecb98cc8c, type: 3}
+  m_Sprite: {fileID: -8658850166083280144, guid: 52b7373b178bac54fbc01ea2bcc44407, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
   data: {fileID: 11400000, guid: 24d64e3a8ab28ea4982da8eba6b213e3, type: 2}
+  collectEffectPrefab: {fileID: 0}
 --- !u!61 &4416271199919272427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,7 +145,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.279999, y: 24.40651}
+    oldSize: {x: 1.28, y: 1.46}
     newSize: {x: 0.52, y: 0.37}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

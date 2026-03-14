@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8627902092737603614}
   - component: {fileID: 2235529560954062012}
   - component: {fileID: 5034294949625465849}
-  - component: {fileID: 2054581738975367917}
+  - component: {fileID: 4887749282385354934}
   m_Layer: 0
   m_Name: Blue_Orchid
   m_TagString: Flower
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.08, y: 4.36, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.64, y: 0.64, z: 0.64}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4332649729578156862}
@@ -83,12 +83,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 3ee8870aa939abf4b870a9784fd6dbc5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c42e9fcacdd97254ba9e1be3a22d593c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.52, y: 0.37}
+  m_Size: {x: 1.52, y: 1.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
   data: {fileID: 11400000, guid: 8652784ac90eb5546a0b47efbc014fed, type: 2}
   collectEffectPrefab: {fileID: 0}
---- !u!61 &2054581738975367917
+--- !u!61 &4887749282385354934
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,13 +145,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.84, y: 21.162666}
-    newSize: {x: 0.52, y: 0.37}
+    oldSize: {x: 1.52, y: 1.52}
+    newSize: {x: 1.52, y: 1.52}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 19.84, y: 21.162666}
+  m_Size: {x: 1.28, y: 1.49}
   m_EdgeRadius: 0
 --- !u!1 &1094791023474675232
 GameObject:
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 1408937843666077331}
   - component: {fileID: 4164731359088335593}
   - component: {fileID: 4252366212048652995}
-  - component: {fileID: 5920985126888012224}
+  - component: {fileID: 186393636609043508}
   m_Layer: 0
   m_Name: Violet_Rose
   m_TagString: Flower
@@ -182,7 +182,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 37.164894, y: 2.4835804, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.76, y: 0.76, z: 0.76}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4332649729578156862}
@@ -236,12 +236,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: ae2cae4e4448cbb428dd4faecb98cc8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52b7373b178bac54fbc01ea2bcc44407, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.52, y: 0.37}
+  m_Size: {x: 1.52, y: 1.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
   data: {fileID: 11400000, guid: 24d64e3a8ab28ea4982da8eba6b213e3, type: 2}
   collectEffectPrefab: {fileID: 0}
---- !u!61 &5920985126888012224
+--- !u!61 &186393636609043508
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -298,13 +298,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.279999, y: 24.40651}
-    newSize: {x: 0.52, y: 0.37}
+    oldSize: {x: 1.52, y: 1.52}
+    newSize: {x: 1.52, y: 1.52}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 17.279999, y: 24.40651}
+  m_Size: {x: 1.28, y: 1.46}
   m_EdgeRadius: 0
 --- !u!1 &1924826767006854188
 GameObject:
@@ -316,7 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6447815750112702445}
   - component: {fileID: 7956545875762761754}
-  - component: {fileID: 572965361651294663}
+  - component: {fileID: 2655101126964802898}
   m_Layer: 0
   m_Name: Stone (2)
   m_TagString: Untagged
@@ -334,8 +334,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 27.397274, y: 5.2875876, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 30}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4332649729578156862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -388,17 +388,17 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8399011212269539787, guid: 882739f28adb5a8459902823d12e8c41, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e58aeaeac5457ae4cb78b388a190eb63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 16.37, y: 12.72}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!61 &572965361651294663
+--- !u!61 &2655101126964802898
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -436,13 +436,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16.37, y: 12.72}
-    newSize: {x: 16.37, y: 12.72}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 16.37, y: 12.72}
+  m_Size: {x: 0.64, y: 0.57}
   m_EdgeRadius: 0
 --- !u!1 &1965949158610186730
 GameObject:
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 7653792172115094107}
   - component: {fileID: 4806765999470857584}
   - component: {fileID: 1354217713415002493}
-  - component: {fileID: 9180808719148992683}
+  - component: {fileID: 7655387339370675329}
   m_Layer: 0
   m_Name: Yellow_Tulip (1)
   m_TagString: Flower
@@ -473,7 +473,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 25.029472, y: 5.5607953, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.76, y: 0.76, z: 0.76}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4332649729578156862}
@@ -527,12 +527,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: f82c25c96c0309e49bc2e7026fba73c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd0b90426c7ba50448ed73d237e3d75f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.52, y: 0.37}
+  m_Size: {x: 1.52, y: 1.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
   data: {fileID: 11400000, guid: 08c39b563b14fa14686c955e615b2013, type: 2}
   collectEffectPrefab: {fileID: 0}
---- !u!61 &9180808719148992683
+--- !u!61 &7655387339370675329
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -589,13 +589,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.16, y: 20.841837}
-    newSize: {x: 0.52, y: 0.37}
+    oldSize: {x: 1.52, y: 1.52}
+    newSize: {x: 1.52, y: 1.52}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 20.16, y: 20.841837}
+  m_Size: {x: 1.28, y: 1.4}
   m_EdgeRadius: 0
 --- !u!1 &2921472696549483833
 GameObject:
@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 6482061719923359368}
   - component: {fileID: 8175796468608096675}
   - component: {fileID: 2380282637127323054}
-  - component: {fileID: 5524680088287370360}
+  - component: {fileID: 8492183311306768359}
   m_Layer: 0
   m_Name: Yellow_Tulip
   m_TagString: Flower
@@ -626,7 +626,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 13.964558, y: 3.4206676, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.76, y: 0.76, z: 0.76}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4332649729578156862}
@@ -680,12 +680,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: f82c25c96c0309e49bc2e7026fba73c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd0b90426c7ba50448ed73d237e3d75f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.52, y: 0.37}
+  m_Size: {x: 1.52, y: 1.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
   data: {fileID: 11400000, guid: 08c39b563b14fa14686c955e615b2013, type: 2}
   collectEffectPrefab: {fileID: 0}
---- !u!61 &5524680088287370360
+--- !u!61 &8492183311306768359
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -742,13 +742,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.16, y: 20.841837}
-    newSize: {x: 0.52, y: 0.37}
+    oldSize: {x: 1.52, y: 1.52}
+    newSize: {x: 1.52, y: 1.52}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 20.16, y: 20.841837}
+  m_Size: {x: 1.28, y: 1.4}
   m_EdgeRadius: 0
 --- !u!1 &2987787975727074187
 GameObject:
@@ -761,7 +761,7 @@ GameObject:
   - component: {fileID: 6730061628013286099}
   - component: {fileID: 3882030395210612337}
   - component: {fileID: 7999770405000278324}
-  - component: {fileID: 3916684090201401376}
+  - component: {fileID: 7367097305773368316}
   m_Layer: 0
   m_Name: Blue_Orchid (1)
   m_TagString: Flower
@@ -778,8 +778,8 @@ Transform:
   m_GameObject: {fileID: 2987787975727074187}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.28, y: 2.57, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: 18.28, y: 2.37, z: 0}
+  m_LocalScale: {x: 0.64, y: 0.64, z: 0.64}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4332649729578156862}
@@ -833,12 +833,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 3ee8870aa939abf4b870a9784fd6dbc5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c42e9fcacdd97254ba9e1be3a22d593c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.52, y: 0.37}
+  m_Size: {x: 1.52, y: 1.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
   data: {fileID: 11400000, guid: 8652784ac90eb5546a0b47efbc014fed, type: 2}
   collectEffectPrefab: {fileID: 0}
---- !u!61 &3916684090201401376
+--- !u!61 &7367097305773368316
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -895,13 +895,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.84, y: 21.162666}
-    newSize: {x: 0.52, y: 0.37}
+    oldSize: {x: 1.52, y: 1.52}
+    newSize: {x: 1.52, y: 1.52}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 19.84, y: 21.162666}
+  m_Size: {x: 1.28, y: 1.49}
   m_EdgeRadius: 0
 --- !u!1 &3841145894578530153
 GameObject:
@@ -913,7 +913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8539695892862870696}
   - component: {fileID: 4725246025707985759}
-  - component: {fileID: 2885596377474329218}
+  - component: {fileID: 9211171477869567950}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Untagged
@@ -931,8 +931,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.244009, y: 2.236767, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 30}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4332649729578156862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -985,17 +985,17 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8399011212269539787, guid: 882739f28adb5a8459902823d12e8c41, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e58aeaeac5457ae4cb78b388a190eb63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 16.37, y: 12.72}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!61 &2885596377474329218
+--- !u!61 &9211171477869567950
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1033,13 +1033,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16.37, y: 12.72}
-    newSize: {x: 16.37, y: 12.72}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 16.37, y: 12.72}
+  m_Size: {x: 0.64, y: 0.57}
   m_EdgeRadius: 0
 --- !u!1 &5559667280829527939
 GameObject:
@@ -1051,7 +1051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1074814479869228098}
   - component: {fileID: 4177906699247520693}
-  - component: {fileID: 5792236762495187560}
+  - component: {fileID: 5319407482440497565}
   m_Layer: 0
   m_Name: Stone (1)
   m_TagString: Untagged
@@ -1069,8 +1069,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 38.82647, y: 2.236767, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 30}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4332649729578156862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1123,17 +1123,17 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8399011212269539787, guid: 882739f28adb5a8459902823d12e8c41, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e58aeaeac5457ae4cb78b388a190eb63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 16.37, y: 12.72}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!61 &5792236762495187560
+--- !u!61 &5319407482440497565
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1171,13 +1171,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16.37, y: 12.72}
-    newSize: {x: 16.37, y: 12.72}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 16.37, y: 12.72}
+  m_Size: {x: 0.64, y: 0.57}
   m_EdgeRadius: 0
 --- !u!1 &8473275547704199560
 GameObject:
@@ -5432,13 +5432,13 @@ Transform:
   - {fileID: 2309637453440995216}
   - {fileID: 8627902092737603614}
   - {fileID: 6730061628013286099}
-  - {fileID: 8539695892862870696}
-  - {fileID: 1074814479869228098}
-  - {fileID: 6447815750112702445}
   - {fileID: 6482061719923359368}
   - {fileID: 7653792172115094107}
   - {fileID: 1408937843666077331}
   - {fileID: 7152569886585443006}
+  - {fileID: 8539695892862870696}
+  - {fileID: 1074814479869228098}
+  - {fileID: 6447815750112702445}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &337922328715401271
@@ -5464,7 +5464,7 @@ GameObject:
   - component: {fileID: 7152569886585443006}
   - component: {fileID: 5260939875773140676}
   - component: {fileID: 5462291721361432302}
-  - component: {fileID: 2514439543436963309}
+  - component: {fileID: 7166356121697052727}
   m_Layer: 0
   m_Name: Violet_Rose (1)
   m_TagString: Flower
@@ -5482,7 +5482,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.94619846, y: 2.4835804, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.76, y: 0.76, z: 0.76}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4332649729578156862}
@@ -5536,12 +5536,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: ae2cae4e4448cbb428dd4faecb98cc8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52b7373b178bac54fbc01ea2bcc44407, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.52, y: 0.37}
+  m_Size: {x: 1.52, y: 1.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5560,7 +5560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
   data: {fileID: 11400000, guid: 24d64e3a8ab28ea4982da8eba6b213e3, type: 2}
   collectEffectPrefab: {fileID: 0}
---- !u!61 &2514439543436963309
+--- !u!61 &7166356121697052727
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5598,11 +5598,11 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.279999, y: 24.40651}
-    newSize: {x: 0.52, y: 0.37}
+    oldSize: {x: 1.52, y: 1.52}
+    newSize: {x: 1.52, y: 1.52}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 17.279999, y: 24.40651}
+  m_Size: {x: 1.28, y: 1.46}
   m_EdgeRadius: 0
