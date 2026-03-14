@@ -48,5 +48,8 @@ MonoBehaviour:
   - name: NoteHit
     clip: {fileID: 8300000, guid: a4fd5a1072c082e4f848704ef3fb78f5, type: 3}
     loop: 0
+  - name: Pickup
+    clip: {fileID: 8300000, guid: 29a7b7e2143eadd4c8ccab6fbbf187f5, type: 3}
+    loop: 0
   initialPoolSize: 5
   audioSourceParent: {fileID: 0}

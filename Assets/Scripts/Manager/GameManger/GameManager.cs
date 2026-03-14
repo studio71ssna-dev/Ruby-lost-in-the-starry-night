@@ -1,7 +1,6 @@
-using Cysharp.Threading.Tasks;
 using System;
-using System.Threading;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +17,7 @@ public class GameManager : MonoBehaviour
     }
 
     public GameState State { get; private set; }
+    public UnityEvent AfterDayEndsEvent;
     public int DayCount => dayCount;
     public event Action<int> OnDayChanged;
     [Header("References")]
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
     public async void OpenShop()
     {
         State = GameState.Shopping;
-
+        AfterDayEndsEvent.Invoke();
         // The code pauses here until the player clicks the Leave button in the shop
         await shopManager.StartShopping();
 

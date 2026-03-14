@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public Transform groundCheck;
     public float checkRadius = 0.2f;
+    public MusicTimer musicTimer;
 
     [Header("Interaction")]
     private List<GameObject> nearbyFlowers = new();
@@ -18,12 +20,13 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private PlayerAnimationManager animManager;
     private PlayerAnimationManager.PlayerAnimState currentState;
+    private bool wolfnearby;
 
     private void OnEnable()
     {
         // Subscribing to events from your InputHandler
         InputHandler.Instance.OnJump += Jump;
-        InputHandler.Instance.OnInteract += TryCollectFlower;
+        InputHandler.Instance.OnInteract += TryInteract;
     }
 
     private void OnDisable()
@@ -31,7 +34,7 @@ public class PlayerController : MonoBehaviour
         if (InputHandler.Instance != null)
         {
             InputHandler.Instance.OnJump -= Jump;
-            InputHandler.Instance.OnInteract -= TryCollectFlower;
+            InputHandler.Instance.OnInteract -= TryInteract;
         }
     }
 
@@ -99,7 +102,7 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
-    private void TryCollectFlower()
+    private void TryInteract()
     {
         if (nearbyFlowers.Count > 0 && nearbyFlowers[0] != null)
         {
@@ -119,19 +122,23 @@ public class PlayerController : MonoBehaviour
                 Invoke(nameof(ResetToIdle), 0.5f);
             }
         }
+        if (wolfnearby)
+        {
+            musicTimer.PlayRandomSong();
+        }
     }
 
     private void ResetToIdle() => SetState(PlayerAnimationManager.PlayerAnimState.Idle);
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Flower") && !nearbyFlowers.Contains(col.gameObject))
-            nearbyFlowers.Add(col.gameObject);
+        if (col.CompareTag("Flower") && !nearbyFlowers.Contains(col.gameObject)) nearbyFlowers.Add(col.gameObject);
+        if (col.CompareTag("Wolf")) wolfnearby = true;      
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.CompareTag("Flower"))
-            nearbyFlowers.Remove(col.gameObject);
+        if (col.CompareTag("Flower")) nearbyFlowers.Remove(col.gameObject);
+        if (col.CompareTag("Wolf")) wolfnearby = false;
     }
 }

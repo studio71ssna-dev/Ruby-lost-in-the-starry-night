@@ -54,11 +54,7 @@ public class PlayerMusic : MonoBehaviour
 
     private void Update()
     {
-        // For placeholder testing: switch action map / load song
-        if (Keyboard.current != null && Keyboard.current.jKey.wasPressedThisFrame)
-        {
-            musicTimer.PlayRandomSong();
-        }
+
         if (Keyboard.current != null && Keyboard.current.kKey.wasPressedThisFrame)
         {
             choiceManager.ShowRandomQuestion();

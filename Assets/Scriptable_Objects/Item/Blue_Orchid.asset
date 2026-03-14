@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Blue Orchid
   description: 
   cost: 7
-  icon: {fileID: 21300000, guid: 3ee8870aa939abf4b870a9784fd6dbc5, type: 3}
+  icon: {fileID: 21300000, guid: c42e9fcacdd97254ba9e1be3a22d593c, type: 3}
   gardenSprite: {fileID: 21300000, guid: 3ee8870aa939abf4b870a9784fd6dbc5, type: 3}
   statModifier: 0
