@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerMusic : MonoBehaviour
 {
-    [SerializeField] private NoteSpawner spawner;
-    [SerializeField] private SongData song;
+    [SerializeField] private MusicTimer musicTimer;
+    [SerializeField] private ChoiceManager choiceManager;
     [SerializeField] private ScoreManager scoreManager;
 
     private int activeFret = 0; // 0=open, 1=fret1, 2=fret2, 3=fret3
@@ -59,7 +59,12 @@ public class PlayerMusic : MonoBehaviour
         {
             InputHandler.Instance.SwitchActionMap();
             scoreManager.ActivateBarUI();
-            spawner.LoadSong(song);
+
+            musicTimer.PlayRandomSong();
+        }
+        if (Keyboard.current != null && Keyboard.current.kKey.wasPressedThisFrame)
+        {
+            choiceManager.ShowRandomQuestion();
         }
     }
 
@@ -78,7 +83,7 @@ public class PlayerMusic : MonoBehaviour
             return;
         }
 
-        float currentTime = spawner.MusicTimer.SongTime;
+        float currentTime = musicTimer.SongTime;
         float diff = Mathf.Abs(closestNote.HitTime - currentTime);
 
         if (closestNote.NoteFret != activeFret)
@@ -113,9 +118,9 @@ public class PlayerMusic : MonoBehaviour
     {
         Note closest = null;
         float minDiff = float.MaxValue;
-        float currentTime = spawner.MusicTimer.SongTime;
+        float currentTime = musicTimer.SongTime;
 
-        foreach (Transform child in spawner.NotesContainer)
+        foreach (Transform child in musicTimer.noteSpawner.NotesContainer)
         {
             Note note = child.GetComponent<Note>();
             if (note == null || note.Lane != lane) continue;
