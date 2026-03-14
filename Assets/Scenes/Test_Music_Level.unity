@@ -405,6 +405,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155269010}
   m_CullTransparentMesh: 1
+--- !u!1 &321076216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1019673747948603857, guid: f4edec0743f99ea45a0298f7229166ec, type: 3}
+  m_PrefabInstance: {fileID: 5993790469294925152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &344590461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,17 +1659,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   gamestate: 0
   shopPanel: {fileID: 0}
---- !u!114 &1395522795 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7276995812741905556, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
-  m_PrefabInstance: {fileID: 7180688756722390760}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44c6b923610feae429d4fd4ff263b261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NoteSpawner
 --- !u!1 &1433629019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2509,6 +2503,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1898488698303908628, guid: f1c936ae292fea54a98a025656398960, type: 3}
+      propertyPath: audioClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898488698303908628, guid: f1c936ae292fea54a98a025656398960, type: 3}
+      propertyPath: audioClips.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 29a7b7e2143eadd4c8ccab6fbbf187f5, type: 3}
+    - target: {fileID: 1898488698303908628, guid: f1c936ae292fea54a98a025656398960, type: 3}
+      propertyPath: audioClips.Array.data[1].name
+      value: PickUp
+      objectReference: {fileID: 0}
     - target: {fileID: 2547297534766970066, guid: f1c936ae292fea54a98a025656398960, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -2571,17 +2577,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6605249937977220829, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
-      propertyPath: noteSpawner
+      propertyPath: MusicUI
       value: 
-      objectReference: {fileID: 1395522795}
+      objectReference: {fileID: 321076216}
     - target: {fileID: 6605249937977220829, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
-      propertyPath: songs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6605249937977220829, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
-      propertyPath: 'songs.Array.data[0]'
+      propertyPath: scoreManager
       value: 
-      objectReference: {fileID: 11400000, guid: 5a28d31785d30cb4da41c663c7f317f9, type: 2}
+      objectReference: {fileID: 572572699}
     - target: {fileID: 7276995812741905556, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
       propertyPath: gameCamera
       value: 

@@ -143,6 +143,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ae0601c7fe2bf4e8a8998bfc218185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicTimer
+  songs:
+  - {fileID: 11400000, guid: dc37dc62b9c4285468a1832ee584d95c, type: 2}
+  - {fileID: 11400000, guid: 16c46eb47102ffc43969a161e4ec49a8, type: 2}
+  - {fileID: 11400000, guid: 5a28d31785d30cb4da41c663c7f317f9, type: 2}
+  noteSpawner: {fileID: 7276995812741905556}
+  MusicUI: {fileID: 0}
+  scoreManager: {fileID: 0}
 --- !u!1 &5322985339395353179
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c6b923610feae429d4fd4ff263b261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NoteSpawner
-  song: {fileID: 0}
   musicTimer: {fileID: 6605249937977220829}
   spawnLeadTime: 3
   notePrefab: {fileID: 4545306395004640995, guid: 7221a89e5a391244bb9daf7f167a15f6, type: 3}
