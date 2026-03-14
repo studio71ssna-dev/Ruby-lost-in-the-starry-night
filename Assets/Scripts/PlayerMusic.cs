@@ -57,9 +57,6 @@ public class PlayerMusic : MonoBehaviour
         // For placeholder testing: switch action map / load song
         if (Keyboard.current != null && Keyboard.current.jKey.wasPressedThisFrame)
         {
-            InputHandler.Instance.SwitchActionMap();
-            scoreManager.ActivateBarUI();
-
             musicTimer.PlayRandomSong();
         }
         if (Keyboard.current != null && Keyboard.current.kKey.wasPressedThisFrame)
@@ -92,7 +89,7 @@ public class PlayerMusic : MonoBehaviour
             return;
         }
 
-        if (diff < 0.05f)
+        if (diff < 0.08f)
         {
             Debug.Log("Perfect");
             scoreManager.Perfect();
@@ -100,7 +97,7 @@ public class PlayerMusic : MonoBehaviour
             AudioManager.Instance.Play("NoteHit", closestNote.transform.position);
             Destroy(closestNote.gameObject);
         }
-        else if (diff < 0.1f)
+        else if (diff < 0.12f)
         {
             Debug.Log("Good");
             scoreManager.Good();

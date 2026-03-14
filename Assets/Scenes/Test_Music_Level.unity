@@ -405,6 +405,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155269010}
   m_CullTransparentMesh: 1
+--- !u!1 &321076216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1019673747948603857, guid: f4edec0743f99ea45a0298f7229166ec, type: 3}
+  m_PrefabInstance: {fileID: 5993790469294925152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &344590461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,9 +2576,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6605249937977220829, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
+      propertyPath: MusicUI
+      value: 
+      objectReference: {fileID: 321076216}
+    - target: {fileID: 6605249937977220829, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
       propertyPath: noteSpawner
       value: 
       objectReference: {fileID: 1395522795}
+    - target: {fileID: 6605249937977220829, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 572572699}
     - target: {fileID: 6605249937977220829, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
       propertyPath: songs.Array.size
       value: 1

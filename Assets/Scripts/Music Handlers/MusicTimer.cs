@@ -24,6 +24,8 @@ public class MusicTimer : MonoBehaviour
 {
     [SerializeField] private SongData[] songs; // all available songs
     public NoteSpawner noteSpawner; // assign in inspector
+    [SerializeField] private GameObject MusicUI; // assign in inspector
+    [SerializeField] private ScoreManager scoreManager; // assign in inspector
     private AudioSource music;
     private SongData currentSong;
 
@@ -50,8 +52,17 @@ public class MusicTimer : MonoBehaviour
         music.time = 0f;
         music.Play();
 
+        //ScoreManager : Activate the bar UI
+        scoreManager.ActivateBarUI();
+
         // Tell NoteSpawner to load the same song
         if (noteSpawner != null)
             noteSpawner.LoadSong(currentSong);
+
+        // Activate the music UI
+        if (MusicUI != null)
+            MusicUI.SetActive(true);
+
+        InputHandler.Instance.SwitchActionMap();
     }
 }
