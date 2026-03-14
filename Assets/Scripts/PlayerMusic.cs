@@ -56,7 +56,6 @@ public class PlayerMusic : MonoBehaviour
     {
         musicTimer.SongFinished();
     }
-
     private void HandleFret(int fretIndex, bool isPressed)
     {
         activeFret = isPressed ? fretIndex : 0; // 0=open when released

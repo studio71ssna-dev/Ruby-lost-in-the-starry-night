@@ -7,7 +7,7 @@ public class ChoiceManager : MonoBehaviour
 
     [SerializeField] private TMP_Text questionText;
     [SerializeField] private TMP_Text[] optionTexts; // size = 3
-
+    GameObject Wolf;
     [SerializeField] private QuestionChoiceData[] questions;
 
     private int correctButtonIndex;
@@ -71,13 +71,19 @@ public class ChoiceManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        Wolf=GameObject.FindGameObjectWithTag("Wolf");
+    }
+
     void ContinueGame()
     {
-        // continue gameplay
+        Wolf.SetActive(false);
+        InputHandler.Instance.SwitchActionMap();
     }
 
     void GameOver()
     {
-        // trigger game over
+        
     }
 }

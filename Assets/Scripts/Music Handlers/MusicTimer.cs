@@ -9,6 +9,7 @@ public class MusicTimer : MonoBehaviour
     private AudioSource music;
     private SongData currentSong;
     public UnityEvent songFinished;
+    private bool quizTriggered = false; // To prevent multiple triggers
 
     public float SongTime => music.time;
 
@@ -22,6 +23,7 @@ public class MusicTimer : MonoBehaviour
         if (songs == null || songs.Length == 0)
         {
             Debug.LogWarning("No songs assigned!");
+            SongFinished();
             return;
         }
 
@@ -43,21 +45,22 @@ public class MusicTimer : MonoBehaviour
         // Activate the music UI
         if (MusicUI != null)
             MusicUI.SetActive(true);
-
+        quizTriggered = false; // Reset the flag for the new song
         InputHandler.Instance.SwitchActionMap();
     }
 
     public void SongFinished()
     {
-        Debug.Log("Checking if song finished: " + music.clip?.name);
-        if (!music.isPlaying && music.clip != null)
+        if(quizTriggered) return; // Prevent multiple triggers if this method is called more than once
+
+        if (music.clip != null && SongTime >= music.clip.length)
         {
             Debug.Log("Song finished: " + currentSong.music.name);
             scoreManager.DeactivateBarUI();
                 if (MusicUI != null)
                     MusicUI.SetActive(false);
-                songFinished.Invoke();
-
+                quizTriggered = true; // Set the flag to prevent further triggers
+            songFinished.Invoke();
             
         }
     }

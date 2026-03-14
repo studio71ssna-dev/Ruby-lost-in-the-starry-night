@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public GameState State { get; private set; }
     public UnityEvent AfterDayEndsEvent;
+    public UnityEvent DayStartEvent;
     public int DayCount => dayCount;
     public event Action<int> OnDayChanged;
     [Header("References")]
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     public ParallaxBackground background;
     public DayTimeManager dayTimeManager;
     [SerializeField] private ShopManager shopManager;
+    private GameObject Wolf;
 
     private int dayCount = 1;
 
@@ -40,6 +42,11 @@ public class GameManager : MonoBehaviour
         StartMorning();
     }
 
+    private void Update()
+    {
+        Wolf = GameObject.FindGameObjectWithTag("Wolf");
+    }
+
     // ======================
     // MORNING
     // ======================
@@ -47,6 +54,7 @@ public class GameManager : MonoBehaviour
     public void StartMorning()
     {
         State = GameState.Morning;
+        DayStartEvent.Invoke(); 
         background.SetMorning();
         tileGenerator.SwitchToDayChunks();
 
@@ -87,10 +95,11 @@ public class GameManager : MonoBehaviour
     public void StartNight()
     {
         State = GameState.Night;
-
         background.SetNight();
         tileGenerator.SwitchToNightChunks();
         tileGenerator.SpawnNightChunk();
+
+
     }
 
     // ======================
@@ -109,8 +118,10 @@ public class GameManager : MonoBehaviour
 
     public void SleepAndNextDay()
     {
+        
         dayCount++;
         StartMorning();
+        
     }
 
 }

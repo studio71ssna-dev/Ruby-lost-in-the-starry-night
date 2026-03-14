@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "QuestionChoice", menuName = "Choice Game/Question Choice")]
 public class QuestionChoiceData : ScriptableObject
 {
+    [TextArea]
     public string Question;
 
     [TextArea]
@@ -14,6 +15,5 @@ public class QuestionChoiceData : ScriptableObject
     [TextArea]
     public string option3;
 
-    [Range(0, 2)]
-    public int correctOption;
+    public int correctOption = 1;
 }
