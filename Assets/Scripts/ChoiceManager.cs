@@ -17,12 +17,10 @@ public class ChoiceManager : MonoBehaviour
         choicePanel.SetActive(true);
         Time.timeScale = 0f;
 
-        // 1?? Pick random question
         QuestionChoiceData q = questions[Random.Range(0, questions.Length)];
 
         questionText.text = q.Question;
 
-        // 2?? Store options
         string[] options =
         {
             q.option1,
@@ -32,7 +30,6 @@ public class ChoiceManager : MonoBehaviour
 
         int correctOriginalIndex = q.correctOption;
 
-        // 3?? Create index shuffle
         int[] order = { 0, 1, 2 };
 
         for (int i = 0; i < order.Length; i++)
@@ -44,7 +41,6 @@ public class ChoiceManager : MonoBehaviour
             order[rand] = temp;
         }
 
-        // 4?? Assign shuffled options to UI
         for (int i = 0; i < 3; i++)
         {
             optionTexts[i].text = options[order[i]];

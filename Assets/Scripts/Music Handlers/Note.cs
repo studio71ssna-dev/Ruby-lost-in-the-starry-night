@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 public class Note : MonoBehaviour
 {
     private float hitTime;
@@ -20,6 +20,10 @@ public class Note : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    private void Start()
+    {
+        StartCoroutine(DestroyAfterUnscaledTime(5f));
     }
 
     public void Init(
@@ -52,5 +56,10 @@ public class Note : MonoBehaviour
         float t = (songTime - spawnTime) / (hitTime - spawnTime);
 
         transform.position = Vector3.LerpUnclamped(spawnPosition, hitPosition, t);
+    }
+    IEnumerator DestroyAfterUnscaledTime(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        Destroy(gameObject);
     }
 }

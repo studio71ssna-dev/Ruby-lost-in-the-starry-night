@@ -60,7 +60,6 @@ public class NoteSpawner : MonoBehaviour
     {
         song = newSong;
         nextNoteIndex = 0;
-
         foreach (Transform child in notesContainer)
             Destroy(child.gameObject);
     }

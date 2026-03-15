@@ -40,7 +40,10 @@ public class MusicTimer : MonoBehaviour
 
         // Tell NoteSpawner to load the same song
         if (noteSpawner != null)
+        {
+            noteSpawner.enabled = true;
             noteSpawner.LoadSong(currentSong);
+        }
 
         // Activate the music UI
         if (MusicUI != null)
@@ -55,12 +58,15 @@ public class MusicTimer : MonoBehaviour
 
         if (music.clip != null && SongTime >= music.clip.length)
         {
-            Debug.Log("Song finished: " + currentSong.music.name);
-            scoreManager.DeactivateBarUI();
+            if (noteSpawner.NotesContainer.childCount == 0)
+            {
+                scoreManager.DeactivateBarUI();
                 if (MusicUI != null)
                     MusicUI.SetActive(false);
                 quizTriggered = true; // Set the flag to prevent further triggers
-            songFinished.Invoke();
+                noteSpawner.enabled = false;
+                songFinished.Invoke();
+            }
             
         }
     }

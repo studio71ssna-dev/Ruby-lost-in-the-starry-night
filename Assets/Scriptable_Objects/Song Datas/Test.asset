@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4c661d823f2394a8b1b28011b13e3d, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: Assembly-CSharp::SongData
+  music: {fileID: 8300000, guid: 68000136488228d4c945a69e133dc41c, type: 3}
+  notes:
+  - time: 2
+    lane: 1
+    noteFret: 1
+  - time: 3
+    lane: 0
+    noteFret: 0
