@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
 
     public async void OpenShop()
     {
+        Debug.Log($"[GameManager] OpenShop invoked at {Time.realtimeSinceStartup:F2}");
         State = GameState.Shopping;
         AfterDayEndsEvent.Invoke();
         // The code pauses here until the player clicks the Leave button in the shop
@@ -96,6 +97,7 @@ public class GameManager : MonoBehaviour
 
     public void StartQuiz()
     {
+        Debug.Log($"[GameManager] StartQuiz invoked at {Time.realtimeSinceStartup:F2}");
         State = GameState.Quiz;
         choiceManager.ShowRandomQuestion();
     }
@@ -106,14 +108,22 @@ public class GameManager : MonoBehaviour
 
     public void SleepAndNextDay()
     {
-        
+        Debug.Log($"[GameManager] SleepAndNextDay invoked at {Time.realtimeSinceStartup:F2}");
         dayCount++;
         StartMorning();
-        
     }
 
     public void StartMorning()
     {
+        Debug.Log($"[GameManager] StartMorning invoked at {Time.realtimeSinceStartup:F2} - restoring timeScale and starting day {dayCount}");
+
+        // Ensure the time scale is normal when a new day starts (protect against lingering pauses)
+        if (Time.timeScale == 0f)
+        {
+            Debug.LogWarning("[GameManager] Time.timeScale was 0 on StartMorning — forcing to 1");
+            Time.timeScale = 1f;
+        }
+
         State = GameState.Morning;
 
         background.SetMorning();
@@ -126,10 +136,13 @@ public class GameManager : MonoBehaviour
         dayTimeManager.StartNewDay();
         OnDayChanged?.Invoke(dayCount);
         DayStartEvent.Invoke();
+
+        Debug.Log($"[GameManager] Morning started. State={State} Day={dayCount}");
     }
 
     public void OnDayEnded()
     {
+        Debug.Log($"[GameManager] OnDayEnded invoked at {Time.realtimeSinceStartup:F2}");
         State = GameState.ShopArrival;
         // Resets world and spawns the Shop at X=0
         tileGenerator.SpawnShopChunk();
@@ -137,6 +150,7 @@ public class GameManager : MonoBehaviour
 
     public void StartNight()
     {
+        Debug.Log($"[GameManager] StartNight invoked at {Time.realtimeSinceStartup:F2}");
         State = GameState.Night;
         background.SetNight();
         tileGenerator.SwitchToNightChunks();

@@ -802,6 +802,11 @@ MonoBehaviour:
   parallaxEffectMultiplier: {x: 0.7, y: 0.1}
   morningSprite: {fileID: 0}
   nightSprite: {fileID: 0}
+--- !u!1 &588139796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 446874269098006509, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+  m_PrefabInstance: {fileID: 1061196668}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,12 +1253,12 @@ PrefabInstance:
       objectReference: {fileID: 1339213728}
     - target: {fileID: 6605249937977220829, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
       propertyPath: songs.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6605249937977220829, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
       propertyPath: 'songs.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 16c46eb47102ffc43969a161e4ec49a8, type: 2}
+      objectReference: {fileID: 11400000, guid: ca4f96c70c56d5a49a24fe0047da51db, type: 2}
     - target: {fileID: 6605249937977220829, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
       propertyPath: 'songs.Array.data[1]'
       value: 
@@ -1270,6 +1275,10 @@ PrefabInstance:
       propertyPath: gameCamera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 7276995812741905556, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 1339213728}
     - target: {fileID: 7276995812741905556, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
       propertyPath: 'lanes.Array.data[0]'
       value: 
@@ -1450,7 +1459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f376df4062d6640a374b66d949dd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DayTimeManager
-  dayDuration: 40
+  dayDuration: 15
 --- !u!4 &787714688
 Transform:
   m_ObjectHideFlags: 0
@@ -2040,19 +2049,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 446874269098006509, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1061196671}
   m_SourcePrefab: {fileID: 100100000, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
 --- !u!114 &1061196669 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7916163356560693448, guid: fc97ed1450eebeb4a9cab211a7ff9eca, type: 3}
   m_PrefabInstance: {fileID: 1061196668}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 588139796}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e711823db9ae8940a8a37c9ca795a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GardenManager
+--- !u!114 &1061196671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588139796}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2aa80d982abbe0489d4335c0eb95b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FrameMonitor
+  stallThreshold: 0.1
+  recentLogCapacity: 200
 --- !u!114 &1136899954 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5895157510010407815, guid: 0838dc86c4500eb44b363a7d83efea5d, type: 3}
@@ -3290,8 +3316,10 @@ MonoBehaviour:
   nightStartChunk: {fileID: 1181877458479443497, guid: 04bad24fd76cd634bbf6c38d70956fe0, type: 3}
   dayStartChunk: {fileID: 1454648586561053970, guid: 279b28ff10d8a3645bdd785f9f3298da, type: 3}
   playerTransform: {fileID: 1640930}
-  spawnDistance: 0
+  spawnDistance: 20
   chunkLength: 50
+  initialSpawnCount: 5
+  maxActiveChunks: 8
 --- !u!4 &1625489440
 Transform:
   m_ObjectHideFlags: 0

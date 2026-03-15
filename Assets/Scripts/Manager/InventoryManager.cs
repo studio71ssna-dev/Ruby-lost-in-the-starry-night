@@ -13,7 +13,6 @@ public class InventoryManager : SingletonPersistent
     public void AddStardust(int amount)
     {
         totalStardust += amount;
-        Debug.Log($"Total Stardust: {totalStardust}");
     }
 
     public bool HasItem(ItemData item) => ownedItems.Contains(item);

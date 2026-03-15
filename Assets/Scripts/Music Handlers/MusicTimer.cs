@@ -48,10 +48,6 @@ public class MusicTimer : MonoBehaviour
         // record precise start time
         songStartDspTime = AudioSettings.dspTime;
 
-        // ScoreManager : Activate the bar UI
-        if (scoreManager != null)
-            scoreManager.ActivateBarUI();
-
         // Tell NoteSpawner to load the same song
         if (noteSpawner != null)
         {

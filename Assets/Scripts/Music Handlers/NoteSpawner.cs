@@ -14,8 +14,8 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] private RectTransform[] hitCircles;
     [SerializeField] private Transform notesContainer;
     [SerializeField] private Color[] fretColors; // 0=open, 1=fret1, 2=fret2, 3=fret3
-
     [SerializeField] private Camera gameCamera;
+    [SerializeField] private ScoreManager scoreManager; // Added: reference to ScoreManager
 
     private int nextNoteIndex = 0;
 
@@ -38,6 +38,11 @@ public class NoteSpawner : MonoBehaviour
 
     private void Spawn(NoteData note)
     {
+        if (nextNoteIndex == 0 && scoreManager != null)
+        {
+            scoreManager.ActivateBarUI();
+        }
+
         Vector3 spawnPos = UIToWorld(lanes[note.lane]);
         Vector3 hitPos = UIToWorld(hitCircles[note.lane]);
 

@@ -39,7 +39,8 @@ public class ScoreManager : MonoBehaviour
     public void ActivateBarUI()
     {
         if (pressureBar == null) return;
-        barActive=true;
+        pressureBar.value = 0f;
+        barActive = true;
         pressureBar.gameObject.SetActive(true);
     }
     public void DeactivateBarUI()

@@ -18,6 +18,8 @@ public class PlayerMusic : MonoBehaviour
     private System.Action<bool> fret2Delegate;
     private System.Action<bool> fret3Delegate;
 
+    private bool[] fretPressed = new bool[3];
+
     private void OnEnable()
     {
         if (InputHandler.Instance == null) return;
@@ -56,9 +58,38 @@ public class PlayerMusic : MonoBehaviour
     {
         musicTimer.SongFinished();
     }
+
     private void HandleFret(int fretIndex, bool isPressed)
     {
-        activeFret = isPressed ? fretIndex : 0; // 0=open when released
+        int idx = fretIndex - 1;
+        if (idx < 0 || idx >= fretPressed.Length) return;
+
+        fretPressed[idx] = isPressed;
+
+        if (isPressed)
+        {
+            if (activeFret == 0)
+            {
+                activeFret = fretIndex;
+            }
+        }
+        else
+        {
+            if (activeFret == fretIndex)
+            {
+                int next = GetNextPressedFretIndex();
+                activeFret = (next == -1) ? 0 : next + 1; 
+            }
+        }
+    }
+
+    private int GetNextPressedFretIndex()
+    {
+        for (int i = 0; i < fretPressed.Length; i++)
+        {
+            if (fretPressed[i]) return i;
+        }
+        return -1;
     }
 
     private void HandleLane(int laneIndex)
