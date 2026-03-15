@@ -1080,10 +1080,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Music UI
       objectReference: {fileID: 0}
-    - target: {fileID: 1019673747948603857, guid: f4edec0743f99ea45a0298f7229166ec, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3390431574915895849, guid: f4edec0743f99ea45a0298f7229166ec, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
