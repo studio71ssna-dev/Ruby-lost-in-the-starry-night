@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9283b6054aa4443b51ec1cd5098042, type: 3}
   m_Name: QuestionChoice6
   m_EditorClassIdentifier: Assembly-CSharp::QuestionChoiceData
-  Question: what is 22+3
-  option1: 25
-  option2: 5
-  option3: 15
-  correctOption: 0
+  Question: The Wolf points toward a dark, unpainted corner of the canvas. "I found
+    a patch of Stardust Flowers that the Merchant doesn't know about. It's far away
+    and very dark, but follow me alone and I'll show you."
+  option1: I never go to dark, unknown places without my guardian or a trusted adult
+    knowing where I am.
+  option2: "More flowers would help the Eternal Garden grow! Lead the way, I\u2019ll
+    follow you."
+  option3: "I'll go with you, but I\u2019ll leave a trail of wheat so I can find
+    my way back later."

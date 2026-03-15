@@ -9,6 +9,9 @@ public class GroundTileGenerator : MonoBehaviour
     public GameObject shopChunk;
     public GameObject nightStartChunk;
 
+    [Header("Specific Chunks")]
+    public GameObject dayStartChunk; // Assign your "Morning" start prefab
+
     public Transform playerTransform;
 
     public float spawnDistance = 20f;
@@ -29,6 +32,9 @@ public class GroundTileGenerator : MonoBehaviour
 
     void Update()
     {
+        // Only spawn random chunks if we are in the Morning state
+        if (GameManager.Instance.State != GameManager.GameState.Morning) return;
+
         if (playerTransform.position.x > spawnX - spawnDistance * 2)
         {
             SpawnRandomChunk();
@@ -72,7 +78,7 @@ public class GroundTileGenerator : MonoBehaviour
         spawnX += chunkLength;
     }
 
-    public void SpawnShopChunk()
+    /*public void SpawnShopChunk()
     {
         ForceSpawnNext(shopChunk);
     }
@@ -80,7 +86,7 @@ public class GroundTileGenerator : MonoBehaviour
     public void SpawnNightChunk()
     {
         ForceSpawnNext(nightStartChunk);
-    }
+    }*/
     void SpawnRandomChunk()
     {
         if (activeSet == null || activeSet.Length == 0) return;
@@ -104,4 +110,33 @@ public class GroundTileGenerator : MonoBehaviour
             activeChunks.RemoveAt(0);
         }
     }
+
+
+    public void ResetWorldToChunk(GameObject targetChunk)
+    {
+        // 1. Clear all current chunks
+        foreach (GameObject chunk in activeChunks)
+        {
+            Destroy(chunk);
+        }
+        activeChunks.Clear();
+
+        // 2. Reset the spawning logic to 0
+        spawnX = 0f;
+
+        // 3. Teleport the player back to the start (0, currentY, 0)
+        playerTransform.position = new Vector3(0, playerTransform.position.y, 0);
+
+        // 4. Spawn the single specific chunk
+        GameObject go = Instantiate(targetChunk, Vector3.zero, Quaternion.identity);
+        activeChunks.Add(go);
+
+        // Set spawnX for the NEXT chunk if movement occurs
+        spawnX = chunkLength;
+    }
+
+    // Simplified Helper Methods
+    public void SpawnMorningStart() => ResetWorldToChunk(dayStartChunk);
+    public void SpawnShopChunk() => ResetWorldToChunk(shopChunk);
+    public void SpawnNightChunk() => ResetWorldToChunk(nightStartChunk);
 }

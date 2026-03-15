@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9283b6054aa4443b51ec1cd5098042, type: 3}
   m_Name: QuestionChoice2
   m_EditorClassIdentifier: Assembly-CSharp::QuestionChoiceData
-  Question: what is 1+2
-  option1: 3
-  option2: 7
-  option3: 5
-  correctOption: 0
+  Question: "The Wolf offers a cluster of shimmering Stardust Flowers but pulls them
+    back slightly. \"I have a special gift for you, but it\u2019s a secret just for
+    us. Promise you won't tell the Starry Merchant or your Garden birds?\""
+  option1: "I don\u2019t keep secrets from the people who help keep me safe. I\u2019ll
+    tell them about your gift."
+  option2: A secret gift? That sounds magical! I promise I won't tell anyone.
+  option3: If the flowers are for the Eternal Garden, I should keep them hidden so
+    they grow better.

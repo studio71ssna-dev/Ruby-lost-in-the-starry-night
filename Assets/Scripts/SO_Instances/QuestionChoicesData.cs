@@ -15,5 +15,5 @@ public class QuestionChoiceData : ScriptableObject
     [TextArea]
     public string option3;
 
-    public int correctOption = 1;
+    public int correctOption = 0;
 }

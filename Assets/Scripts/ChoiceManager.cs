@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class ChoiceManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ChoiceManager : MonoBehaviour
     [SerializeField] private TMP_Text[] optionTexts; // size = 3
     GameObject Wolf;
     [SerializeField] private QuestionChoiceData[] questions;
+    public UnityEvent WrongChoice;
 
     private int correctButtonIndex;
 
@@ -80,6 +82,6 @@ public class ChoiceManager : MonoBehaviour
 
     void GameOver()
     {
-        
+        WrongChoice.Invoke();
     }
 }

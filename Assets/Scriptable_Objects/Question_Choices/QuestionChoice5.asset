@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9283b6054aa4443b51ec1cd5098042, type: 3}
   m_Name: QuestionChoice5
   m_EditorClassIdentifier: Assembly-CSharp::QuestionChoiceData
-  Question: what is 5+6
-  option1: 15
-  option2: 36
-  option3: 11
-  correctOption: 2
+  Question: As the rhythm fades, the Wolf moves to pat your head. "You played so
+    well, Ruby. Come here and give me a big hug to show we are friends now."
+  option1: "I\u2019m glad you liked the music, but I\u2019m not comfortable with
+    hugs. A high-five or a wave is better for me."
+  option2: Since I am the Celestial Weaver, I have to be nice to everyone, so okay.
+  option3: "I\u2019ll give you a hug, but only if the Starry Merchant isn't looking."

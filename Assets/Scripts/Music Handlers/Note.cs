@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 public class Note : MonoBehaviour
 {
     private float hitTime;
@@ -54,12 +55,18 @@ public class Note : MonoBehaviour
     {
         float songTime = musicTimer.SongTime;
         float t = (songTime - spawnTime) / (hitTime - spawnTime);
-
+        rotate();
         transform.position = Vector3.LerpUnclamped(spawnPosition, hitPosition, t);
     }
     IEnumerator DestroyAfterUnscaledTime(float delay)
     {
         yield return new WaitForSecondsRealtime(delay);
         Destroy(gameObject);
+    }
+
+    //rotate this sprite
+    void rotate()
+    {
+        transform.DORotate(new Vector3(0, 0, 360), 1f, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Incremental);
     }
 }

@@ -12,6 +12,7 @@ public class MainMenuManager : MonoBehaviour
     {
         // Replace "GameScene" with the actual name of your level
         SceneManager.LoadScene("GameScene");
+        GameManager.Instance.DayStartEvent.Invoke(); // Start the game in the morning state
     }
 
     public void OpenGardenGallery()

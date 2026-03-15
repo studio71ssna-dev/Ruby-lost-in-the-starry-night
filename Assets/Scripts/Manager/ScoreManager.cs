@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
@@ -10,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     [Header("Hit Reductions")]
     [SerializeField] private float perfectReduction = 0.2f;
     [SerializeField] private float goodReduction = 0.1f;
-
+    public UnityEvent WolfPressureUp;
     private bool barActive = false;
 
     private void Update()
@@ -20,6 +21,10 @@ public class ScoreManager : MonoBehaviour
         pressureBar.value = Mathf.Clamp01(
             pressureBar.value + fillSpeed * Time.deltaTime
         );
+        if (pressureBar.value >= 1f)
+        {
+            WolfPressureUp.Invoke();
+        }
     }
 
     public void Perfect()

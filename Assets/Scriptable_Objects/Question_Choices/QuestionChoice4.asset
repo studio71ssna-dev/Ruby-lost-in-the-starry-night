@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9283b6054aa4443b51ec1cd5098042, type: 3}
   m_Name: QuestionChoice4
   m_EditorClassIdentifier: Assembly-CSharp::QuestionChoiceData
-  Question: what is 9-3
-  option1: 6
-  option2: 9
-  option3: 1
-  correctOption: 0
+  Question: The Wolf reaches into his fur and pulls out a glowing stone. "We can
+    talk even when the moon is hidden. Just tell me your secret frequency so I can
+    call you whenever the 'noise' gets too loud.
+  option1: "I don\u2019t give out my private frequency. If you need help, you can
+    talk to the Starry Merchant in the village."
+  option2: "I suppose it\u2019s okay since you\u2019re a Celestial creature like
+    me. Here is my number."
+  option3: I'll give it to you, but only if you promise to only call me during the
+    Day phase.

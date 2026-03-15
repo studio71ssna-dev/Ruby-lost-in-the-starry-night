@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     // MORNING
     // ======================
 
-    public void StartMorning()
+    /*public void StartMorning()
     {
         State = GameState.Morning;
         DayStartEvent.Invoke(); 
@@ -60,14 +60,7 @@ public class GameManager : MonoBehaviour
 
         OnDayChanged?.Invoke(dayCount);
         Debug.Log($"DAY {dayCount} STARTED");
-    }
-
-    // Called by DayTimeManager
-    public void OnDayEnded()
-    {
-        State = GameState.ShopArrival;
-        tileGenerator.SpawnShopChunk();
-    }
+    }*/
 
     // ======================
     // SHOP
@@ -88,15 +81,14 @@ public class GameManager : MonoBehaviour
     // NIGHT
     // ======================
 
-    public void StartNight()
+    /*public void StartNight()
     {
         State = GameState.Night;
         background.SetNight();
         tileGenerator.SwitchToNightChunks();
         tileGenerator.SpawnNightChunk();
 
-
-    }
+    }*/
 
     // ======================
     // QUIZ
@@ -118,6 +110,39 @@ public class GameManager : MonoBehaviour
         dayCount++;
         StartMorning();
         
+    }
+
+    public void StartMorning()
+    {
+        State = GameState.Morning;
+
+        background.SetMorning();
+        tileGenerator.SwitchToDayChunks();
+
+        // Resets world and spawns the Day Start Chunk at X=0
+        tileGenerator.SpawnMorningStart();
+
+        dayTimeManager.gameObject.SetActive(true);
+        dayTimeManager.StartNewDay();
+        OnDayChanged?.Invoke(dayCount);
+        DayStartEvent.Invoke();
+    }
+
+    public void OnDayEnded()
+    {
+        State = GameState.ShopArrival;
+        // Resets world and spawns the Shop at X=0
+        tileGenerator.SpawnShopChunk();
+    }
+
+    public void StartNight()
+    {
+        State = GameState.Night;
+        background.SetNight();
+        tileGenerator.SwitchToNightChunks();
+
+        // Resets world and spawns the House/Night chunk at X=0
+        tileGenerator.SpawnNightChunk();
     }
 
 }

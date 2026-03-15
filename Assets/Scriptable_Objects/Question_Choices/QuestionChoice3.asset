@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9283b6054aa4443b51ec1cd5098042, type: 3}
   m_Name: QuestionChoice3
   m_EditorClassIdentifier: Assembly-CSharp::QuestionChoiceData
-  Question: what is 5+5
-  option1: 4
-  option2: 10
-  option3: 5
-  correctOption: 1
+  Question: You prepare to leave for the Eternal Garden, but the Wolf begins to follow
+    closely, stepping into your personal space. "Wait! I'm still feeling a bit of
+    'noise.' I need to stay right next to you to feel better."
+  option1: I understand you're agitated, but I need you to stay here while I go to
+    my sanctuary. I am setting a boundary.
+  option2: Okay, you can follow me just this once since you're feeling overwhelmed.
+  option3: I'll run as fast as I can so you can't keep up with me
