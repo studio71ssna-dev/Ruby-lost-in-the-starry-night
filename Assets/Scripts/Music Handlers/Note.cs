@@ -55,7 +55,6 @@ public class Note : MonoBehaviour
     {
         float songTime = musicTimer.SongTime;
         float t = (songTime - spawnTime) / (hitTime - spawnTime);
-        rotate();
         transform.position = Vector3.LerpUnclamped(spawnPosition, hitPosition, t);
     }
     IEnumerator DestroyAfterUnscaledTime(float delay)
@@ -64,9 +63,4 @@ public class Note : MonoBehaviour
         Destroy(gameObject);
     }
 
-    //rotate this sprite
-    void rotate()
-    {
-        transform.DORotate(new Vector3(0, 0, 360), 1f, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Incremental);
-    }
 }

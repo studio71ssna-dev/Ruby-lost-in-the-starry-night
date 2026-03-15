@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseMenuUI;
     public UnityEvent ToMainMenu;
+    public UnityEvent OnPauseEvent;
+    public UnityEvent OnResumeEvent;
     private bool isPaused = false;
 
     private void OnEnable()
@@ -30,9 +31,10 @@ public class PauseManager : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        
+        OnResumeEvent.Invoke();
 
         // Optional: Re-enable player controls or lock cursor here
         Cursor.visible = false;
@@ -41,10 +43,10 @@ public class PauseManager : MonoBehaviour
 
     public void Pause()
     {
-        pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
 
+        OnPauseEvent.Invoke();
         // Make cursor visible to interact with buttons
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
