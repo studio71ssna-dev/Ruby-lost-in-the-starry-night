@@ -55,4 +55,9 @@ public class ScoreManager : MonoBehaviour
 
         pressureBar.value = Mathf.Clamp01(pressureBar.value - amount);
     }
+
+    public void wolfpressurelow()
+    {
+        pressureBar.value = 0f;
+    }
 }

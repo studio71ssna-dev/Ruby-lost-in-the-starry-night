@@ -77,4 +77,12 @@ public class NoteSpawner : MonoBehaviour
         );
         return worldPos;
     }
+
+    public void StopNoteSpawn()
+    {
+        song = null;
+        nextNoteIndex = 0;
+        foreach (Transform child in notesContainer)
+            Destroy(child.gameObject);
+    }
 }

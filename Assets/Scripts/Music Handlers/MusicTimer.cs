@@ -93,4 +93,21 @@ public class MusicTimer : MonoBehaviour
             }
         }
     }
+
+    public void StopMusic()
+    {
+        if (music != null)
+            music.Stop();
+        if (noteSpawner != null)
+            noteSpawner.enabled = false;
+        if (MusicUI != null)
+            MusicUI.SetActive(false);
+        quizTriggered = false; // Reset the flag
+        songStartDspTime = -1.0; // Reset start time
+    }
+
+    public void StopNoteSpawn()
+    {
+        noteSpawner.StopNoteSpawn();
+    }
 }
