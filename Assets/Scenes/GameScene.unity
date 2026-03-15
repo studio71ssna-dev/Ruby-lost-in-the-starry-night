@@ -4901,7 +4901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4933456255507525823, guid: 6f27fc4d04dcea745825686ddfdbbd43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4933456255507525823, guid: 6f27fc4d04dcea745825686ddfdbbd43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -4922,7 +4922,7 @@ PrefabInstance:
     - target: {fileID: 4933456255507525823, guid: 6f27fc4d04dcea745825686ddfdbbd43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1584423596}
+      objectReference: {fileID: 1339213728}
     - target: {fileID: 4933456255507525823, guid: 6f27fc4d04dcea745825686ddfdbbd43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -4941,7 +4941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4933456255507525823, guid: 6f27fc4d04dcea745825686ddfdbbd43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: StopMusic
+      value: DeactivateBarUI
       objectReference: {fileID: 0}
     - target: {fileID: 4933456255507525823, guid: 6f27fc4d04dcea745825686ddfdbbd43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -4953,7 +4953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4933456255507525823, guid: 6f27fc4d04dcea745825686ddfdbbd43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: MusicTimer, Assembly-CSharp
+      value: ScoreManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4933456255507525823, guid: 6f27fc4d04dcea745825686ddfdbbd43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
