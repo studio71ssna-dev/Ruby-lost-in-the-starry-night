@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     private PlayerAnimationManager.PlayerAnimState currentState;
     private bool wolfnearby;
 
+    [SerializeField] private float walkDustInterval = 0.25f;
+    private float walkDustTimer = 0f;
+
     private void OnEnable()
     {
         // Subscribing to events from your InputHandler
@@ -71,6 +74,14 @@ public class PlayerController : MonoBehaviour
         if (moveDir.x != 0)
         {
             transform.localScale = new Vector3(Mathf.Sign(moveDir.x), 1, 1);
+        }
+
+        if (Mathf.Abs(moveDir.x) > 0.1f && isGrounded)
+        {
+            ExecuteAfterInterval(ref walkDustTimer, walkDustInterval, () =>
+            {
+                ParticleManager.Instance.PlayParticle("Walk", groundCheck.position);
+            });
         }
     }
 
@@ -153,5 +164,16 @@ public class PlayerController : MonoBehaviour
     {
         if (col.CompareTag("Flower")) nearbyFlowers.Remove(col.gameObject);
         if (col.CompareTag("Wolf")) wolfnearby = false;
+    }
+
+    private void ExecuteAfterInterval(ref float timer, float interval, System.Action action)
+    {
+        timer += Time.deltaTime;
+
+        if (timer >= interval)
+        {
+            timer = 0f;
+            action?.Invoke();
+        }
     }
 }

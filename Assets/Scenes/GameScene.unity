@@ -1394,12 +1394,12 @@ PrefabInstance:
       objectReference: {fileID: 1339213728}
     - target: {fileID: 6605249937977220829, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
       propertyPath: songs.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6605249937977220829, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
       propertyPath: 'songs.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: ca4f96c70c56d5a49a24fe0047da51db, type: 2}
+      objectReference: {fileID: 11400000, guid: 16c46eb47102ffc43969a161e4ec49a8, type: 2}
     - target: {fileID: 6605249937977220829, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
       propertyPath: 'songs.Array.data[1]'
       value: 
@@ -1657,7 +1657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f376df4062d6640a374b66d949dd36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DayTimeManager
-  dayDuration: 15
+  dayDuration: 60
 --- !u!4 &787714688
 Transform:
   m_ObjectHideFlags: 0

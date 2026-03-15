@@ -74,6 +74,10 @@ namespace SingletonManagers
         {
             PlayParticle(particleName, position, Quaternion.identity, color);
         }
+        public void PlayParticle(string particleName, Vector3 position)
+        {
+            PlayParticle(particleName, position, Quaternion.identity, Color.white);
+        }
 
         private IEnumerator ReturnToPool(ParticleSystem particle, string key, float delay)
         {

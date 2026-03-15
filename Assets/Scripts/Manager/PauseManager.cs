@@ -35,10 +35,6 @@ public class PauseManager : MonoBehaviour
         isPaused = false;
         
         OnResumeEvent.Invoke();
-
-        // Optional: Re-enable player controls or lock cursor here
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Pause()
