@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public ParallaxBackground background;
     public DayTimeManager dayTimeManager;
     [SerializeField] private ShopManager shopManager;
-    private GameObject Wolf;
+
 
     private int dayCount = 1;
 
@@ -42,10 +42,6 @@ public class GameManager : MonoBehaviour
         StartMorning();
     }
 
-    private void Update()
-    {
-        Wolf = GameObject.FindGameObjectWithTag("Wolf");
-    }
 
     // ======================
     // MORNING

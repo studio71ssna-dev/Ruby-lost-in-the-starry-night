@@ -1,5 +1,6 @@
-using UnityEngine;
+using SingletonManagers;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -128,6 +129,8 @@ public class PlayerController : MonoBehaviour
                 // Communication with DayTimeManager and UIManager remains intact
                 FindObjectOfType<DayTimeManager>().AddFlowerToSession(flowerScript.data);
                 nearbyFlowers.RemoveAt(0);
+                ParticleManager.Instance.PlayParticle("PickUp", flowerObj.transform.position, flowerScript.data.glowColor);
+                AudioManager.Instance.Play("Pickup", flowerObj.transform.position);
                 Destroy(flowerObj,0.25f);
                 // Return to idle after a delay or via Animation Event
                 Invoke(nameof(ResetToIdle), 0.5f);
