@@ -89,8 +89,8 @@ public class InputHandler : SingletonPersistent
     }
 
 
-    public void SwitchActionMap()
+    public void SwitchActionMap(string actionMapName)
     {
-        playerInput.SwitchCurrentActionMap(playerInput.currentActionMap.name == "Player_Movement" ? "Player_Music" : "Player_Movement");
+        playerInput.SwitchCurrentActionMap(actionMapName);
     }
 }

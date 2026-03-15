@@ -77,7 +77,7 @@ public class ChoiceManager : MonoBehaviour
     void ContinueGame()
     {
         Wolf.SetActive(false);
-        InputHandler.Instance.SwitchActionMap();
+        InputHandler.Instance.SwitchActionMap("Player_Movement");
     }
 
     void GameOver()

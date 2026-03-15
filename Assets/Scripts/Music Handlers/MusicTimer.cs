@@ -60,7 +60,7 @@ public class MusicTimer : MonoBehaviour
             MusicUI.SetActive(true);
 
         quizTriggered = false; // Reset the flag for the new song
-        InputHandler.Instance.SwitchActionMap();
+        InputHandler.Instance.SwitchActionMap("Player_Music");
     }
 
     public void SongFinished()

@@ -44,25 +44,6 @@ public class GameManager : MonoBehaviour
 
 
     // ======================
-    // MORNING
-    // ======================
-
-    /*public void StartMorning()
-    {
-        State = GameState.Morning;
-        DayStartEvent.Invoke(); 
-        background.SetMorning();
-        tileGenerator.SwitchToDayChunks();
-
-        // Wake up the timer and start it
-        dayTimeManager.gameObject.SetActive(true);
-        dayTimeManager.StartNewDay();
-
-        OnDayChanged?.Invoke(dayCount);
-        Debug.Log($"DAY {dayCount} STARTED");
-    }*/
-
-    // ======================
     // SHOP
     // ======================
 
@@ -77,19 +58,6 @@ public class GameManager : MonoBehaviour
         // ONCE THE SHOP IS CLOSED, TRIGGER THE NIGHT
         StartNight();
     }
-
-    // ======================
-    // NIGHT
-    // ======================
-
-    /*public void StartNight()
-    {
-        State = GameState.Night;
-        background.SetNight();
-        tileGenerator.SwitchToNightChunks();
-        tileGenerator.SpawnNightChunk();
-
-    }*/
 
     // ======================
     // QUIZ
@@ -121,8 +89,9 @@ public class GameManager : MonoBehaviour
         if (Time.timeScale == 0f)
         {
             Debug.LogWarning("[GameManager] Time.timeScale was 0 on StartMorning — forcing to 1");
-            Time.timeScale = 1f;
+            Time.timeScale = 1f;        
         }
+        InputHandler.Instance.SwitchActionMap("Player_Movement");
 
         State = GameState.Morning;
 
