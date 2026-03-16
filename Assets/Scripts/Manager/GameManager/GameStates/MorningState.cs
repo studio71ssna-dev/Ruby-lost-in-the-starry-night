@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class MorningState : IGameState
 {
     GameManager gm;
@@ -21,11 +22,10 @@ public class MorningState : IGameState
 
     public void Update()
     {
-        // transition example
-        //if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.N))
         {
             gm.ChangeState(gm.DayState);
-        }//
+        }
     }
 
     public void Exit()
