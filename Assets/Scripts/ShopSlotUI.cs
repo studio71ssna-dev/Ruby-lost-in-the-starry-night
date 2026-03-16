@@ -1,4 +1,3 @@
-using NUnit.Framework.Interfaces;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,12 +11,9 @@ public class ShopSlotUI : MonoBehaviour
 
     private ItemData _data;
 
-    private ShopManager _manager;
-
-    public void Setup(ItemData item, ShopManager manager) // Add manager to parameters
+    public void Setup(ItemData item)
     {
         _data = item;
-        _manager = manager; // Store the reference
 
         icon.sprite = item.icon;
         nameText.text = item.itemName;
@@ -34,18 +30,25 @@ public class ShopSlotUI : MonoBehaviour
         if (InventoryManager.Instance.TryPurchase(_data))
         {
             RefreshState();
-            // CALL THE MANAGER TO UPDATE THE TEXT
-            _manager.UpdateCurrencyUI();
+
+            // notify shop state UI refresh
+            GameManager.Instance.ShopState.RefreshShopUI();
         }
     }
 
     public void RefreshState()
     {
-        // Disable button if already owned
+        if (_data == null) return;
+
         if (InventoryManager.Instance.HasItem(_data))
         {
             buyButton.interactable = false;
             priceText.text = "Sold";
+        }
+        else
+        {
+            buyButton.interactable = true;
+            priceText.text = _data.cost.ToString();
         }
     }
 }

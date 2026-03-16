@@ -10511,6 +10511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2118862448979062967}
   - component: {fileID: 7599158619623017889}
+  - component: {fileID: -7902379483570387838}
   m_Layer: 3
   m_Name: TileSet_Shop
   m_TagString: Untagged
@@ -10550,6 +10551,18 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &-7902379483570387838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181877458479443497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b477d91d30dd4498ee7aaeb4313881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TileChunk
 --- !u!1 &1918150149865537750
 GameObject:
   m_ObjectHideFlags: 0

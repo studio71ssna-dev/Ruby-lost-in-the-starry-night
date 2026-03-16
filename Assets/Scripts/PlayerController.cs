@@ -15,13 +15,12 @@ public class PlayerController : MonoBehaviour
     public MusicTimer musicTimer;
 
     [Header("Interaction")]
-    private List<GameObject> nearbyFlowers = new();
+    private IInteractable currentInteractable;
 
     private Rigidbody2D rb;
     private bool isGrounded;
     private PlayerAnimationManager animManager;
     private PlayerAnimationManager.PlayerAnimState currentState;
-    private bool wolfnearby;
 
     [SerializeField] private float walkDustInterval = 0.25f;
     private float walkDustTimer = 0f;
@@ -126,44 +125,29 @@ public class PlayerController : MonoBehaviour
 
     private void TryInteract()
     {
-        if (nearbyFlowers.Count > 0 && nearbyFlowers[0] != null)
-        {
-            // Play Pickup Animation
-            SetState(PlayerAnimationManager.PlayerAnimState.Pickup);
-
-
-            GameObject flowerObj = nearbyFlowers[0];
-            FlowerItem flowerScript = flowerObj.GetComponent<FlowerItem>();
-
-            if (flowerScript != null && flowerScript.data != null)
-            {
-                // Communication with DayTimeManager and UIManager remains intact
-                FindObjectOfType<DayTimeManager>().AddFlowerToSession(flowerScript.data);
-                nearbyFlowers.RemoveAt(0);
-                ParticleManager.Instance.PlayParticle("PickUp", flowerObj.transform.position, flowerScript.data.glowColor);
-                AudioManager.Instance.Play("Pickup", flowerObj.transform.position);
-                Destroy(flowerObj,0.25f);
-                // Return to idle after a delay or via Animation Event
-                Invoke(nameof(ResetToIdle), 0.5f);
-            }
-        }
-        if (wolfnearby)
-        {
-            musicTimer.PlayRandomSong();
-        }
+        currentInteractable?.Interact(this);
     }
+
     private void ResetToIdle() => SetState(PlayerAnimationManager.PlayerAnimState.Idle);
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Flower") && !nearbyFlowers.Contains(col.gameObject)) nearbyFlowers.Add(col.gameObject);
-        if (col.CompareTag("Wolf")) wolfnearby = true;      
+        IInteractable interactable = col.GetComponent<IInteractable>();
+
+        if (interactable != null)
+        {
+            currentInteractable = interactable;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.CompareTag("Flower")) nearbyFlowers.Remove(col.gameObject);
-        if (col.CompareTag("Wolf")) wolfnearby = false;
+        IInteractable interactable = col.GetComponent<IInteractable>();
+
+        if (interactable != null && currentInteractable == interactable)
+        {
+            currentInteractable = null;
+        }
     }
 
     private void ExecuteAfterInterval(ref float timer, float interval, System.Action action)

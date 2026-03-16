@@ -1,37 +1,9 @@
 using UnityEngine;
 
-public class HouseInteractable : MonoBehaviour
+public class HouseInteractable : MonoBehaviour, IInteractable
 {
-    private bool playerInside = false;
-
-    private void OnEnable()
+    public void Interact(PlayerController player)
     {
-        if (InputHandler.Instance != null)
-            InputHandler.Instance.OnInteract += HandleInteract;
-    }
-
-    private void OnDisable()
-    {
-        if (InputHandler.Instance != null)
-            InputHandler.Instance.OnInteract -= HandleInteract;
-    }
-
-    private void HandleInteract()
-    {
-        if (!playerInside) return;
-
         GameManager.Instance.SleepAndNextDay();
-    }
-
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.CompareTag("Player"))
-            playerInside = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.CompareTag("Player"))
-            playerInside = false;
     }
 }

@@ -9382,8 +9382,8 @@ MonoBehaviour:
   obstaclePrefabs:
   - {fileID: 8669957130621766178, guid: 0f35afb79e314704d91409c6fc35f606, type: 3}
   wolfPrefab: {fileID: 8921097957713536274, guid: cf5c35f186945e54da333dbe473e412c, type: 3}
-  flowerChance: 1
-  obstacleChance: 1
+  flowerChance: 0.6
+  obstacleChance: 0.35
   wolfChance: 1
 --- !u!114 &8360384352507824275
 MonoBehaviour:
@@ -9397,7 +9397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c155f00da28ed408ab50ebf46bbf1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TilePool
-  tilePrefab: {fileID: 7609520073147225562, guid: 65b51acae9d9425478d24ac21b412450, type: 3}
+  tilePrefab: {fileID: 6509914070830129872}
   poolSize: 10
 --- !u!222 &8379115392285289212
 CanvasRenderer:

@@ -110,4 +110,19 @@ public class MusicTimer : MonoBehaviour
     {
         noteSpawner.StopNoteSpawn();
     }
+
+    public void PlayMorningMusic()
+    {
+        StopMusic();
+    }
+
+    public void PlayDayMusic()
+    {
+        StopMusic();
+    }
+
+    public void PlayNightMusic()
+    {
+        StopMusic();
+    }
 }
