@@ -14,8 +14,15 @@ public class GardenUI : SingletonPersistent
     [SerializeField] private GardenInventorySlotUI inventorySlotPrefab;
     [SerializeField] private Transform inventorySlotContainer;
 
+    [Header("Dynamic Grid Spawning")]
+    [SerializeField] private GardenSlotUI gardenSlotPrefab; // Drag your GardenSlot prefab here
+    [SerializeField] private Transform gardenGridContainer; // Drag the PlantingGrid here
+
     private ItemData currentlySelectedFlower;
     private List<GardenInventorySlotUI> activeInventorySlots = new List<GardenInventorySlotUI>();
+
+    // NEW: Keep track of the physical dirt patches in the world
+    private List<GardenSlotUI> activeGridSlots = new List<GardenSlotUI>();
 
     protected override void OnAwake()
     {
@@ -26,9 +33,28 @@ public class GardenUI : SingletonPersistent
     public void OpenGarden()
     {
         Time.timeScale = 0f;
-        currentlySelectedFlower = null; // Clear selection when opening
+        currentlySelectedFlower = null;
+
+        UpdateGridSize(); // Grow the garden if needed!
         RefreshInventoryUI();
+
         gardenPanel.SetActive(true);
+    }
+
+    private void UpdateGridSize()
+    {
+        // Define your growth logic here. 
+        // Example: Start with 25 slots. Add 5 slots (1 row) every 3 days.
+        int currentDay = GameManager.Instance.DayCount;
+        int targetSlotCount = 25 + ((currentDay / 3) * 5);
+
+        // Only instantiate NEW slots to reach the target amount.
+        // This prevents us from deleting slots that already have flowers planted in them!
+        while (activeGridSlots.Count < targetSlotCount)
+        {
+            GardenSlotUI newSlot = Instantiate(gardenSlotPrefab, gardenGridContainer);
+            activeGridSlots.Add(newSlot);
+        }
     }
 
     private void SleepAndClose()
@@ -43,8 +69,6 @@ public class GardenUI : SingletonPersistent
     public void SetSelectedFlower(ItemData flower)
     {
         currentlySelectedFlower = flower;
-
-        // Update the visual highlights so the player knows what is selected
         foreach (var slot in activeInventorySlots)
         {
             slot.UpdateHighlight();
@@ -53,38 +77,28 @@ public class GardenUI : SingletonPersistent
 
     public void RefreshInventoryUI()
     {
-        // 1. Clear out the old UI slots
-        foreach (var slot in activeInventorySlots)
-        {
-            Destroy(slot.gameObject);
-        }
+        foreach (var slot in activeInventorySlots) Destroy(slot.gameObject);
         activeInventorySlots.Clear();
 
         if (InventoryManager.Instance == null) return;
 
-        // 2. Loop through the player's dictionary of owned flowers
         foreach (var kvp in InventoryManager.Instance.flowerInventory)
         {
-            ItemData flower = kvp.Key;
-            int quantity = kvp.Value;
-
-            // Only spawn a button if they actually have at least 1 of this flower
-            if (quantity > 0)
+            if (kvp.Value > 0)
             {
                 GardenInventorySlotUI newSlot = Instantiate(inventorySlotPrefab, inventorySlotContainer);
-                newSlot.Setup(flower, quantity);
+                newSlot.Setup(kvp.Key, kvp.Value);
                 activeInventorySlots.Add(newSlot);
             }
         }
 
-        // If the player used their last selected flower, clear the selection
         if (currentlySelectedFlower != null && (!InventoryManager.Instance.flowerInventory.ContainsKey(currentlySelectedFlower) || InventoryManager.Instance.flowerInventory[currentlySelectedFlower] <= 0))
         {
             SetSelectedFlower(null);
         }
         else
         {
-            SetSelectedFlower(currentlySelectedFlower); // Re-apply highlights
+            SetSelectedFlower(currentlySelectedFlower);
         }
     }
 }
