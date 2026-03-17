@@ -1,9 +1,9 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundTileGenerator : MonoBehaviour
 {
-    [Header("Player Reference")]
+    [Header("Player")]
     public Transform player;
 
     [Header("Tile Sets")]
@@ -14,19 +14,16 @@ public class GroundTileGenerator : MonoBehaviour
     [Header("Special Tiles")]
     public GameObject shopTile;
 
-    [Header("Tile Settings")]
-    public float tileLength = 20f;
+    [Header("Generation Settings")]
     public int tilesOnScreen = 6;
+    public float spawnAheadDistance = 60f;
+    public float removeDistance = 120f;
 
     private float spawnX = 0f;
+    private bool isScrollingEnabled = false;
 
-    private Queue<GameObject> activeTiles = new();
-
+    private Queue<(GameObject instance, GameObject prefab)> activeTiles = new();
     private GameObject[] currentTiles;
-
-    // -----------------------------
-    // INITIALIZE
-    // -----------------------------
 
     void Start()
     {
@@ -35,26 +32,44 @@ public class GroundTileGenerator : MonoBehaviour
             Debug.LogError("GroundTileGenerator: Player reference missing!");
             return;
         }
-    }
 
-    // -----------------------------
-    // UPDATE LOOP
-    // -----------------------------
+        TilePool.Instance.WarmUp(morningTiles);
+        TilePool.Instance.WarmUp(dayTiles);
+        TilePool.Instance.WarmUp(nightTiles);
+    }
 
     void Update()
     {
+        if (!isScrollingEnabled) return;
         if (currentTiles == null) return;
 
-        if (player.position.x > spawnX - (tilesOnScreen * tileLength))
+        if (player.position.x + spawnAheadDistance > spawnX)
         {
             SpawnTile();
-            RemoveOldestTile();
         }
+
+        RemoveOldTiles();
     }
 
-    // -----------------------------
-    // TILESET SWITCHING
-    // -----------------------------
+    // ------------------------------------------------
+    // MORNING START
+    // ------------------------------------------------
+
+    public void SpawnSingleMorningTile()
+    {
+        isScrollingEnabled = false;
+        currentTiles = morningTiles;
+
+        ClearAllTiles();
+
+        spawnX = player.position.x;
+
+        SpawnTile();
+    }
+
+    // ------------------------------------------------
+    // CHANGE TILE SET
+    // ------------------------------------------------
 
     public void SetTileSet(TileSetType type)
     {
@@ -74,11 +89,13 @@ public class GroundTileGenerator : MonoBehaviour
         }
 
         SpawnInitialTiles();
+
+        isScrollingEnabled = true;
     }
 
-    // -----------------------------
-    // INITIAL WORLD BUILD
-    // -----------------------------
+    // ------------------------------------------------
+    // INITIAL SPAWN
+    // ------------------------------------------------
 
     void SpawnInitialTiles()
     {
@@ -88,84 +105,114 @@ public class GroundTileGenerator : MonoBehaviour
         }
     }
 
-    // -----------------------------
-    // TILE SPAWNING
-    // -----------------------------
+    // ------------------------------------------------
+    // SPAWN TILE
+    // ------------------------------------------------
 
     void SpawnTile()
     {
         if (currentTiles == null || currentTiles.Length == 0)
         {
-            Debug.LogWarning("GroundTileGenerator: No tiles assigned!");
+            Debug.LogWarning("No tiles assigned!");
             return;
         }
 
         GameObject prefab = currentTiles[Random.Range(0, currentTiles.Length)];
 
-        GameObject tile = TilePool.Instance.GetTile();
-
-        tile.transform.position = new Vector3(spawnX, 0, 0);
+        GameObject tile = TilePool.Instance.GetTile(prefab);
 
         TileChunk chunk = tile.GetComponent<TileChunk>();
 
-        if (chunk != null)
+        if (chunk == null)
         {
-            TileObjectSpawner.Instance.Populate(chunk);
+            Debug.LogError("TileChunk missing on prefab!");
+            return;
         }
 
-        activeTiles.Enqueue(tile);
+        Vector3 startOffset = chunk.StartPoint.localPosition;
 
-        spawnX += tileLength;
+        tile.transform.position = new Vector3(
+            spawnX - startOffset.x,
+            0,
+            0
+        );
+
+        TileObjectSpawner.Instance.Populate(chunk);
+
+        spawnX = chunk.GetEndX();
+
+        activeTiles.Enqueue((tile, prefab));
     }
 
-    // -----------------------------
-    // REMOVE OLD TILE
-    // -----------------------------
+    // ------------------------------------------------
+    // REMOVE OLD TILES
+    // ------------------------------------------------
 
-    void RemoveOldestTile()
+    void RemoveOldTiles()
     {
         if (activeTiles.Count == 0) return;
 
-        GameObject oldTile = activeTiles.Dequeue();
+        var (instance, prefab) = activeTiles.Peek();
 
-        TilePool.Instance.ReturnTile(oldTile);
+        if (player.position.x - instance.transform.position.x > removeDistance)
+        {
+            activeTiles.Dequeue();
+
+            TileChunk chunk = instance.GetComponent<TileChunk>();
+
+            if (chunk != null)
+                chunk.ClearGeneratedObjects();
+
+            TilePool.Instance.ReturnTile(instance, prefab);
+        }
     }
 
-    // -----------------------------
+    // ------------------------------------------------
     // SHOP TILE
-    // -----------------------------
+    // ------------------------------------------------
 
     public void SpawnShopTile()
     {
         if (shopTile == null)
         {
-            Debug.LogWarning("Shop tile not assigned!");
+            Debug.LogWarning("Shop tile missing!");
             return;
         }
 
-        GameObject tile = Instantiate(
-            shopTile,
-            new Vector3(spawnX, 0, 0),
-            Quaternion.identity
-        );
+        GameObject tile = Instantiate(shopTile, new Vector3(spawnX, 0, 0), Quaternion.identity);
 
-        activeTiles.Enqueue(tile);
+        TileChunk chunk = tile.GetComponent<TileChunk>();
 
-        spawnX += tileLength;
+        if (chunk != null)
+            spawnX = chunk.GetEndX();
+
+        activeTiles.Enqueue((tile, null));
     }
 
-    // -----------------------------
-    // WORLD RESET
-    // -----------------------------
+    // ------------------------------------------------
+    // CLEAR WORLD
+    // ------------------------------------------------
 
-    public void ResetWorld()
+    void ClearAllTiles()
     {
         while (activeTiles.Count > 0)
         {
-            GameObject tile = activeTiles.Dequeue();
-            TilePool.Instance.ReturnTile(tile);
-        }
+            var (instance, prefab) = activeTiles.Dequeue();
 
-        spawnX = 0f;
+            TileChunk chunk = instance.GetComponent<TileChunk>();
+
+            if (chunk != null)
+                chunk.ClearGeneratedObjects();
+
+            if (prefab != null)
+                TilePool.Instance.ReturnTile(instance, prefab);
+            else
+                Destroy(instance);
+        }
+    }
+
+    public void ResetWorld()
+    {
+        ClearAllTiles();
     }
 }

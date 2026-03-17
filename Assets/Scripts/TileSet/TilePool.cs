@@ -5,43 +5,60 @@ public class TilePool : MonoBehaviour
 {
     public static TilePool Instance;
 
-    [SerializeField] private GameObject tilePrefab;
-    [SerializeField] private int poolSize = 10;
+    [SerializeField] private int initialPoolSizePerPrefab = 4;
 
-    private Queue<GameObject> pool = new();
+    // One queue per prefab
+    private Dictionary<GameObject, Queue<GameObject>> pools = new();
 
     void Awake()
     {
         Instance = this;
+    }
 
-        for (int i = 0; i < poolSize; i++)
+    // Pre-warm the pool for a set of prefabs
+    public void WarmUp(GameObject[] prefabs)
+    {
+        foreach (var prefab in prefabs)
         {
-            GameObject tile = Instantiate(tilePrefab);
-            tile.SetActive(false);
-            pool.Enqueue(tile);
+            if (prefab == null) continue;
+            if (!pools.ContainsKey(prefab))
+                pools[prefab] = new Queue<GameObject>();
+
+            while (pools[prefab].Count < initialPoolSizePerPrefab)
+            {
+                GameObject obj = Instantiate(prefab);
+                obj.SetActive(false);
+                pools[prefab].Enqueue(obj);
+            }
         }
     }
 
-    public GameObject GetTile()
+    public GameObject GetTile(GameObject prefab)
     {
-        if (pool.Count > 0)
+        if (!pools.ContainsKey(prefab))
+            pools[prefab] = new Queue<GameObject>();
+
+        if (pools[prefab].Count > 0)
         {
-            GameObject tile = pool.Dequeue();
+            GameObject tile = pools[prefab].Dequeue();
             tile.SetActive(true);
             return tile;
         }
 
-        return Instantiate(tilePrefab);
+        // Pool empty — instantiate a new one
+        return Instantiate(prefab);
     }
 
-    public void ReturnTile(GameObject tile)
+    public void ReturnTile(GameObject tile, GameObject sourcePrefab)
     {
         TileChunk chunk = tile.GetComponent<TileChunk>();
-
-        if (chunk != null)
-            chunk.ClearGeneratedObjects();
+        if (chunk != null) chunk.ClearGeneratedObjects();
 
         tile.SetActive(false);
-        pool.Enqueue(tile);
+
+        if (!pools.ContainsKey(sourcePrefab))
+            pools[sourcePrefab] = new Queue<GameObject>();
+
+        pools[sourcePrefab].Enqueue(tile);
     }
 }

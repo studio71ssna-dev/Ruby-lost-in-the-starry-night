@@ -1,6 +1,4 @@
 using UnityEngine;
-
-
 public class MorningState : IGameState
 {
     GameManager gm;
@@ -14,22 +12,13 @@ public class MorningState : IGameState
     {
         Debug.Log("Morning Start");
 
-        gm.tileGenerator.SetTileSet(TileSetType.Morning);
-        gm.tileGenerator.ResetWorld();
+        gm.tileGenerator.SpawnSingleMorningTile();
 
-        gm.musicTimer.PlayMorningMusic();
+        // Immediately start day gameplay
+        gm.ChangeState(gm.DayState);
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            gm.ChangeState(gm.DayState);
-        }
-    }
+    public void Update() { }
 
-    public void Exit()
-    {
-        Debug.Log("Leaving Morning");
-    }
+    public void Exit() { }
 }
