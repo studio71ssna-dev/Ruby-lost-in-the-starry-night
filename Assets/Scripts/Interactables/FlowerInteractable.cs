@@ -9,8 +9,8 @@ public class FlowerInteractable : MonoBehaviour, IInteractable
     {
         if (data == null) return;
 
+        
         InventoryManager.Instance.AddStardust(data.value);
-
         ParticleManager.Instance.PlayParticle("PickUp", transform.position, data.glowColor);
         AudioManager.Instance.Play("Pickup", transform.position);
 

@@ -69,7 +69,7 @@ public class ShopSlotUI : MonoBehaviour
         {
             buyButton.interactable = canAfford;
             priceText.text = _data.cost.ToString();
-            priceText.color = canAfford ? Color.brown : Color.red;
+            priceText.color = canAfford ? Color.darkOliveGreen : Color.red;
         }
     }
 }
