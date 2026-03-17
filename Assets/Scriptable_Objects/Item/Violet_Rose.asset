@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Violet_Rose
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: Violet Rose
-  description: 
+  itemType: 1
+  description: 'A Violet Rose
+
+'
   cost: 5
   icon: {fileID: 21300000, guid: 52b7373b178bac54fbc01ea2bcc44407, type: 3}
-  gardenSprite: {fileID: 21300000, guid: ae2cae4e4448cbb428dd4faecb98cc8c, type: 3}
+  gardenSprite: {fileID: 21300000, guid: 52b7373b178bac54fbc01ea2bcc44407, type: 3}
   statModifier: 0

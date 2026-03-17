@@ -8,19 +8,16 @@ public class ShopState : IGameState
 
     public void Enter()
     {
-        Debug.Log("Shop Open");
-        Time.timeScale = 0f;
+        Debug.Log("Shop State Active - Spawning Tile");
+        // We only spawn the tile here. Time keeps running so the player can walk to it.
         gm.tileGenerator.SpawnShopTile();
-        // Panel is opened by ShopUI when player interacts with ShopInteractable
-        // ShopInteractable.HandleInteract -> GameManager.OpenShop -> this Enter()
-        // So open the panel here since we only arrive via interaction
-        ShopUI.Instance?.OpenShop();
     }
 
     public void Update() { }
 
     public void Exit()
     {
+        // Time is managed by ShopUI now, but we can ensure it's normal when leaving the state
         Time.timeScale = 1f;
         ShopUI.Instance?.CloseShop();
     }

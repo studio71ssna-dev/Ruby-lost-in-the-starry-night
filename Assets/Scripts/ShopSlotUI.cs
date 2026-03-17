@@ -7,7 +7,10 @@ public class ShopSlotUI : MonoBehaviour
     public Image icon;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI priceText;
+
+    [Header("Buttons")]
     public Button buyButton;
+    public Button selectButton; // The background button of the slot
 
     private ItemData _data;
 
@@ -17,12 +20,25 @@ public class ShopSlotUI : MonoBehaviour
 
         icon.sprite = item.icon;
         nameText.text = item.itemName;
-        priceText.text = item.cost.ToString();
 
+        // Hook up the Buy Button
         buyButton.onClick.RemoveAllListeners();
         buyButton.onClick.AddListener(OnBuyClicked);
 
+        // Hook up the Select Button (Clicking anywhere else on the slot)
+        if (selectButton != null)
+        {
+            selectButton.onClick.RemoveAllListeners();
+            selectButton.onClick.AddListener(OnSelectClicked);
+        }
+
         RefreshState();
+    }
+
+    private void OnSelectClicked()
+    {
+        // Send this item's data to the main ShopUI description panel
+        ShopUI.Instance.ShowItemDescription(_data);
     }
 
     private void OnBuyClicked()
@@ -31,8 +47,8 @@ public class ShopSlotUI : MonoBehaviour
         {
             RefreshState();
 
-            // notify shop state UI refresh
-            GameManager.Instance.ShopState.RefreshShopUI();
+            // Refreshes the Stardust counter and all other slots
+            ShopUI.Instance.Refresh();
         }
     }
 
@@ -40,15 +56,20 @@ public class ShopSlotUI : MonoBehaviour
     {
         if (_data == null) return;
 
-        if (InventoryManager.Instance.HasItem(_data))
+        bool isSoldOut = _data.itemType == ItemType.Upgrade && InventoryManager.Instance.HasBoughtUpgradeToday(_data);
+        bool canAfford = InventoryManager.Instance.totalStardust >= _data.cost;
+
+        if (isSoldOut)
         {
             buyButton.interactable = false;
-            priceText.text = "Sold";
+            priceText.text = "Sold Out";
+            priceText.color = Color.gray;
         }
         else
         {
-            buyButton.interactable = true;
+            buyButton.interactable = canAfford;
             priceText.text = _data.cost.ToString();
+            priceText.color = canAfford ? Color.brown : Color.red;
         }
     }
 }
