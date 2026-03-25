@@ -10,7 +10,6 @@ public class NightState : IGameState
     {
         Debug.Log("Night Start");
         gm.tileGenerator.SetTileSet(TileSetType.Night);
-        gm.musicTimer.PlayNightMusic();
     }
 
     public void Update() { }

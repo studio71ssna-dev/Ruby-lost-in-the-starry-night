@@ -43,16 +43,16 @@ public class GardenUI : SingletonPersistent
 
     private void UpdateGridSize()
     {
-        // Define your growth logic here. 
-        // Example: Start with 25 slots. Add 5 slots (1 row) every 3 days.
         int currentDay = GameManager.Instance.DayCount;
         int targetSlotCount = 25 + ((currentDay / 3) * 5);
 
-        // Only instantiate NEW slots to reach the target amount.
-        // This prevents us from deleting slots that already have flowers planted in them!
         while (activeGridSlots.Count < targetSlotCount)
         {
             GardenSlotUI newSlot = Instantiate(gardenSlotPrefab, gardenGridContainer);
+
+            // FORCE the slot to be active, regardless of the prefab's saved state
+            newSlot.gameObject.SetActive(true);
+
             activeGridSlots.Add(newSlot);
         }
     }

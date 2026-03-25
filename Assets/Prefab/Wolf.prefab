@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4118211250252764237}
   m_Layer: 0
   m_Name: Wolf
-  m_TagString: Wolf
+  m_TagString: Generated
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,4 +230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f780aeb1c11af5c4581c54af6473e1ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WolfInteractable
-  musicTimer: {fileID: 6605249937977220829, guid: b7ec692d14da0f94bb03e230bc301951, type: 3}
+  songController: {fileID: 0}
+  songs:
+  - {fileID: 11400000, guid: 16c46eb47102ffc43969a161e4ec49a8, type: 2}
+  - {fileID: 11400000, guid: 5a28d31785d30cb4da41c663c7f317f9, type: 2}
+  - {fileID: 11400000, guid: dc37dc62b9c4285468a1832ee584d95c, type: 2}

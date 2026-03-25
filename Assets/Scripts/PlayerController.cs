@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public Transform groundCheck;
     public float checkRadius = 0.2f;
-    public MusicTimer musicTimer;
 
     [Header("Interaction")]
     private IInteractable currentInteractable;

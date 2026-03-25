@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public GroundTileGenerator tileGenerator;
-    public MusicTimer musicTimer;
     [Header("Day Settings")]
     public float DayDuration = 60f;
     GameStateMachine stateMachine;

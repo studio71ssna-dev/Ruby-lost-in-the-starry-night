@@ -13,7 +13,6 @@ public class DayState : IGameState
     {
         Debug.Log("Day Start");
         gm.tileGenerator.SetTileSet(TileSetType.Day);
-        gm.musicTimer.PlayDayMusic();
 
         cts = new CancellationTokenSource();
         RunDayTimerAsync(cts.Token).Forget();

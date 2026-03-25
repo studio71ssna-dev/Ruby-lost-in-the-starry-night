@@ -56,8 +56,11 @@ public class TilePool : MonoBehaviour
 
         tile.SetActive(false);
 
-        if (!pools.ContainsKey(sourcePrefab))
-            pools[sourcePrefab] = new Queue<GameObject>();
+        if (sourcePrefab == null)
+        {
+            Debug.LogError("ReturnTile called with NULL prefab!");
+            return;
+        }
 
         pools[sourcePrefab].Enqueue(tile);
     }

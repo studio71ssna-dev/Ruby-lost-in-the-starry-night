@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
 
-public class ChoiceManager : MonoBehaviour
+public class QuizManager : MonoBehaviour
 {
     [SerializeField] private GameObject choicePanel;
 
