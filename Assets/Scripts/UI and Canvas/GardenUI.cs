@@ -26,7 +26,6 @@ public class GardenUI : SingletonPersistent
 
     protected override void OnAwake()
     {
-        gardenPanel.SetActive(false);
         sleepButton.onClick.AddListener(SleepAndClose);
     }
 
@@ -41,6 +40,14 @@ public class GardenUI : SingletonPersistent
         gardenPanel.SetActive(true);
     }
 
+    public void ActivateAllChildren()
+    {
+        // Loop through every direct child of the GameObject this script is attached to
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+    }
     private void UpdateGridSize()
     {
         int currentDay = GameManager.Instance.DayCount;
@@ -50,12 +57,14 @@ public class GardenUI : SingletonPersistent
         {
             GardenSlotUI newSlot = Instantiate(gardenSlotPrefab, gardenGridContainer);
 
-            // FORCE the slot to be active, regardless of the prefab's saved state
+           ActivateAllChildren(); // Ensure the new slot and all its children are active
             newSlot.gameObject.SetActive(true);
 
             activeGridSlots.Add(newSlot);
         }
     }
+
+
 
     private void SleepAndClose()
     {
