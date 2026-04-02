@@ -1,0 +1,52 @@
+name: Build and Deploy Unity to itch.io
+
+on:
+  push:
+    branches:
+      - main # Triggers automatically when you push to the main branch
+
+jobs:
+  build-and-deploy:
+    name: Build and Push to Itch
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. Pull your code from the repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true # CRITICAL: If you use Git LFS for textures/models, this must be true!
+
+      # 2. Free up disk space on the GitHub runner (Unity builds are huge)
+      - name: Free Disk Space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          swap-storage: true
+
+      # 3. Build the Unity Project using GameCI
+      - name: Build Unity Game
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: WebGL # Change to StandaloneWindows64 for PC
+          buildName: VirusFrenzy # The name of your executable/build
+
+      # 4. Upload to Itch.io using Butler
+      - name: Push to itch.io
+        uses: manleydev/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
+          CHANNEL: webgl # Change to 'windows' if building for PC
+          ITCH_GAME: your-itch-game-slug   # e.g., super-cool-game
+          ITCH_USER: your-itch-username    # e.g., john-doe
+          # GameCI outputs builds to the build/<Platform> folder by default
+          PACKAGE: build/WebGL
