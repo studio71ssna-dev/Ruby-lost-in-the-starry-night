@@ -10,7 +10,6 @@ jobs:
     name: Build & Push (${{ matrix.targetPlatform }})
     runs-on: ubuntu-latest
     
-    # Run all 3 builds simultaneously
     strategy:
       fail-fast: false
       matrix:
@@ -30,7 +29,17 @@ jobs:
           fetch-depth: 0
           lfs: true 
 
-      # 2. Free up disk space (with Docker fix applied)
+      # 2. CACHE THE LIBRARY FOLDER (The Speed Boost!)
+      - name: Cache Unity Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ matrix.targetPlatform }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-${{ matrix.targetPlatform }}-
+            Library-
+
+      # 3. Free up disk space 
       - name: Free Disk Space
         uses: jlumbroso/free-disk-space@main
         with:
@@ -40,9 +49,9 @@ jobs:
           haskell: true
           large-packages: true
           swap-storage: true
-          docker-images: false # Prevents deleting the Butler container!
+          docker-images: false
 
-      # 3. Build the Game
+      # 4. Build the Game
       - name: Build Unity Game
         uses: game-ci/unity-builder@v4
         env:
@@ -53,9 +62,9 @@ jobs:
           targetPlatform: ${{ matrix.targetPlatform }}
           buildName: RubyLostInTheStarryNight
 
-      # 4. Upload to Itch.io
+      # 5. Upload to Itch.io
       - name: Push to itch.io
-        uses: manleydev/butler-publish-itchio-action@master # Uses updated master branch
+        uses: manleydev/butler-publish-itchio-action@master 
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
           CHANNEL: ${{ matrix.itchChannel }}
