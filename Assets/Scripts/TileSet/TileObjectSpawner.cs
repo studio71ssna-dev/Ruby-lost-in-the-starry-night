@@ -1,8 +1,13 @@
 using UnityEngine;
+using Singleton;
 
-public class TileObjectSpawner : MonoBehaviour
+// FIX: Was using a raw manual singleton (Instance = this in Awake) inconsistent with
+// every other manager in the project. Converted to SingletonPersistent so it gets
+// DontDestroyOnLoad, duplicate-detection, and the shared GetInstance<T>() accessor
+// automatically, just like AudioManager, ParticleManager, etc.
+public class TileObjectSpawner : SingletonPersistent
 {
-    public static TileObjectSpawner Instance;
+    public static TileObjectSpawner Instance => GetInstance<TileObjectSpawner>();
 
     [Header("Prefabs")]
     public GameObject[] flowerPrefabs;
@@ -13,11 +18,6 @@ public class TileObjectSpawner : MonoBehaviour
     [Range(0, 1)] public float flowerChance = 0.6f;
     [Range(0, 1)] public float obstacleChance = 0.35f;
     [Range(0, 1)] public float wolfChance = 0.15f;
-
-    void Awake()
-    {
-        Instance = this;
-    }
 
     public void Populate(TileChunk chunk)
     {

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using Singleton;
@@ -15,18 +15,18 @@ public class GardenUI : SingletonPersistent
     [SerializeField] private Transform inventorySlotContainer;
 
     [Header("Dynamic Grid Spawning")]
-    [SerializeField] private GardenSlotUI gardenSlotPrefab; // Drag your GardenSlot prefab here
-    [SerializeField] private Transform gardenGridContainer; // Drag the PlantingGrid here
+    [SerializeField] private GardenSlotUI gardenSlotPrefab;
+    [SerializeField] private Transform gardenGridContainer;
 
     private ItemData currentlySelectedFlower;
-    private List<GardenInventorySlotUI> activeInventorySlots = new List<GardenInventorySlotUI>();
 
-    // NEW: Keep track of the physical dirt patches in the world
-    private List<GardenSlotUI> activeGridSlots = new List<GardenSlotUI>();
+    private List<GardenInventorySlotUI> activeInventorySlots = new();
+    private List<GardenSlotUI> activeGridSlots = new();
 
     protected override void OnAwake()
     {
-        sleepButton.onClick.AddListener(SleepAndClose);
+        if (sleepButton != null)
+            sleepButton.onClick.AddListener(SleepAndClose);
     }
 
     public void OpenGarden()
@@ -34,37 +34,35 @@ public class GardenUI : SingletonPersistent
         Time.timeScale = 0f;
         currentlySelectedFlower = null;
 
-        UpdateGridSize(); // Grow the garden if needed!
-        RefreshInventoryUI();
-
         gardenPanel.SetActive(true);
+        UpdateGridSize();
+        RefreshInventoryUI();
     }
 
-    public void ActivateAllChildren()
-    {
-        // Loop through every direct child of the GameObject this script is attached to
-        foreach (Transform child in transform)
-        {
-            child.gameObject.SetActive(true);
-        }
-    }
     private void UpdateGridSize()
     {
+        if (!gardenGridContainer.gameObject.activeSelf)
+            gardenGridContainer.gameObject.SetActive(true);
+
         int currentDay = GameManager.Instance.DayCount;
         int targetSlotCount = 25 + ((currentDay / 3) * 5);
 
         while (activeGridSlots.Count < targetSlotCount)
         {
+
             GardenSlotUI newSlot = Instantiate(gardenSlotPrefab, gardenGridContainer);
-
-           ActivateAllChildren(); // Ensure the new slot and all its children are active
-            newSlot.gameObject.SetActive(true);
-
             activeGridSlots.Add(newSlot);
+            ActivateAllChildren();
+        }
+
+
+        while (activeGridSlots.Count > targetSlotCount)
+        {
+            var slot = activeGridSlots[^1];
+            activeGridSlots.RemoveAt(activeGridSlots.Count - 1);
+            Destroy(slot.gameObject);
         }
     }
-
-
 
     private void SleepAndClose()
     {
@@ -78,15 +76,24 @@ public class GardenUI : SingletonPersistent
     public void SetSelectedFlower(ItemData flower)
     {
         currentlySelectedFlower = flower;
+
         foreach (var slot in activeInventorySlots)
-        {
             slot.UpdateHighlight();
+    }
+
+    public void ActivateAllChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(true);
         }
     }
 
     public void RefreshInventoryUI()
     {
-        foreach (var slot in activeInventorySlots) Destroy(slot.gameObject);
+        foreach (var slot in activeInventorySlots)
+            Destroy(slot.gameObject);
+
         activeInventorySlots.Clear();
 
         if (InventoryManager.Instance == null) return;
@@ -95,13 +102,15 @@ public class GardenUI : SingletonPersistent
         {
             if (kvp.Value > 0)
             {
-                GardenInventorySlotUI newSlot = Instantiate(inventorySlotPrefab, inventorySlotContainer);
+                var newSlot = Instantiate(inventorySlotPrefab, inventorySlotContainer);
                 newSlot.Setup(kvp.Key, kvp.Value);
                 activeInventorySlots.Add(newSlot);
             }
         }
 
-        if (currentlySelectedFlower != null && (!InventoryManager.Instance.flowerInventory.ContainsKey(currentlySelectedFlower) || InventoryManager.Instance.flowerInventory[currentlySelectedFlower] <= 0))
+        if (currentlySelectedFlower != null &&
+            (!InventoryManager.Instance.flowerInventory.ContainsKey(currentlySelectedFlower) ||
+             InventoryManager.Instance.flowerInventory[currentlySelectedFlower] <= 0))
         {
             SetSelectedFlower(null);
         }

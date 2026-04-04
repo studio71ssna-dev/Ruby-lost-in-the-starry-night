@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class GardenSlotUI : MonoBehaviour
 {
-    public Image flowerImage; // The visual representation of the planted flower
+    public Image flowerImage;
     public Button slotButton;
 
     private ItemData plantedFlower;
@@ -11,7 +11,6 @@ public class GardenSlotUI : MonoBehaviour
     private void Awake()
     {
         slotButton.onClick.AddListener(OnSlotClicked);
-        flowerImage.gameObject.SetActive(false); // Hide image until a flower is planted
     }
 
     private void OnSlotClicked()

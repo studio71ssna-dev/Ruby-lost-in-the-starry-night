@@ -22,8 +22,12 @@ public class GroundTileGenerator : MonoBehaviour
     private float spawnX = 0f;
     private bool isScrollingEnabled = false;
 
+    // FIX: Track shop tile instance separately so it can be explicitly destroyed on cleanup,
+    // since it bypasses TilePool. Stored outside the main queue to avoid the null-prefab
+    // fragility that previously existed in activeTiles.
     private Queue<(GameObject instance, GameObject prefab)> activeTiles = new();
     private GameObject[] currentTiles;
+    private GameObject spawnedShopTile;
 
     void Start()
     {
@@ -171,6 +175,10 @@ public class GroundTileGenerator : MonoBehaviour
     // SHOP TILE
     // ------------------------------------------------
 
+    // FIX: Was using raw Instantiate with a null prefab stored in the activeTiles queue,
+    // making ClearAllTiles() brittle (it had to special-case null prefabs).
+    // Now the shop tile is tracked in its own field and destroyed explicitly.
+    // This keeps the activeTiles queue clean (all entries have valid prefabs).
     public void SpawnShopTile()
     {
         if (shopTile == null)
@@ -179,14 +187,16 @@ public class GroundTileGenerator : MonoBehaviour
             return;
         }
 
-        GameObject tile = Instantiate(shopTile, new Vector3(spawnX, 0, 0), Quaternion.identity);
+        // Clean up any previously spawned shop tile first
+        if (spawnedShopTile != null)
+            Destroy(spawnedShopTile);
 
-        TileChunk chunk = tile.GetComponent<TileChunk>();
+        spawnedShopTile = Instantiate(shopTile, new Vector3(spawnX, 0, 0), Quaternion.identity);
+
+        TileChunk chunk = spawnedShopTile.GetComponent<TileChunk>();
 
         if (chunk != null)
             spawnX = chunk.GetEndX();
-
-        activeTiles.Enqueue((tile, null));
     }
 
     // ------------------------------------------------
@@ -204,10 +214,15 @@ public class GroundTileGenerator : MonoBehaviour
             if (chunk != null)
                 chunk.ClearGeneratedObjects();
 
-            if (prefab != null)
-                TilePool.Instance.ReturnTile(instance, prefab);
-            else
-                Destroy(instance);
+            // FIX: No longer need a null-prefab check here — shop tile is handled separately
+            TilePool.Instance.ReturnTile(instance, prefab);
+        }
+
+        // Also destroy the shop tile if it exists
+        if (spawnedShopTile != null)
+        {
+            Destroy(spawnedShopTile);
+            spawnedShopTile = null;
         }
     }
 

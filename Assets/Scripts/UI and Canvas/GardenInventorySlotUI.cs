@@ -9,34 +9,41 @@ public class GardenInventorySlotUI : MonoBehaviour
     public Button selectButton;
 
     [Header("Optional Polish")]
-    public GameObject highlightFrame; // Turn this on/off to show it's currently selected
+    public GameObject highlightFrame;
 
     private ItemData myFlower;
 
     public void Setup(ItemData flower, int quantity)
     {
         myFlower = flower;
-        flowerIcon.sprite = flower.icon;
-        quantityText.text = "x" + quantity;
 
-        selectButton.onClick.RemoveAllListeners();
-        selectButton.onClick.AddListener(OnSelectClicked);
+        if (flowerIcon != null)
+            flowerIcon.sprite = flower.icon;
+
+        if (quantityText != null)
+            quantityText.text = "x" + quantity;
+
+        if (selectButton != null)
+        {
+            selectButton.onClick.RemoveAllListeners();
+            selectButton.onClick.AddListener(OnSelectClicked);
+        }
 
         UpdateHighlight();
     }
 
     private void OnSelectClicked()
     {
-        // Tell the GardenUI manager that this is the flower we want to plant
         GardenUI.Instance.SetSelectedFlower(myFlower);
     }
 
     public void UpdateHighlight()
     {
-        // If we have a highlight frame, turn it on only if this flower is the selected one
         if (highlightFrame != null)
         {
-            highlightFrame.SetActive(GardenUI.Instance.GetSelectedFlower() == myFlower);
+            highlightFrame.SetActive(
+                GardenUI.Instance.GetSelectedFlower() == myFlower
+            );
         }
     }
 }
