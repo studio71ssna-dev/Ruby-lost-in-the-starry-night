@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WolfInteractable : MonoBehaviour,IInteractable
+public class WolfInteractable : MonoBehaviour
 {
     [SerializeField]private SongController songController;
     [SerializeField] private SongData[] songs;

@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public Transform groundCheck;
     public float checkRadius = 0.2f;
-    public MusicTimer musicTimer;
+    //public MusicTimer musicTimer;
 
     [Header("Interaction")]
     private List<GameObject> nearbyFlowers = new();
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         // Subscribing to events from your InputHandler
         InputHandler.Instance.OnJump += Jump;
-        InputHandler.Instance.OnInteract += TryInteract;
+        
     }
 
     private void OnDisable()
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         if (InputHandler.Instance != null)
         {
             InputHandler.Instance.OnJump -= Jump;
-            InputHandler.Instance.OnInteract -= TryInteract;
+      
         }
     }
 
@@ -124,34 +124,7 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
-    private void TryInteract()
-    {
-        if (nearbyFlowers.Count > 0 && nearbyFlowers[0] != null)
-        {
-            // Play Pickup Animation
-            SetState(PlayerAnimationManager.PlayerAnimState.Pickup);
-
-
-            GameObject flowerObj = nearbyFlowers[0];
-            FlowerItem flowerScript = flowerObj.GetComponent<FlowerItem>();
-
-            if (flowerScript != null && flowerScript.data != null)
-            {
-                // Communication with DayTimeManager and UIManager remains intact
-                FindObjectOfType<DayTimeManager>().AddFlowerToSession(flowerScript.data);
-                nearbyFlowers.RemoveAt(0);
-                ParticleManager.Instance.PlayParticle("PickUp", flowerObj.transform.position, flowerScript.data.glowColor);
-                AudioManager.Instance.Play("Pickup", flowerObj.transform.position);
-                Destroy(flowerObj,0.25f);
-                // Return to idle after a delay or via Animation Event
-                Invoke(nameof(ResetToIdle), 0.5f);
-            }
-        }
-        if (wolfnearby)
-        {
-            musicTimer.PlayRandomSong();
-        }
-    }
+   
     private void ResetToIdle() => SetState(PlayerAnimationManager.PlayerAnimState.Idle);
 
     private void OnTriggerEnter2D(Collider2D col)
