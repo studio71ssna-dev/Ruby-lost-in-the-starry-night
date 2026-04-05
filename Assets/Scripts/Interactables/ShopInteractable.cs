@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShopInteractable : MonoBehaviour
+public class ShopInteractable : MonoBehaviour, IInteractable
 {
     public void Interact(PlayerController player)
     {
