@@ -1,15 +1,18 @@
-name: Build and Deploy Unity to itch.io
+name: 🎮 Build & Deploy Unity (RubyStarryNight)
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  ITCH_GAME: ruby-lost-in-the-starry-night
+  ITCH_USER: studio-71
 
 jobs:
   build-and-deploy:
-    name: Build & Push (${{ matrix.targetPlatform }})
     runs-on: ubuntu-latest
-    
+
     strategy:
       fail-fast: false
       matrix:
@@ -22,24 +25,24 @@ jobs:
             itchChannel: android
 
     steps:
-      # 1. Pull your code
+      # 1️⃣ Checkout
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          lfs: true 
+          lfs: true
 
-      # 2. CACHE THE LIBRARY FOLDER (The Speed Boost!)
+      # 2️⃣ Cache
       - name: Cache Unity Library
         uses: actions/cache@v4
         with:
           path: Library
-          key: Library-${{ matrix.targetPlatform }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          key: Library-${{ matrix.targetPlatform }}-${{ github.ref }}
           restore-keys: |
             Library-${{ matrix.targetPlatform }}-
             Library-
 
-      # 3. Free up disk space 
+      # 3️⃣ Free Disk Space (important for Android + WebGL)
       - name: Free Disk Space
         uses: jlumbroso/free-disk-space@main
         with:
@@ -51,8 +54,9 @@ jobs:
           swap-storage: true
           docker-images: false
 
-      # 4. Build the Game
+      # 4️⃣ Build Unity
       - name: Build Unity Game
+        timeout-minutes: 90
         uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -60,14 +64,59 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
-          buildName: RubyLostInTheStarryNight
+          buildName: RubyStarryNight
 
-      # 5. Upload to Itch.io
-      - name: Push to itch.io
-        uses: manleydev/butler-publish-itchio-action@master 
+      # 5️⃣ Fix Permissions (CRITICAL)
+      - name: Fix Permissions
+        run: sudo chown -R $USER:$USER build
+
+      # 🪟 Windows Zip
+      - name: Zip Build (Windows)
+        if: matrix.targetPlatform == 'StandaloneWindows64'
+        run: |
+          cd build/StandaloneWindows64
+          zip -r StandaloneWindows64.zip .
+          mv StandaloneWindows64.zip ../
+
+      # 🌐 WebGL Zip (IMPORTANT)
+      - name: Zip Build (WebGL)
+        if: matrix.targetPlatform == 'WebGL'
+        run: |
+          cd build/WebGL
+          zip -r WebGL.zip *
+          mv WebGL.zip ../
+
+      # 🤖 Android Zip (APK/AAB)
+      - name: Zip Build (Android)
+        if: matrix.targetPlatform == 'Android'
+        run: |
+          cd build/Android
+          zip -r Android.zip .
+          mv Android.zip ../
+
+      # 6️⃣ Upload Artifact (backup)
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Build-${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}.zip
+
+      # 7️⃣ Upload to itch (latest)
+      - name: Push to itch.io (latest)
+        uses: manleydev/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
           CHANNEL: ${{ matrix.itchChannel }}
-          ITCH_GAME: ruby-lost-in-the-starry-night
-          ITCH_USER: studio-71
-          PACKAGE: build/${{ matrix.targetPlatform }}
+          ITCH_GAME: ${{ env.ITCH_GAME }}
+          ITCH_USER: ${{ env.ITCH_USER }}
+          PACKAGE: build/${{ matrix.targetPlatform }}.zip
+
+      # 8️⃣ Upload to itch (versioned)
+      - name: Push to itch.io (versioned)
+        uses: manleydev/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
+          CHANNEL: ${{ matrix.itchChannel }}-${{ github.run_number }}
+          ITCH_GAME: ${{ env.ITCH_GAME }}
+          ITCH_USER: ${{ env.ITCH_USER }}
+          PACKAGE: build/${{ matrix.targetPlatform }}.zip
