@@ -102,11 +102,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6940985435447395851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f78bd4cc9ebf2bf45a5015ab4565d075, type: 3}
+  m_Script: {fileID: 11500000, guid: b3735e6e22b23244ea771ecf16b6cc3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
   data: {fileID: 11400000, guid: 24d64e3a8ab28ea4982da8eba6b213e3, type: 2}
-  collectEffectPrefab: {fileID: 0}
 --- !u!61 &4416271199919272427
 BoxCollider2D:
   m_ObjectHideFlags: 0

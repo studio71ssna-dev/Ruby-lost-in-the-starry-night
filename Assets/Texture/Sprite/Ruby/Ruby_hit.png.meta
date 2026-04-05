@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: 97079877951918b4b9aed5edd7efda1f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5099774477936975916
+    second: Ruby_Side-hit_react-v1_0
+  - first:
+      213: -632112044230781239
+    second: Ruby_Side-hit_react-v1_1
+  - first:
+      213: -5044154666846942241
+    second: Ruby_Side-hit_react-v1_2
+  - first:
+      213: 402745516403589095
+    second: Ruby_Side-hit_react-v1_3
+  - first:
+      213: -8315223721434530164
+    second: Ruby_Side-hit_react-v1_4
+  - first:
+      213: -2338671319646755953
+    second: Ruby_Side-hit_react-v1_5
+  - first:
+      213: -1389484927472370765
+    second: Ruby_Side-hit_react-v1_6
+  - first:
+      213: 2246673434980977126
+    second: Ruby_Side-hit_react-v1_7
+  - first:
+      213: 1818271890106201596
+    second: Ruby_Side-hit_react-v1_8
+  - first:
+      213: 1757026356272883971
+    second: Ruby_Side-hit_react-v1_9
+  - first:
+      213: 788646845010154865
+    second: Ruby_Side-hit_react-v1_10
+  - first:
+      213: 6990392655293134764
+    second: Ruby_Side-hit_react-v1_11
+  - first:
+      213: -2709045542492952579
+    second: Ruby_Side-hit_react-v1_12
+  - first:
+      213: -8161157078299789984
+    second: Ruby_Side-hit_react-v1_13
+  - first:
+      213: 731068199601369893
+    second: Ruby_Side-hit_react-v1_14
+  - first:
+      213: 6272875997465914961
+    second: Ruby_Side-hit_react-v1_15
+  - first:
+      213: -6875057054119292283
+    second: Ruby_Side-hit_react-v1_16
+  - first:
+      213: 6934799009469657546
+    second: Ruby_Side-hit_react-v1_17
+  - first:
+      213: -3762037223441880570
+    second: Ruby_Side-hit_react-v1_18
+  - first:
+      213: -5316395138240518145
+    second: Ruby_Side-hit_react-v1_19
+  - first:
+      213: 5395099460988368351
+    second: Ruby_Side-hit_react-v1_20
+  - first:
+      213: -4149984697709465346
+    second: Ruby_Side-hit_react-v1_21
+  - first:
+      213: 1502768088899901691
+    second: Ruby_Side-hit_react-v1_22
+  - first:
+      213: 8287148265150110568
+    second: Ruby_Side-hit_react-v1_23
+  - first:
+      213: 7145633030726473554
+    second: Ruby_Side-hit_react-v1_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1030
+        width: 143
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2069003ed906c640800000000000000
+      internalID: 5099774477936975916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_1
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1030
+        width: 143
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c6d061e1794a37f0800000000000000
+      internalID: -632112044230781239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_2
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 1030
+        width: 144
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdb857a3e009ff9b0800000000000000
+      internalID: -5044154666846942241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_3
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 1030
+        width: 146
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7effd10d9e6d69500800000000000000
+      internalID: 402745516403589095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_4
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 1030
+        width: 159
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8e3effc4146a9c80800000000000000
+      internalID: -8315223721434530164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_5
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 774
+        width: 178
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f83af0a53de5b8fd0800000000000000
+      internalID: -2338671319646755953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_6
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 774
+        width: 181
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bbff3df1de87bce0800000000000000
+      internalID: -1389484927472370765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_7
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 774
+        width: 182
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e90952f599cd2f10800000000000000
+      internalID: 2246673434980977126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_8
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 774
+        width: 181
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf5bbd286accb3910800000000000000
+      internalID: 1818271890106201596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_9
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 774
+        width: 177
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 309e4a27926326810800000000000000
+      internalID: 1757026356272883971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_10
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 518
+        width: 171
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 175101a8026d1fa00800000000000000
+      internalID: 788646845010154865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_11
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 518
+        width: 157
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca73f33551dd20160800000000000000
+      internalID: 6990392655293134764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_12
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 518
+        width: 148
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df72a57ae69876ad0800000000000000
+      internalID: -2709045542492952579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_13
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 518
+        width: 148
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 065b6cf70eebdbe80800000000000000
+      internalID: -8161157078299789984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_14
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 518
+        width: 141
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 523f2d777a6452a00800000000000000
+      internalID: 731068199601369893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_15
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 262
+        width: 147
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15ea70d0c7bbd0750800000000000000
+      internalID: 6272875997465914961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_16
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 262
+        width: 148
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5821daee804e690a0800000000000000
+      internalID: -6875057054119292283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_17
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 262
+        width: 146
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac17b2cf4fa5d3060800000000000000
+      internalID: 6934799009469657546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_18
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 262
+        width: 145
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60a23f0d31f8acbc0800000000000000
+      internalID: -3762037223441880570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_19
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 262
+        width: 145
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff76f8b0ace5836b0800000000000000
+      internalID: -5316395138240518145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_20
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 6
+        width: 145
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd5fc14106e3fda40800000000000000
+      internalID: 5395099460988368351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_21
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 6
+        width: 146
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef078bda7ea4866c0800000000000000
+      internalID: -4149984697709465346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_22
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 6
+        width: 145
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf8dba66d97ead410800000000000000
+      internalID: 1502768088899901691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_23
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 6
+        width: 144
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b5441a07dd10370800000000000000
+      internalID: 8287148265150110568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_Side-hit_react-v1_24
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 6
+        width: 143
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 257dfbbd1636a2360800000000000000
+      internalID: 7145633030726473554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ruby_Side-hit_react-v1_0: 5099774477936975916
+      Ruby_Side-hit_react-v1_1: -632112044230781239
+      Ruby_Side-hit_react-v1_10: 788646845010154865
+      Ruby_Side-hit_react-v1_11: 6990392655293134764
+      Ruby_Side-hit_react-v1_12: -2709045542492952579
+      Ruby_Side-hit_react-v1_13: -8161157078299789984
+      Ruby_Side-hit_react-v1_14: 731068199601369893
+      Ruby_Side-hit_react-v1_15: 6272875997465914961
+      Ruby_Side-hit_react-v1_16: -6875057054119292283
+      Ruby_Side-hit_react-v1_17: 6934799009469657546
+      Ruby_Side-hit_react-v1_18: -3762037223441880570
+      Ruby_Side-hit_react-v1_19: -5316395138240518145
+      Ruby_Side-hit_react-v1_2: -5044154666846942241
+      Ruby_Side-hit_react-v1_20: 5395099460988368351
+      Ruby_Side-hit_react-v1_21: -4149984697709465346
+      Ruby_Side-hit_react-v1_22: 1502768088899901691
+      Ruby_Side-hit_react-v1_23: 8287148265150110568
+      Ruby_Side-hit_react-v1_24: 7145633030726473554
+      Ruby_Side-hit_react-v1_3: 402745516403589095
+      Ruby_Side-hit_react-v1_4: -8315223721434530164
+      Ruby_Side-hit_react-v1_5: -2338671319646755953
+      Ruby_Side-hit_react-v1_6: -1389484927472370765
+      Ruby_Side-hit_react-v1_7: 2246673434980977126
+      Ruby_Side-hit_react-v1_8: 1818271890106201596
+      Ruby_Side-hit_react-v1_9: 1757026356272883971
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
