@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0e34fba238da7b84b91999550b7a0d63
+guid: b2111e8acadd6624c9f82556f61ab317
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3628990221839939330
-    second: Red_lily_0
+      213: 2600944073215298805
+    second: ruby walk w flower 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red_lily_0
+      name: ruby walk w flower 1_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 0
-        width: 128
-        height: 142
+        x: 35
+        y: 10
+        width: 313
+        height: 501
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 207b22a2163cc5230800000000000000
-      internalID: 3628990221839939330
+      spriteID: 5fcc7acaad8681420800000000000000
+      internalID: 2600944073215298805
       vertices: []
       indices: 
       edges: []
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Red_lily_0: 3628990221839939330
+      ruby walk w flower 1_0: 2600944073215298805
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

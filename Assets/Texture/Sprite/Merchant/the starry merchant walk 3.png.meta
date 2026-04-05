@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e3c04cc5697d77c45a2f5c99d868c99b
+guid: be5900733042c594d968e5b4634ff44c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4107716287124996956
-    second: Orange Popy_0
+      213: -3272869307768202106
+    second: the starry merchant walk 3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Orange Popy_0
+      name: the starry merchant walk 3_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 0
-        width: 128
-        height: 146
+        x: 85
+        y: 12
+        width: 243
+        height: 490
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c530c24133a810930800000000000000
-      internalID: 4107716287124996956
+      spriteID: 68c923a74be6492d0800000000000000
+      internalID: -3272869307768202106
       vertices: []
       indices: 
       edges: []
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Orange Popy_0: 4107716287124996956
+      the starry merchant walk 3_0: -3272869307768202106
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

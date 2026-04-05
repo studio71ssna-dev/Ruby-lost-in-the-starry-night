@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5598762304333512283}
   - component: {fileID: 2147365204275702358}
   - component: {fileID: 8101716726483843968}
-  - component: {fileID: -7474677257006540348}
   m_Layer: 0
   m_Name: Yellow_Tulip
   m_TagString: Generated
@@ -92,7 +91,7 @@ SpriteRenderer:
   m_Size: {x: 1.52, y: 1.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!114 &2147365204275702358
 MonoBehaviour:
@@ -107,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
   data: {fileID: 11400000, guid: 08c39b563b14fa14686c955e615b2013, type: 2}
+  collectEffectPrefab: {fileID: 0}
 --- !u!61 &8101716726483843968
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -153,16 +153,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.52, y: 1.52}
   m_EdgeRadius: 0
---- !u!114 &-7474677257006540348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463573966004650689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a752a660c5294b54f8d66471d0f5f5fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlowerInteractable
-  data: {fileID: 11400000, guid: 08c39b563b14fa14686c955e615b2013, type: 2}

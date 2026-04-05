@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 310870860054ebe429ffae2e7e3c8e43
+guid: a171e610762c51a4a975952647e2baa5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7528371378283355072
-    second: White_Daisy_0
+      213: -5859008400836099316
+    second: ruby walk w flower 4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: White_Daisy_0
+      name: ruby walk w flower 4_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 0
-        width: 125
-        height: 147
+        x: 63
+        y: 13
+        width: 285
+        height: 498
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 044e3345e1ad58790800000000000000
-      internalID: -7528371378283355072
+      spriteID: c03822cd6ee90bea0800000000000000
+      internalID: -5859008400836099316
       vertices: []
       indices: 
       edges: []
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      White_Daisy_0: -7528371378283355072
+      ruby walk w flower 4_0: -5859008400836099316
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,73 +1,36 @@
-using UnityEngine;
 using SingletonManagers;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private PlayerAnimationManager anim;
-
-    public PlayerStateMachine StateMachine { get; private set; }
-
-    // ===== STATES =====
-    public IdleState IdleState { get; private set; }
-    public WalkState WalkState { get; private set; }
-    public JumpState JumpState { get; private set; }
-    public HurtState HurtState { get; private set; }
-    public RestState RestState { get; private set; }
-    public PickupState PickupState { get; private set; }
-
-    [Header("Health")]
-    public int maxHealth = 5;
-    private int currentHealth;
-    public int CurrentHealth => currentHealth;
-
-    [Header("Movement")]
+    [Header("Movement Settings")]
     public float moveSpeed = 7f;
     public float jumpForce = 12f;
-
-    [Header("Ground Check")]
-    public Transform groundCheck;
     public LayerMask groundLayer;
+    public Transform groundCheck;
     public float checkRadius = 0.2f;
-
-    [Header("Music")]
     public MusicTimer musicTimer;
 
-    // ===== INTERACTION =====
-    private IInteractable currentInteractable;
-    private FlowerInteractable pickupTarget;
+    [Header("Interaction")]
+    private List<GameObject> nearbyFlowers = new();
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<PlayerAnimationManager>();
+    private Rigidbody2D rb;
+    private bool isGrounded;
+    private PlayerAnimationManager animManager;
+    private PlayerAnimationManager.PlayerAnimState currentState;
+    private bool wolfnearby;
 
-        StateMachine = new PlayerStateMachine();
-
-        IdleState = new IdleState(this, StateMachine, anim);
-        WalkState = new WalkState(this, StateMachine, anim);
-        JumpState = new JumpState(this, StateMachine, anim);
-        HurtState = new HurtState(this, StateMachine, anim);
-        RestState = new RestState(this, StateMachine, anim);
-        PickupState = new PickupState(this, StateMachine, anim);
-
-
-    }
-
-    private void Start()
-    {
-        currentHealth = maxHealth;
-        StateMachine.Initialize(IdleState);
-    }
+    [SerializeField] private float walkDustInterval = 0.25f;
+    private float walkDustTimer = 0f;
 
     private void OnEnable()
     {
-        if (InputHandler.Instance != null)
-        {
-            InputHandler.Instance.OnJump += Jump;
-            InputHandler.Instance.OnInteract += HandleInteract;
-        }
+        // Subscribing to events from your InputHandler
+        InputHandler.Instance.OnJump += Jump;
+        InputHandler.Instance.OnInteract += TryInteract;
     }
 
     private void OnDisable()
@@ -75,119 +38,142 @@ public class PlayerController : MonoBehaviour
         if (InputHandler.Instance != null)
         {
             InputHandler.Instance.OnJump -= Jump;
-            InputHandler.Instance.OnInteract -= HandleInteract;
+            InputHandler.Instance.OnInteract -= TryInteract;
         }
     }
 
-    private void Update()
+    void Start()
     {
-        StateMachine.Update();
-        HandleMovement();
+        rb = GetComponent<Rigidbody2D>();
+        animManager = GetComponent<PlayerAnimationManager>();
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
-    // ===== MOVEMENT =====
-
-    private void HandleMovement()
+    void Update()
     {
-        float move = GetMoveInput();
-        rb.linearVelocity = new Vector2(move * moveSpeed, rb.linearVelocity.y);
-
-        if (move != 0)
-            transform.localScale = new Vector3(Mathf.Sign(move), 1, 1);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+        ApplyMovement();
+        DetermineAnimationState();
     }
 
-    public void TakeDamage(int amount)
+
+    private void ApplyMovement()
     {
-        // Ignore damage if already resting
-        if (StateMachine.CurrentState == RestState) return;
-
-        currentHealth -= amount;
-
-        if (currentHealth <= 0)
+        // Stop movement if we are currently in the middle of a Pickup animation
+        if (currentState == PlayerAnimationManager.PlayerAnimState.Pickup)
         {
-            currentHealth = 0;
-            StateMachine.ChangeState(RestState);
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // Keep falling if in air, but stop horizontal
+            return;
+        }
+
+        // Accessing MoveDirection from your InputHandler
+        Vector2 moveDir = InputHandler.Instance.MoveDirection;
+        rb.linearVelocity = new Vector2(moveDir.x * moveSpeed, rb.linearVelocity.y);
+
+        // Flip Sprite based on direction
+        if (moveDir.x != 0)
+        {
+            transform.localScale = new Vector3(Mathf.Sign(moveDir.x), 1, 1);
+        }
+
+        if (Mathf.Abs(moveDir.x) > 0.1f && isGrounded)
+        {
+            ExecuteAfterInterval(ref walkDustTimer, walkDustInterval, () =>
+            {
+                ParticleManager.Instance.PlayParticle("Walk", groundCheck.position);
+            });
+        }
+    }
+
+    private void DetermineAnimationState()
+    {
+        // GUARD CLAUSE: If we are picking something up, lock the state until it finishes.
+        if (currentState == PlayerAnimationManager.PlayerAnimState.Pickup)
+            return;
+
+        // Priority-based animation switching
+        if (!isGrounded)
+        {
+            SetState(PlayerAnimationManager.PlayerAnimState.Jump);
+        }
+        else if (Mathf.Abs(rb.linearVelocity.x) > 0.1f)
+        {
+            SetState(PlayerAnimationManager.PlayerAnimState.Walk);
         }
         else
         {
-            StateMachine.ChangeState(HurtState);
+            // We removed the Pickup check here because the guard clause above handles it
+            if (currentState != PlayerAnimationManager.PlayerAnimState.Rest)
+            {
+                SetState(PlayerAnimationManager.PlayerAnimState.Idle);
+            }
         }
     }
 
-    public void RestoreHealth(int amount)
+    private void SetState(PlayerAnimationManager.PlayerAnimState newState)
     {
-        currentHealth += amount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        if (currentState == newState) return;
+        currentState = newState;
+        animManager.UpdateAnimation(newState);
     }
 
-    public float GetMoveInput()
+    private void Jump()
     {
-        return InputHandler.Instance.MoveDirection.x;
-    }
-
-    public bool IsGrounded()
-    {
-        return Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
-    }
-
-    public void Jump()
-    {
-        if (!IsGrounded()) return;
-
+        if (!isGrounded) return;
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
-    // ===== INTERACTION SYSTEM =====
-
-    private void HandleInteract()
+    private void TryInteract()
     {
-        currentInteractable?.Interact(this);
+        if (nearbyFlowers.Count > 0 && nearbyFlowers[0] != null)
+        {
+            // Play Pickup Animation
+            SetState(PlayerAnimationManager.PlayerAnimState.Pickup);
+
+
+            GameObject flowerObj = nearbyFlowers[0];
+            FlowerItem flowerScript = flowerObj.GetComponent<FlowerItem>();
+
+            if (flowerScript != null && flowerScript.data != null)
+            {
+                // Communication with DayTimeManager and UIManager remains intact
+                FindObjectOfType<DayTimeManager>().AddFlowerToSession(flowerScript.data);
+                nearbyFlowers.RemoveAt(0);
+                ParticleManager.Instance.PlayParticle("PickUp", flowerObj.transform.position, flowerScript.data.glowColor);
+                AudioManager.Instance.Play("Pickup", flowerObj.transform.position);
+                Destroy(flowerObj,0.25f);
+                // Return to idle after a delay or via Animation Event
+                Invoke(nameof(ResetToIdle), 0.5f);
+            }
+        }
+        if (wolfnearby)
+        {
+            musicTimer.PlayRandomSong();
+        }
     }
+    private void ResetToIdle() => SetState(PlayerAnimationManager.PlayerAnimState.Idle);
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        var interactable = col.GetComponent<IInteractable>();
-        if (interactable != null)
-            currentInteractable = interactable;
+        if (col.CompareTag("Flower") && !nearbyFlowers.Contains(col.gameObject)) nearbyFlowers.Add(col.gameObject);
+        if (col.CompareTag("Wolf")) wolfnearby = true;      
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        var interactable = col.GetComponent<IInteractable>();
-
-        if (interactable != null && interactable == currentInteractable)
-            currentInteractable = null;
+        if (col.CompareTag("Flower")) nearbyFlowers.Remove(col.gameObject);
+        if (col.CompareTag("Wolf")) wolfnearby = false;
     }
 
-    // ===== PICKUP FLOW =====
-
-    public void TriggerPickup(FlowerInteractable flower)
+    private void ExecuteAfterInterval(ref float timer, float interval, System.Action action)
     {
-        pickupTarget = flower;
-        StateMachine.ChangeState(PickupState);
-    }
+        timer += Time.deltaTime;
 
-    public void PerformPickup()
-    {
-        if (pickupTarget == null) return;
-
-        // Add to session
-        var flowerData = pickupTarget.data;
-
-        FindObjectOfType<DayTimeManager>().AddFlowerToSession(flowerData);
-
-        // Effects
-        ParticleManager.Instance.PlayParticle(
-            "PickUp",
-            pickupTarget.transform.position,
-            flowerData.glowColor
-        );
-
-        AudioManager.Instance.Play("Pickup", pickupTarget.transform.position);
-
-        Destroy(pickupTarget.gameObject, 0.2f);
-
-        pickupTarget = null;
+        if (timer >= interval)
+        {
+            timer = 0f;
+            action?.Invoke();
+        }
     }
 }

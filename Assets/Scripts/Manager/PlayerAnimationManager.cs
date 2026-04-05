@@ -3,28 +3,22 @@ using UnityEngine;
 public class PlayerAnimationManager : MonoBehaviour
 {
     private Animator anim;
+    private static readonly int StateHash = Animator.StringToHash("State");
 
-    [SerializeField] private float crossFadeDuration = 0.15f;
+    // Define the states as an Enum here for global access
+    public enum PlayerAnimState { Idle, Walk, Jump, Pickup, Hurt, Rest, Roll }
 
-    private bool isLocked;
+    private void Awake() => anim = GetComponent<Animator>();
 
-    private void Awake()
+    public void UpdateAnimation(PlayerAnimState newState)
     {
-        anim = GetComponent<Animator>();
+        // Use an Integer or Trigger in your Animator Controller
+        anim.SetInteger(StateHash, (int)newState);
     }
 
-    public void Play(string stateName, bool lockState = false)
+    // Special case for one-shot triggers like 'Hurt'
+    public void PlayTrigger(string triggerName)
     {
-        if (isLocked) return;
-
-        anim.CrossFade(stateName, crossFadeDuration);
-
-        if (lockState)
-            isLocked = true;
-    }
-
-    public void Unlock()
-    {
-        isLocked = false;
+        anim.SetTrigger("Interacting");
     }
 }
