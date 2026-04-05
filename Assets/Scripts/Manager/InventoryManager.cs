@@ -8,22 +8,62 @@ public class InventoryManager : SingletonPersistent
 
     public int totalStardust { get; private set; }
 
-    private HashSet<ItemData> ownedItems = new HashSet<ItemData>();
+    private HashSet<ItemData> ownedUpgrades = new HashSet<ItemData>();
+    private HashSet<ItemData> dailyPurchasedUpgrades = new HashSet<ItemData>();
 
-    public void AddStardust(int amount)
+    // NEW: Track how many of each flower the player owns
+    public Dictionary<ItemData, int> flowerInventory = new Dictionary<ItemData, int>();
+
+    private void Start()
     {
-        totalStardust += amount;
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnDayChanged += ResetDailyPurchases;
     }
 
-    public bool HasItem(ItemData item) => ownedItems.Contains(item);
+    private void OnDestroy()
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnDayChanged -= ResetDailyPurchases;
+    }
+
+    public void AddStardust(int amount) => totalStardust += amount;
+
+    public bool HasBoughtUpgradeToday(ItemData item) => dailyPurchasedUpgrades.Contains(item);
 
     public bool TryPurchase(ItemData item)
     {
-        if (HasItem(item)) return false;
         if (totalStardust < item.cost) return false;
+        if (item.itemType == ItemType.Upgrade && HasBoughtUpgradeToday(item)) return false;
 
         totalStardust -= item.cost;
-        ownedItems.Add(item);
+
+        if (item.itemType == ItemType.Upgrade)
+        {
+            dailyPurchasedUpgrades.Add(item);
+            ownedUpgrades.Add(item);
+        }
+        else if (item.itemType == ItemType.Flower)
+        {
+            // Add or increment the flower count
+            if (flowerInventory.ContainsKey(item))
+                flowerInventory[item]++;
+            else
+                flowerInventory[item] = 1;
+        }
+
         return true;
     }
+
+    // NEW: Call this when placing a flower in the garden
+    public bool TryUseFlower(ItemData flower)
+    {
+        if (flowerInventory.ContainsKey(flower) && flowerInventory[flower] > 0)
+        {
+            flowerInventory[flower]--;
+            return true;
+        }
+        return false;
+    }
+
+    private void ResetDailyPurchases(int day) => dailyPurchasedUpgrades.Clear();
 }

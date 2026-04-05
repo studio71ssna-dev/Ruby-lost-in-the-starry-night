@@ -1,66 +1,47 @@
 using UnityEngine;
-using System.Collections;
-using DG.Tweening;
+
 public class Note : MonoBehaviour
 {
-    private float hitTime;
-    private float spawnTime;
-    private int noteFret;
-    private int lane;
+    private double hitTime;
+    private double spawnTime;
 
-    private Vector3 spawnPosition;
-    private Vector3 hitPosition;
+    private Vector3 spawnPos;
+    private Vector3 hitPos;
 
-    private MusicTimer musicTimer;
-    private SpriteRenderer spriteRenderer;
+    private SongController songController;
 
-    public float HitTime => hitTime;
-    public int NoteFret => noteFret;
-    public int Lane => lane;
-
-    private void Awake()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-    private void Start()
-    {
-        StartCoroutine(DestroyAfterUnscaledTime(5f));
-    }
+    public int NoteFret { get; private set; }
+    public int Lane { get; private set; }
+    public double HitTime => hitTime;
 
     public void Init(
-        float noteHitTime,
-        float noteSpawnTime,
+        double hitTime,
+        double spawnTime,
         Vector3 spawnPos,
         Vector3 hitPos,
-        MusicTimer timer,
-        Color fretColor,
-        int noteFretIndex,
-        int laneIndex)
+        SongController controller,
+        int fret,
+        int lane)
     {
-        hitTime = noteHitTime;
-        spawnTime = noteSpawnTime;
+        this.hitTime = hitTime;
+        this.spawnTime = spawnTime;
+        this.spawnPos = spawnPos;
+        this.hitPos = hitPos;
+        this.songController = controller;
 
-        spawnPosition = spawnPos;
-        hitPosition = hitPos;
+        this.NoteFret = fret;
+        this.Lane = lane;
 
-        musicTimer = timer;
-        noteFret = noteFretIndex;
-        lane = laneIndex;
-
-        if (spriteRenderer != null)
-            spriteRenderer.color = fretColor;
+        transform.position = spawnPos;
     }
 
-    void Update()
+    private void Update()
     {
-        float songTime = musicTimer.SongTime;
-        float t = (songTime - spawnTime) / (hitTime - spawnTime);
-        transform.position = Vector3.LerpUnclamped(spawnPosition, hitPosition, t);
-    }
-    IEnumerator DestroyAfterUnscaledTime(float delay)
-    {
-        yield return new WaitForSecondsRealtime(delay);
-        Destroy(gameObject);
-    }
+        if (songController == null) return;
 
+        double songTime = songController.SongTime;
+
+        float t = (float)((songTime - spawnTime) / (hitTime - spawnTime));
+        transform.position = Vector3.LerpUnclamped(spawnPos, hitPos, t);
+    }
 }
