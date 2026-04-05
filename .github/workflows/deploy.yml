@@ -1,4 +1,4 @@
-name: 🎮 Build & Deploy Unity (EchoesOf71)
+name: 🎮 Build & Deploy Unity (RubyStarryNight)
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  ITCH_GAME: echoes-of-71
+  ITCH_GAME: ruby-lost-in-the-starry-night
   ITCH_USER: studio-71
 
 jobs:
@@ -21,6 +21,8 @@ jobs:
             itchChannel: html
           - targetPlatform: StandaloneWindows64
             itchChannel: windows
+          - targetPlatform: Android
+            itchChannel: android
 
     steps:
       # 1️⃣ Checkout
@@ -30,7 +32,7 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      # 2️⃣ Cache (speeds up builds a LOT)
+      # 2️⃣ Cache
       - name: Cache Unity Library
         uses: actions/cache@v4
         with:
@@ -40,7 +42,7 @@ jobs:
             Library-${{ matrix.targetPlatform }}-
             Library-
 
-      # 3️⃣ Free disk space (critical for WebGL)
+      # 3️⃣ Free Disk Space (important for Android + WebGL)
       - name: Free Disk Space
         uses: jlumbroso/free-disk-space@main
         with:
@@ -52,7 +54,7 @@ jobs:
           swap-storage: true
           docker-images: false
 
-      # 4️⃣ Build Unity (WebGL needs more time)
+      # 4️⃣ Build Unity
       - name: Build Unity Game
         timeout-minutes: 90
         uses: game-ci/unity-builder@v4
@@ -62,9 +64,9 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
-          buildName: EchoesOf71
+          buildName: RubyStarryNight
 
-      # ✅ Fix permission issue from Unity container
+      # 5️⃣ Fix Permissions (CRITICAL)
       - name: Fix Permissions
         run: sudo chown -R $USER:$USER build
 
@@ -76,7 +78,7 @@ jobs:
           zip -r StandaloneWindows64.zip .
           mv StandaloneWindows64.zip ../
 
-      # 🌐 WebGL Zip (CRITICAL FIX)
+      # 🌐 WebGL Zip (IMPORTANT)
       - name: Zip Build (WebGL)
         if: matrix.targetPlatform == 'WebGL'
         run: |
@@ -84,7 +86,15 @@ jobs:
           zip -r WebGL.zip *
           mv WebGL.zip ../
 
-      # 6️⃣ Upload artifact (backup)
+      # 🤖 Android Zip (APK/AAB)
+      - name: Zip Build (Android)
+        if: matrix.targetPlatform == 'Android'
+        run: |
+          cd build/Android
+          zip -r Android.zip .
+          mv Android.zip ../
+
+      # 6️⃣ Upload Artifact (backup)
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -101,7 +111,7 @@ jobs:
           ITCH_USER: ${{ env.ITCH_USER }}
           PACKAGE: build/${{ matrix.targetPlatform }}.zip
 
-      # 8️⃣ Upload to itch (versioned history)
+      # 8️⃣ Upload to itch (versioned)
       - name: Push to itch.io (versioned)
         uses: manleydev/butler-publish-itchio-action@master
         env:
