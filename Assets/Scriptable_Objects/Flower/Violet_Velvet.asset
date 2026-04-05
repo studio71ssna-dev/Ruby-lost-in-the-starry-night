@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlowerData
   flowerName: Violet_Velvet
   value: 5
-  icon: {fileID: -8658850166083280144, guid: 52b7373b178bac54fbc01ea2bcc44407, type: 3}
+  icon: {fileID: 21300000, guid: 52b7373b178bac54fbc01ea2bcc44407, type: 3}
   glowColor: {r: 0.49394265, g: 0.19490923, b: 0.5660378, a: 1}

@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public IdleState IdleState { get; private set; }
     public WalkState WalkState { get; private set; }
     public JumpState JumpState { get; private set; }
+    public FallState FallState { get; private set; }
     public PickupState PickupState { get; private set; }
     public HurtState HurtState { get; private set; }
     public RestState RestState { get; private set; }
@@ -26,10 +27,7 @@ public class PlayerController : MonoBehaviour
     [Header("Ground Check")]
     public Transform groundCheck;
     public LayerMask groundLayer;
-    public float checkRadius = 0.2f;
-
-    // Cached systems
-    //public DayTimeManager DayTimeManager { get; private set; }
+    public float checkRadius = 0.25f;
 
     private void Awake()
     {
@@ -37,21 +35,29 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<PlayerAnimationManager>();
 
         StateMachine = new PlayerStateMachine();
-
-        // Initialize States
         IdleState = new IdleState(this, StateMachine, anim);
         WalkState = new WalkState(this, StateMachine, anim);
         JumpState = new JumpState(this, StateMachine, anim);
+        FallState = new FallState(this, StateMachine, anim);
         PickupState = new PickupState(this, StateMachine, anim);
         HurtState = new HurtState(this, StateMachine, anim);
         RestState = new RestState(this, StateMachine, anim);
     }
 
+    private void OnEnable()
+    {
+        if (InputHandler.Instance != null)
+            InputHandler.Instance.OnJump += HandleJump;
+    }
+
+    private void OnDisable()
+    {
+        if (InputHandler.Instance != null)
+            InputHandler.Instance.OnJump -= HandleJump;
+    }
+
     private void Start()
     {
-        // Cache manager (ONLY once)
-       // DayTimeManager = FindFirstObjectByType<DayTimeManager>();
-
         StateMachine.Initialize(IdleState);
     }
 
@@ -75,6 +81,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void HandleJump()
+    {
+        if (IsGrounded())
+        {
+            StateMachine.ChangeState(JumpState);
+        }
+    }
+
     public float GetMoveInput()
     {
         return InputHandler.Instance.MoveDirection.x;
@@ -87,14 +101,13 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        if (!IsGrounded()) return;
-
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
-    // ===== PICKUP ENTRY POINT =====
+    public Rigidbody2D GetRB() => rb;
 
+    // ===== PICKUP =====
     public void TriggerPickup(FlowerInteractable flower)
     {
         if (flower == null) return;

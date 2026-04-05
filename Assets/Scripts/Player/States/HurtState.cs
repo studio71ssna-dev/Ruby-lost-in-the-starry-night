@@ -9,8 +9,10 @@ public class HurtState : PlayerState
 
     public override void Enter()
     {
-        anim.Play("Hurt", true); // lock animation
-        timer = 0.4f;
+        anim.Play("Hurt", true);
+        timer = 0.3f;
+
+        Time.timeScale = 0.9f;
     }
 
     public override void Update()
@@ -19,6 +21,7 @@ public class HurtState : PlayerState
 
         if (timer <= 0f)
         {
+            Time.timeScale = 1f;
             anim.Unlock();
             stateMachine.ChangeState(player.IdleState);
         }

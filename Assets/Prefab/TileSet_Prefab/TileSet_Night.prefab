@@ -7186,7 +7186,7 @@ GameObject:
   - component: {fileID: 3047550141022071105}
   - component: {fileID: 5774661035600034985}
   - component: {fileID: 3802278090548649517}
-  - component: {fileID: 8826856480773263404}
+  - component: {fileID: 8476218133343790935}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -7314,7 +7314,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.32, y: 1.46}
   m_EdgeRadius: 0
---- !u!114 &8826856480773263404
+--- !u!114 &8476218133343790935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7323,7 +7323,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4998556458001710373}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6c3faf91044de54c8e8e1c62fbef8fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 03a8d040913990d4fbcfbb8ef6fdfbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HouseInteractable
 --- !u!1 &5609483358175447030

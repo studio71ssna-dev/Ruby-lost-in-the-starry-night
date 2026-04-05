@@ -10392,7 +10392,7 @@ GameObject:
   - component: {fileID: 7545932741528398011}
   - component: {fileID: 702458897094001864}
   - component: {fileID: 3912062853864255689}
-  - component: {fileID: 4632001106314431938}
+  - component: {fileID: 8277087356912679687}
   m_Layer: 0
   m_Name: Shop
   m_TagString: Untagged
@@ -10520,7 +10520,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5.732781, y: 3.69}
   m_EdgeRadius: 0
---- !u!114 &4632001106314431938
+--- !u!114 &8277087356912679687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

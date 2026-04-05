@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2585444555196937867
+--- !u!1 &9024362990247475981
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6029926362807614937}
-  - component: {fileID: 1540719237035559090}
+  - component: {fileID: 6818267728114523109}
+  - component: {fileID: 2824320381204151828}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: ParticleManager 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6029926362807614937
+--- !u!4 &6818267728114523109
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2585444555196937867}
+  m_GameObject: {fileID: 9024362990247475981}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,24 +32,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1540719237035559090
+--- !u!114 &2824320381204151828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2585444555196937867}
+  m_GameObject: {fileID: 9024362990247475981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e68129b740213e745913883050a4aaee, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c04c238d0fb8e64691b6b2b906f1b42, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  audioClips:
+  m_EditorClassIdentifier: Assembly-CSharp::SingletonManagers.ParticleManager
+  particlePrefabs:
   - name: NoteHit
-    clip: {fileID: 8300000, guid: a4fd5a1072c082e4f848704ef3fb78f5, type: 3}
-    loop: 0
-  - name: Pickup
-    clip: {fileID: 8300000, guid: 29a7b7e2143eadd4c8ccab6fbbf187f5, type: 3}
-    loop: 0
-  initialPoolSize: 5
-  audioSourceParent: {fileID: 0}
+    prefab: {fileID: 4007921317578898842, guid: a13a86865f855204484c266b37e90746, type: 3}
+  - name: PickUp
+    prefab: {fileID: 5848212497268052239, guid: fb51995ad1c91bd4f9201330aba4657b, type: 3}
+  - name: Walk
+    prefab: {fileID: 6360919174994527828, guid: e3ccf7e841bd3684885ae4c297751499, type: 3}

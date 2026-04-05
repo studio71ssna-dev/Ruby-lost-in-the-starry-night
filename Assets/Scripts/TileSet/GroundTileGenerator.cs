@@ -22,9 +22,7 @@ public class GroundTileGenerator : MonoBehaviour
     private float spawnX = 0f;
     private bool isScrollingEnabled = false;
 
-    // FIX: Track shop tile instance separately so it can be explicitly destroyed on cleanup,
-    // since it bypasses TilePool. Stored outside the main queue to avoid the null-prefab
-    // fragility that previously existed in activeTiles.
+
     private Queue<(GameObject instance, GameObject prefab)> activeTiles = new();
     private GameObject[] currentTiles;
     private GameObject spawnedShopTile;

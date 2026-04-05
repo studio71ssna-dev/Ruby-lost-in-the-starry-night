@@ -8,7 +8,8 @@ public class RockObstacle : MonoBehaviour
 
         if (health != null)
         {
-            health.TakeDamage(1);
+            Vector2 hitDir = (collision.transform.position - transform.position).normalized;
+            health.TakeDamage(1, hitDir);
         }
     }
 }

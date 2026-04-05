@@ -31,13 +31,18 @@ public class PickupState : PlayerState
     private void PerformPickup()
     {
         if (target == null) return;
-
         var data = target.data;
 
-        // Add to session
-        //player.DayTimeManager.AddFlowerToSession(data);
+        // --- NEW ECONOMY LOGIC ---
+        if (InventoryManager.Instance != null)
+        {
+            InventoryManager.Instance.AddStardust(data.value);
+            if (UIManager.Instance != null)
+            {
+                UIManager.Instance.UpdateFlowerCount(InventoryManager.Instance.totalStardust);
+            }
+        }
 
-        // Effects
         if (ParticleManager.Instance != null)
         {
             ParticleManager.Instance.PlayParticle(

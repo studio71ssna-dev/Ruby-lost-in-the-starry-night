@@ -23,7 +23,15 @@ public class PlayerInteraction : MonoBehaviour
 
     private void HandleInteract()
     {
-        currentInteractable?.Interact(player);
+        if (currentInteractable == null) return;
+
+        if (player == null)
+        {
+            Debug.LogError("Player is NULL in PlayerInteraction");
+            return;
+        }
+
+        currentInteractable.Interact(player);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

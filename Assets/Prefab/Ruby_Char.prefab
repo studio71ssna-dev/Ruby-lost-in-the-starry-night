@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 5536567143531369805}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: -1.18, z: 0}
+  m_LocalPosition: {x: 0.09, y: -1.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48,6 +48,8 @@ GameObject:
   - component: {fileID: 7012238771622663577}
   - component: {fileID: 6370201088106135543}
   - component: {fileID: 8632467531468524447}
+  - component: {fileID: 5867098699080988970}
+  - component: {fileID: 3912825239056209892}
   m_Layer: 0
   m_Name: Ruby_Char
   m_TagString: Player
@@ -65,7 +67,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 6, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5416609948576077933}
@@ -164,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91efe604609bbc64c80eefaffa4918a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimationManager
+  crossFadeDuration: 0.15
 --- !u!50 &4531819111368033999
 Rigidbody2D:
   serializedVersion: 5
@@ -251,12 +254,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 7
   jumpForce: 6
+  groundCheck: {fileID: 5416609948576077933}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  groundCheck: {fileID: 5416609948576077933}
   checkRadius: 0.2
-  walkDustInterval: 0.25
 --- !u!114 &6370201088106135543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,3 +379,31 @@ MonoBehaviour:
   judge: {fileID: 0}
   noteManager: {fileID: 0}
   scoreManager: {fileID: 0}
+--- !u!114 &5867098699080988970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089250578956688021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f354f61ecf3a144b2b2a48675508cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 5
+  damageCooldown: 0.5
+  knockbackForce: 6
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &3912825239056209892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6089250578956688021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a5c9cb47fb12d4eb20e9ace783cb1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction

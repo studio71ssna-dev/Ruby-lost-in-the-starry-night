@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5493383332067451483
+--- !u!1 &5971899611498994995
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 972005350367452708}
-  - component: {fileID: 8333087041720322774}
+  - component: {fileID: 3772496370622373070}
+  - component: {fileID: 8524437988157092240}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -17,97 +17,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &972005350367452708
+--- !u!4 &3772496370622373070
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5493383332067451483}
+  m_GameObject: {fileID: 5971899611498994995}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2191789678722712632}
+  - {fileID: 7732675158958668190}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8333087041720322774
+--- !u!114 &8524437988157092240
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5493383332067451483}
+  m_GameObject: {fileID: 5971899611498994995}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc6e2bd804c471249a0d139fc6973f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  AfterDayEndsEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  tileGenerator: {fileID: 432480916464436507}
+  DayDuration: 10
   DayStartEvent:
     m_PersistentCalls:
       m_Calls:
@@ -171,13 +110,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  tileGenerator: {fileID: 4999209999861531744}
-  shopUI: {fileID: 0}
-  choiceManager: {fileID: 0}
-  background: {fileID: 0}
-  dayTimeManager: {fileID: 0}
-  shopManager: {fileID: 0}
---- !u!1 &7723974750699056672
+--- !u!1 &8179482440927754979
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,8 +118,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2191789678722712632}
-  - component: {fileID: 4999209999861531744}
+  - component: {fileID: 7732675158958668190}
+  - component: {fileID: 432480916464436507}
+  - component: {fileID: 3565828332812872001}
+  - component: {fileID: 7388373554494328845}
   m_Layer: 0
   m_Name: TileGenerator
   m_TagString: Untagged
@@ -194,45 +129,79 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2191789678722712632
+--- !u!4 &7732675158958668190
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7723974750699056672}
+  m_GameObject: {fileID: 8179482440927754979}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 972005350367452708}
+  m_Father: {fileID: 3772496370622373070}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4999209999861531744
+--- !u!114 &432480916464436507
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7723974750699056672}
+  m_GameObject: {fileID: 8179482440927754979}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b71906516e3d8d940bf37a895364667a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelGenerator
-  dayChunks:
+  player: {fileID: 0}
+  morningTiles:
+  - {fileID: 1454648586561053970, guid: 279b28ff10d8a3645bdd785f9f3298da, type: 3}
+  dayTiles:
   - {fileID: 8982267131783635723, guid: 8abdfcf8fc6232644a535ac9104e669a, type: 3}
   - {fileID: 1134025506597219181, guid: 0cfb834536458c4499e068bc202b0b78, type: 3}
   - {fileID: 7609520073147225562, guid: 65b51acae9d9425478d24ac21b412450, type: 3}
-  - {fileID: 2192137188154802136, guid: 81dcf03fc916e644d8190683bb67c938, type: 3}
-  nightChunks:
+  - {fileID: 7908524156678441921, guid: 81dcf03fc916e644d8190683bb67c938, type: 3}
+  nightTiles:
   - {fileID: 1181877458479443497, guid: 04bad24fd76cd634bbf6c38d70956fe0, type: 3}
-  shopChunk: {fileID: 1181877458479443497, guid: a316e0ecb61a52243a962e80f519e5df, type: 3}
-  nightStartChunk: {fileID: 1181877458479443497, guid: 04bad24fd76cd634bbf6c38d70956fe0, type: 3}
-  dayStartChunk: {fileID: 1454648586561053970, guid: 279b28ff10d8a3645bdd785f9f3298da, type: 3}
-  playerTransform: {fileID: 0}
-  spawnDistance: 20
-  chunkLength: 50
-  initialSpawnCount: 5
-  maxActiveChunks: 8
+  shopTile: {fileID: 1181877458479443497, guid: a316e0ecb61a52243a962e80f519e5df, type: 3}
+  tilesOnScreen: 1
+  spawnAheadDistance: 60
+  removeDistance: 80
+--- !u!114 &3565828332812872001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8179482440927754979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4f8e2aecb676e4090c531fe22c65b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TileObjectSpawner
+  flowerPrefabs:
+  - {fileID: 445873643097931827, guid: 00d6584c37fb8504ebaca8643ecf264c, type: 3}
+  - {fileID: 6940985435447395851, guid: 6b155e5346e686c49ae32c9e2c618e08, type: 3}
+  - {fileID: 1463573966004650689, guid: 79017f31071aa6b4990656f30cb6f4c3, type: 3}
+  obstaclePrefabs:
+  - {fileID: 8669957130621766178, guid: 0f35afb79e314704d91409c6fc35f606, type: 3}
+  wolfPrefab: {fileID: 8921097957713536274, guid: cf5c35f186945e54da333dbe473e412c, type: 3}
+  flowerChance: 1
+  obstacleChance: 1
+  wolfChance: 1
+--- !u!114 &7388373554494328845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8179482440927754979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c155f00da28ed408ab50ebf46bbf1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TilePool
+  initialPoolSizePerPrefab: 1

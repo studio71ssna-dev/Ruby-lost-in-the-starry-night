@@ -1,4 +1,5 @@
-using UnityEngine;
+﻿using UnityEngine;
+
 public class WalkState : PlayerState
 {
     public WalkState(PlayerController player, PlayerStateMachine sm, PlayerAnimationManager anim)
@@ -13,7 +14,7 @@ public class WalkState : PlayerState
     {
         if (!player.IsGrounded())
         {
-            stateMachine.ChangeState(player.JumpState);
+            stateMachine.ChangeState(player.FallState); // 👈 FIXED
             return;
         }
 

@@ -36,13 +36,12 @@ public class ShopUI : SingletonPersistent
 
     public void OpenShop()
     {
+        shopPanel.SetActive(true);
         Time.timeScale = 0f;
         Refresh();
-
-        // Clear the description panel when first opening the shop
         ClearDescriptionPanel();
 
-        shopPanel.SetActive(true);
+     
     }
 
     public void CloseShop()

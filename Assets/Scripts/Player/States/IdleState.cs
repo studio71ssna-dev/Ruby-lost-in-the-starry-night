@@ -1,4 +1,5 @@
-using UnityEngine;
+﻿using UnityEngine;
+
 public class IdleState : PlayerState
 {
     public IdleState(PlayerController player, PlayerStateMachine sm, PlayerAnimationManager anim)
@@ -13,7 +14,7 @@ public class IdleState : PlayerState
     {
         if (!player.IsGrounded())
         {
-            stateMachine.ChangeState(player.JumpState);
+            stateMachine.ChangeState(player.FallState); // 👈 FIXED
             return;
         }
 
