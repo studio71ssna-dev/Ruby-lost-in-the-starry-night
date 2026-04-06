@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 7994745579760298684}
   - component: {fileID: 671675474156456573}
   - component: {fileID: 4118211250252764237}
+  - component: {fileID: 151042924759290633}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Generated
@@ -107,7 +108,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.78, y: 1.78, z: 1.78}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4782058473640996122}
@@ -235,3 +236,25 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 16c46eb47102ffc43969a161e4ec49a8, type: 2}
   - {fileID: 11400000, guid: 5a28d31785d30cb4da41c663c7f317f9, type: 2}
   - {fileID: 11400000, guid: dc37dc62b9c4285468a1832ee584d95c, type: 2}
+--- !u!95 &151042924759290633
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8921097957713536274}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4fef2a798913f11499f07522bea29c91, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

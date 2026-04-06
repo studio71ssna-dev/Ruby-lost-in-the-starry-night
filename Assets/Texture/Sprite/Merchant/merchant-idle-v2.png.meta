@@ -227,12 +227,12 @@ TextureImporter:
       name: merchant-idle-v2_0
       rect:
         serializedVersion: 2
-        x: 83
-        y: 1073
-        width: 86
-        height: 159
+        x: 84
+        y: 1074
+        width: 84
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -249,12 +249,12 @@ TextureImporter:
       name: merchant-idle-v2_1
       rect:
         serializedVersion: 2
-        x: 339
-        y: 1073
-        width: 86
-        height: 159
+        x: 340
+        y: 1074
+        width: 84
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -271,12 +271,12 @@ TextureImporter:
       name: merchant-idle-v2_2
       rect:
         serializedVersion: 2
-        x: 595
-        y: 1073
-        width: 86
-        height: 159
+        x: 596
+        y: 1074
+        width: 84
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -293,12 +293,12 @@ TextureImporter:
       name: merchant-idle-v2_3
       rect:
         serializedVersion: 2
-        x: 851
-        y: 1073
-        width: 86
-        height: 159
+        x: 852
+        y: 1074
+        width: 84
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -315,12 +315,12 @@ TextureImporter:
       name: merchant-idle-v2_4
       rect:
         serializedVersion: 2
-        x: 1106
-        y: 1073
-        width: 86
-        height: 159
+        x: 1107
+        y: 1074
+        width: 84
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -337,12 +337,12 @@ TextureImporter:
       name: merchant-idle-v2_5
       rect:
         serializedVersion: 2
-        x: 81
-        y: 817
-        width: 87
-        height: 159
+        x: 82
+        y: 818
+        width: 84
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -359,12 +359,12 @@ TextureImporter:
       name: merchant-idle-v2_6
       rect:
         serializedVersion: 2
-        x: 337
-        y: 817
-        width: 87
-        height: 160
+        x: 338
+        y: 818
+        width: 84
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -381,12 +381,12 @@ TextureImporter:
       name: merchant-idle-v2_7
       rect:
         serializedVersion: 2
-        x: 594
-        y: 817
-        width: 86
-        height: 160
+        x: 595
+        y: 818
+        width: 84
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -403,12 +403,12 @@ TextureImporter:
       name: merchant-idle-v2_8
       rect:
         serializedVersion: 2
-        x: 850
-        y: 817
-        width: 87
-        height: 160
+        x: 851
+        y: 818
+        width: 85
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -425,12 +425,12 @@ TextureImporter:
       name: merchant-idle-v2_9
       rect:
         serializedVersion: 2
-        x: 1107
-        y: 817
-        width: 87
-        height: 159
+        x: 1109
+        y: 818
+        width: 84
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -447,12 +447,12 @@ TextureImporter:
       name: merchant-idle-v2_10
       rect:
         serializedVersion: 2
-        x: 85
-        y: 561
-        width: 86
-        height: 159
+        x: 86
+        y: 562
+        width: 84
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -469,12 +469,12 @@ TextureImporter:
       name: merchant-idle-v2_11
       rect:
         serializedVersion: 2
-        x: 342
-        y: 561
-        width: 86
-        height: 158
+        x: 343
+        y: 562
+        width: 84
+        height: 156
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -491,12 +491,12 @@ TextureImporter:
       name: merchant-idle-v2_12
       rect:
         serializedVersion: 2
-        x: 598
-        y: 561
-        width: 87
-        height: 158
+        x: 599
+        y: 562
+        width: 84
+        height: 155
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -513,12 +513,12 @@ TextureImporter:
       name: merchant-idle-v2_13
       rect:
         serializedVersion: 2
-        x: 854
-        y: 561
-        width: 87
-        height: 157
+        x: 855
+        y: 562
+        width: 85
+        height: 155
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -535,12 +535,12 @@ TextureImporter:
       name: merchant-idle-v2_14
       rect:
         serializedVersion: 2
-        x: 1110
-        y: 561
-        width: 87
-        height: 157
+        x: 1111
+        y: 562
+        width: 85
+        height: 155
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -557,12 +557,12 @@ TextureImporter:
       name: merchant-idle-v2_15
       rect:
         serializedVersion: 2
-        x: 86
-        y: 305
-        width: 87
-        height: 157
+        x: 87
+        y: 306
+        width: 85
+        height: 155
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -579,12 +579,12 @@ TextureImporter:
       name: merchant-idle-v2_16
       rect:
         serializedVersion: 2
-        x: 342
-        y: 305
-        width: 87
-        height: 157
+        x: 343
+        y: 306
+        width: 85
+        height: 155
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -601,12 +601,12 @@ TextureImporter:
       name: merchant-idle-v2_17
       rect:
         serializedVersion: 2
-        x: 597
-        y: 305
-        width: 87
-        height: 157
+        x: 599
+        y: 306
+        width: 84
+        height: 155
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -623,12 +623,12 @@ TextureImporter:
       name: merchant-idle-v2_18
       rect:
         serializedVersion: 2
-        x: 853
-        y: 305
-        width: 87
-        height: 158
+        x: 854
+        y: 306
+        width: 85
+        height: 155
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -645,12 +645,12 @@ TextureImporter:
       name: merchant-idle-v2_19
       rect:
         serializedVersion: 2
-        x: 1109
-        y: 305
-        width: 86
-        height: 158
+        x: 1110
+        y: 306
+        width: 84
+        height: 156
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -667,12 +667,12 @@ TextureImporter:
       name: merchant-idle-v2_20
       rect:
         serializedVersion: 2
-        x: 84
-        y: 49
-        width: 87
-        height: 158
+        x: 86
+        y: 50
+        width: 83
+        height: 156
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -689,12 +689,12 @@ TextureImporter:
       name: merchant-idle-v2_21
       rect:
         serializedVersion: 2
-        x: 340
-        y: 49
-        width: 86
-        height: 159
+        x: 341
+        y: 50
+        width: 84
+        height: 156
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -711,12 +711,12 @@ TextureImporter:
       name: merchant-idle-v2_22
       rect:
         serializedVersion: 2
-        x: 595
-        y: 49
-        width: 87
-        height: 159
+        x: 597
+        y: 50
+        width: 84
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -733,12 +733,12 @@ TextureImporter:
       name: merchant-idle-v2_23
       rect:
         serializedVersion: 2
-        x: 851
-        y: 49
-        width: 86
-        height: 159
+        x: 852
+        y: 50
+        width: 84
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -755,12 +755,12 @@ TextureImporter:
       name: merchant-idle-v2_24
       rect:
         serializedVersion: 2
-        x: 1107
-        y: 49
-        width: 86
-        height: 159
+        x: 1108
+        y: 50
+        width: 84
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -777,7 +777,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 34b0ea55667bc97469aca5af86d3df6c
     internalID: 0
     vertices: []
     indices: 
@@ -785,7 +785,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       merchant-idle-v2_0: 5271855190646008751
       merchant-idle-v2_1: 2700638003788153313

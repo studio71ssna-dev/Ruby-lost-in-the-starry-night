@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1916687299683726793}
   - component: {fileID: 1809344856486208408}
   - component: {fileID: 2389368265713901383}
+  - component: {fileID: 4858784633723825838}
+  - component: {fileID: 4514919482203182097}
   m_Layer: 0
   m_Name: Blue_Orchid
   m_TagString: Generated
@@ -130,7 +132,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1.52, y: 1.52}
     newSize: {x: 1.52, y: 1.52}
     adaptiveTilingThreshold: 0.5
@@ -152,3 +154,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlowerInteractable
   data: {fileID: 11400000, guid: 8652784ac90eb5546a0b47efbc014fed, type: 2}
+--- !u!114 &4858784633723825838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445873643097931827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8b66ef2dfeced64994dd32e3f0bf24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnapToGround
+  raycastDistance: 2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &4514919482203182097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445873643097931827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e7e8c8532222b4fa98587563c99652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WindSway
+  swayAngle: 12.5
+  swayDuration: 1
