@@ -224,551 +224,551 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_0
+      name: Ruby_sit_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 1034
-        width: 134
-        height: 236
+        x: 49
+        y: 1035
+        width: 132
+        height: 234
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ff3142814a0a37ad0800000000000000
-      internalID: -2705642324479437825
+      spriteID: 54daba1af1c4a114ba61706d9ebe09e5
+      internalID: 1114914336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_1
+      name: Ruby_sit_1
       rect:
         serializedVersion: 2
-        x: 307
-        y: 1033
-        width: 135
-        height: 236
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3da4248c525e25c30800000000000000
-      internalID: 4346788540802288339
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ruby_Side-sit-v2_2
-      rect:
-        serializedVersion: 2
-        x: 568
-        y: 1034
-        width: 135
+        x: 308
+        y: 1035
+        width: 133
         height: 233
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4278231e32ecb8490800000000000000
-      internalID: -7742868480836073692
+      spriteID: 280d7dc624bdc8b479603b9c64f88a37
+      internalID: -1777054363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_3
+      name: Ruby_sit_2
       rect:
         serializedVersion: 2
-        x: 827
-        y: 1038
-        width: 136
-        height: 227
+        x: 569
+        y: 1035
+        width: 133
+        height: 231
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7dc21532965eb9700800000000000000
-      internalID: 548284019382496471
+      spriteID: b8f864cc045394548aa1c1bc66da6a40
+      internalID: 664142409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_4
+      name: Ruby_sit_3
       rect:
         serializedVersion: 2
-        x: 1085
-        y: 1036
-        width: 137
-        height: 227
+        x: 828
+        y: 1039
+        width: 133
+        height: 225
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f890422f0788799e0800000000000000
-      internalID: -1614671922708870769
+      spriteID: ef05d337a1161f340b33b0e7183ab570
+      internalID: 266283725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_5
+      name: Ruby_sit_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 777
-        width: 136
-        height: 226
+        x: 1087
+        y: 1037
+        width: 134
+        height: 224
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b66e9c91fc4e1d0a0800000000000000
-      internalID: -6858449179366529429
+      spriteID: edd1ec5cbd63934499559b7cc72a3c6d
+      internalID: -899336164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_6
+      name: Ruby_sit_5
       rect:
         serializedVersion: 2
-        x: 323
-        y: 777
-        width: 135
-        height: 221
+        x: 65
+        y: 778
+        width: 134
+        height: 224
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d0d448e8db76e8920800000000000000
-      internalID: 2994444866085473549
+      spriteID: 587df481f969d474ea4c07534ee362aa
+      internalID: -893098964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_7
+      name: Ruby_sit_6
       rect:
         serializedVersion: 2
-        x: 583
-        y: 773
-        width: 136
-        height: 217
+        x: 324
+        y: 778
+        width: 133
+        height: 219
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 975a6dea134a24c20800000000000000
-      internalID: 3189292019425387897
+      spriteID: b28c7658d01b067478987f5567cc0394
+      internalID: -1122217873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_8
+      name: Ruby_sit_7
       rect:
         serializedVersion: 2
-        x: 844
-        y: 767
-        width: 136
-        height: 214
+        x: 584
+        y: 774
+        width: 133
+        height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6b6ad3d166c4beb10800000000000000
-      internalID: 2011785660012013238
+      spriteID: 2efbeac11b52f8b4a8357b34cc23ea0f
+      internalID: 2108270285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_9
+      name: Ruby_sit_8
       rect:
         serializedVersion: 2
-        x: 1099
-        y: 767
-        width: 141
-        height: 205
+        x: 846
+        y: 768
+        width: 133
+        height: 212
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5d04444f4f3c14fd0800000000000000
-      internalID: -2359389272927878955
+      spriteID: c538070763cd2fd4da4ed182c3f7b867
+      internalID: 1836400847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_10
+      name: Ruby_sit_9
       rect:
         serializedVersion: 2
-        x: 68
-        y: 511
-        width: 153
-        height: 198
+        x: 1101
+        y: 768
+        width: 138
+        height: 203
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2f8230157cb377cb0800000000000000
-      internalID: -4866355145106839310
+      spriteID: 143276ba676179f49b7a518ee4d7f4f4
+      internalID: -1768974144
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_11
+      name: Ruby_sit_10
       rect:
         serializedVersion: 2
-        x: 318
-        y: 511
-        width: 161
-        height: 195
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc8d442e6420c7040800000000000000
-      internalID: 4646591419006638287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ruby_Side-sit-v2_12
-      rect:
-        serializedVersion: 2
-        x: 568
-        y: 511
-        width: 159
-        height: 198
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bb9131f35915cb150800000000000000
-      internalID: 5889672114143959483
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ruby_Side-sit-v2_13
-      rect:
-        serializedVersion: 2
-        x: 819
+        x: 69
         y: 512
-        width: 155
-        height: 202
+        width: 150
+        height: 196
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 991279f2a6e2220b0800000000000000
-      internalID: -5754986340226227815
+      spriteID: c76552f71b1c30f4b83a7c04fb779369
+      internalID: -1028609515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_14
+      name: Ruby_sit_11
       rect:
         serializedVersion: 2
-        x: 1067
-        y: 515
-        width: 149
-        height: 205
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 209583e503db92ad0800000000000000
-      internalID: -2726440083959293694
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ruby_Side-sit-v2_15
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 259
+        x: 319
+        y: 512
         width: 159
-        height: 208
+        height: 193
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6f553a78b17326ee0800000000000000
-      internalID: -1269391553585785354
+      spriteID: 389ee285b4712de4bacb02ce58544010
+      internalID: -678885650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_16
+      name: Ruby_sit_12
       rect:
         serializedVersion: 2
-        x: 280
-        y: 259
-        width: 168
-        height: 208
+        x: 569
+        y: 512
+        width: 157
+        height: 196
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f794702da20c10c20800000000000000
-      internalID: 3171026902790392191
+      spriteID: 222ef34c8802e61488075b8de5215dbd
+      internalID: -427833276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_17
+      name: Ruby_sit_13
       rect:
         serializedVersion: 2
-        x: 528
-        y: 259
-        width: 176
-        height: 208
+        x: 821
+        y: 513
+        width: 152
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b6a5f6c97b6c90980800000000000000
-      internalID: -8572101923817170325
+      spriteID: d3854d796af6f33428f6b756f52fa6cd
+      internalID: -1358818654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_18
+      name: Ruby_sit_14
       rect:
         serializedVersion: 2
-        x: 784
-        y: 259
-        width: 176
-        height: 208
+        x: 1069
+        y: 516
+        width: 146
+        height: 203
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 296a3cfa02ccb2170800000000000000
-      internalID: 8154835991044269714
+      spriteID: 8ade6df1ac5c3be40b525cf349cdc8d5
+      internalID: -1569929866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_19
+      name: Ruby_sit_15
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 258
-        width: 176
-        height: 210
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 62bc66747c56eaf40800000000000000
-      internalID: 5741638481514777382
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ruby_Side-sit-v2_20
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 2
-        width: 176
-        height: 209
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 70ae212cdbf1aa710800000000000000
-      internalID: 1705210308778453511
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ruby_Side-sit-v2_21
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 2
-        width: 176
+        x: 34
+        y: 260
+        width: 156
         height: 206
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 61ebd2b61c2c3f360800000000000000
-      internalID: 7202314365078191638
+      spriteID: f777345afe550d24e8b9ba45058247f5
+      internalID: 617161770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_22
+      name: Ruby_sit_16
       rect:
         serializedVersion: 2
-        x: 528
-        y: 2
-        width: 176
-        height: 201
+        x: 281
+        y: 260
+        width: 165
+        height: 206
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 14de6a1581e4c4d80800000000000000
-      internalID: -8265145349775626943
+      spriteID: 4c32f942ceb39374f80065e113c5db08
+      internalID: -1297609222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_23
+      name: Ruby_sit_17
       rect:
         serializedVersion: 2
-        x: 784
-        y: 2
-        width: 176
-        height: 197
+        x: 529
+        y: 260
+        width: 173
+        height: 206
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0e7db5cdb59c3f0c0800000000000000
-      internalID: -4543066202710485024
+      spriteID: 620dffc039ed76844a0318606a9d62b9
+      internalID: 587361151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ruby_Side-sit-v2_24
+      name: Ruby_sit_18
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 2
-        width: 176
+        x: 785
+        y: 260
+        width: 173
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d31c103bc68116b44ae554a308b2c1bc
+      internalID: 1458009169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_sit_19
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 259
+        width: 174
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02d09b00f8ae3c45b6ca6a388a6af56
+      internalID: 1898051963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_sit_20
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 3
+        width: 173
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6260373123de574aacdf8da1797fe95
+      internalID: -621937589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_sit_21
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 3
+        width: 173
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e50d5115305e2e438d3e2f4d7ece37c
+      internalID: -1193931070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_sit_22
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 3
+        width: 173
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47cdb566d552be44cbe16034c30c6394
+      internalID: 464240697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_sit_23
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 3
+        width: 173
         height: 195
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 13ae18d1294ce1710800000000000000
-      internalID: 1665985044012984881
+      spriteID: 3cf690818dd832a4ebe9cde1679ee45d
+      internalID: 1025766879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby_sit_24
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 3
+        width: 173
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5427c14b2a5a40641ab3f76c948d432a
+      internalID: -603983513
       vertices: []
       indices: 
       edges: []
@@ -777,7 +777,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9eeb3846a6748b54d86eba5cdee820fd
     internalID: 0
     vertices: []
     indices: 
@@ -785,33 +785,35 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Ruby_Side-sit-v2_0: -2705642324479437825
-      Ruby_Side-sit-v2_1: 4346788540802288339
-      Ruby_Side-sit-v2_10: -4866355145106839310
-      Ruby_Side-sit-v2_11: 4646591419006638287
-      Ruby_Side-sit-v2_12: 5889672114143959483
-      Ruby_Side-sit-v2_13: -5754986340226227815
-      Ruby_Side-sit-v2_14: -2726440083959293694
-      Ruby_Side-sit-v2_15: -1269391553585785354
-      Ruby_Side-sit-v2_16: 3171026902790392191
-      Ruby_Side-sit-v2_17: -8572101923817170325
-      Ruby_Side-sit-v2_18: 8154835991044269714
-      Ruby_Side-sit-v2_19: 5741638481514777382
-      Ruby_Side-sit-v2_2: -7742868480836073692
-      Ruby_Side-sit-v2_20: 1705210308778453511
-      Ruby_Side-sit-v2_21: 7202314365078191638
-      Ruby_Side-sit-v2_22: -8265145349775626943
-      Ruby_Side-sit-v2_23: -4543066202710485024
-      Ruby_Side-sit-v2_24: 1665985044012984881
-      Ruby_Side-sit-v2_3: 548284019382496471
-      Ruby_Side-sit-v2_4: -1614671922708870769
-      Ruby_Side-sit-v2_5: -6858449179366529429
-      Ruby_Side-sit-v2_6: 2994444866085473549
-      Ruby_Side-sit-v2_7: 3189292019425387897
-      Ruby_Side-sit-v2_8: 2011785660012013238
-      Ruby_Side-sit-v2_9: -2359389272927878955
+      Ruby_sit_0: 1114914336
+      Ruby_sit_1: -1777054363
+      Ruby_sit_10: -1028609515
+      Ruby_sit_11: -678885650
+      Ruby_sit_12: -427833276
+      Ruby_sit_13: -1358818654
+      Ruby_sit_14: -1569929866
+      Ruby_sit_15: 617161770
+      Ruby_sit_16: -1297609222
+      Ruby_sit_17: 587361151
+      Ruby_sit_18: 1458009169
+      Ruby_sit_19: 1898051963
+      Ruby_sit_2: 664142409
+      Ruby_sit_20: -621937589
+      Ruby_sit_21: -1193931070
+      Ruby_sit_22: 464240697
+      Ruby_sit_23: 1025766879
+      Ruby_sit_24: -603983513
+      Ruby_sit_3: 266283725
+      Ruby_sit_4: -899336164
+      Ruby_sit_5: -893098964
+      Ruby_sit_6: -1122217873
+      Ruby_sit_7: 2108270285
+      Ruby_sit_8: 1836400847
+      Ruby_sit_9: -1768974144
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

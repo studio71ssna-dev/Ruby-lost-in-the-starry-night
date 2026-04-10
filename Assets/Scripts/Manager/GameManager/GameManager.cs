@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
 
     public GroundTileGenerator tileGenerator;
     [Header("Day Settings")]
+    [Header("Static Environments")]
+    public GameObject staticNightEnvironment; // Drag your permanent Night parent object here
+    public Transform nightSpawnPoint;         // Where Ruby teleports when night starts
+    public Transform morningSpawnPoint;       // Where Ruby teleports when a new day starts
     public float DayDuration = 60f;
     GameStateMachine stateMachine;
 

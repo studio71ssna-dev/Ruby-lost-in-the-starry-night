@@ -15,6 +15,10 @@ public class NoteManager : MonoBehaviour
     [SerializeField] private float spawnLeadTime = 1f;
     [SerializeField] private float missWindow = 0.15f;
 
+    [Header("Fret Colors")]
+    [Tooltip("Color 0 = Fret 1, Color 1 = Fret 2, Color 2 = Fret 3")]
+    [SerializeField] private Color[] fretColors = new Color[3];
+
     private List<NoteData> songNotes;
     private int nextIndex;
 
@@ -63,6 +67,16 @@ public class NoteManager : MonoBehaviour
         GameObject obj = Instantiate(notePrefab, spawnPos, Quaternion.identity, notesParent);
         Note note = obj.GetComponent<Note>();
 
+        // Determine the correct color based on the fret number
+        Color colorToApply = Color.white;
+        int colorIndex = data.noteFret - 1; // Convert Fret 1-3 to Index 0-2
+
+        if (colorIndex >= 0 && colorIndex < fretColors.Length)
+        {
+            colorToApply = fretColors[colorIndex];
+        }
+
+        // Pass the color into the Note's Init method
         note.Init(
             data.time,
             data.time - spawnLeadTime,
@@ -70,7 +84,8 @@ public class NoteManager : MonoBehaviour
             hitPos,
             songController,
             data.noteFret,
-            data.lane
+            data.lane,
+            colorToApply
         );
 
         laneQueues[data.lane].Enqueue(note);

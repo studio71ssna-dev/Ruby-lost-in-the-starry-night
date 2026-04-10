@@ -31,8 +31,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount, Vector2 hitDirection)
     {
-        if (Time.time - lastDamageTime < damageCooldown) return;
+        // NEW: If Ruby is already knocked out and resting, she cannot be hurt again!
+        if (player.StateMachine.CurrentState == player.RestState) return;
 
+        if (Time.time - lastDamageTime < damageCooldown) return;
         lastDamageTime = Time.time;
 
         CurrentHealth -= amount;
@@ -44,7 +46,6 @@ public class PlayerHealth : MonoBehaviour
 
         // 🔥 DOTween Effects
         PlayHitFlash();
-
         transform.DOPunchScale(Vector3.one * 0.2f, 0.2f, 10, 1);
         transform.DOPunchPosition(hitDirection * 0.5f, 0.2f, 10, 1);
 

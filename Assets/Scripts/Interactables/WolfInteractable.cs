@@ -3,11 +3,12 @@ using UnityEngine;
 public class WolfInteractable : MonoBehaviour,IInteractable
 {
     [SerializeField]private SongController songController;
-    [SerializeField] private SongData[] songs;
+    [SerializeField]private SongData[] songs;
 
     private void Awake()
     {
         songController = Object.FindFirstObjectByType<SongController>();
+        
     }
 
     public void Interact(PlayerController player)

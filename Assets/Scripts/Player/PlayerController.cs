@@ -71,8 +71,27 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
-        float move = GetMoveInput();
+        // 1. Block normal input if we are doing a locked action
+        if (StateMachine.CurrentState == PickupState ||
+            StateMachine.CurrentState == HurtState ||
+            StateMachine.CurrentState == RestState)
+        {
+            if (StateMachine.CurrentState == PickupState)
+            {
+                // Instantly freeze in place when picking up flowers
+                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            }
+            else if (StateMachine.CurrentState == HurtState || StateMachine.CurrentState == RestState)
+            {
+                // Smoothly slide to a stop! (Artificial Friction)
+                // The '5f' controls the brake strength. Higher number = stops faster.
+                rb.linearVelocity = new Vector2(Mathf.Lerp(rb.linearVelocity.x, 0f, Time.deltaTime * 5f), rb.linearVelocity.y);
+            }
+            return;
+        }
 
+        // 2. Normal movement
+        float move = GetMoveInput();
         rb.linearVelocity = new Vector2(move * moveSpeed, rb.linearVelocity.y);
 
         if (move != 0)
@@ -83,6 +102,12 @@ public class PlayerController : MonoBehaviour
 
     private void HandleJump()
     {
+        // 2. Block jumping during locked actions
+        if (StateMachine.CurrentState == PickupState ||
+            StateMachine.CurrentState == HurtState ||
+            StateMachine.CurrentState == RestState)
+            return;
+
         if (IsGrounded())
         {
             StateMachine.ChangeState(JumpState);
@@ -114,5 +139,22 @@ public class PlayerController : MonoBehaviour
 
         PickupState.SetTarget(flower);
         StateMachine.ChangeState(PickupState);
+    }
+
+    public void AE_CollectFlower()
+    {
+        if (StateMachine.CurrentState == PickupState)
+        {
+            PickupState.PerformPickup();
+        }
+    }
+
+    // The Animation will trigger this at the very last frame to unlock the player
+    public void AE_FinishPickup()
+    {
+        if (StateMachine.CurrentState == PickupState)
+        {
+            StateMachine.ChangeState(IdleState);
+        }
     }
 }

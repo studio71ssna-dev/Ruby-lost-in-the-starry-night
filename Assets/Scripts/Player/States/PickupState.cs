@@ -4,6 +4,7 @@ using SingletonManagers;
 public class PickupState : PlayerState
 {
     private FlowerInteractable target;
+    private bool hasPickedUp;
 
     public PickupState(PlayerController player, PlayerStateMachine sm, PlayerAnimationManager anim)
         : base(player, sm, anim) { }
@@ -21,19 +22,21 @@ public class PickupState : PlayerState
             return;
         }
 
+        hasPickedUp = false;
         anim.Play("Pickup", true); // LOCK animation
 
-       
-        PerformPickup();
-
+        // We DO NOT call PerformPickup() here anymore! 
+        // We wait for the Animation Event to call it.
     }
 
-    private void PerformPickup()
+    // Changed to public so the PlayerController can trigger it
+    public void PerformPickup()
     {
-        if (target == null) return;
+        if (target == null || hasPickedUp) return;
+
+        hasPickedUp = true; // Prevent accidental double-triggering
         var data = target.data;
 
-        // --- NEW ECONOMY LOGIC ---
         if (InventoryManager.Instance != null)
         {
             InventoryManager.Instance.AddStardust(data.value);
@@ -58,7 +61,6 @@ public class PickupState : PlayerState
         }
 
         GameObject.Destroy(target.gameObject);
-
         target = null;
     }
 
@@ -69,8 +71,8 @@ public class PickupState : PlayerState
 
     public override void Update()
     {
-        // Wait until animation finishes
-        if (!IsAnimationPlaying("Pickup"))
+  
+        if (!IsAnimationPlaying("Pickup") && hasPickedUp)
         {
             stateMachine.ChangeState(player.IdleState);
         }

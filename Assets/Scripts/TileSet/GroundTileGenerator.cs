@@ -69,6 +69,17 @@ public class GroundTileGenerator : MonoBehaviour
         SpawnTile();
     }
 
+    public void SpawnSingleNightTile()
+    {
+        // 1. Stop infinite scrolling so no more tiles spawn
+        isScrollingEnabled = false;
+
+        currentTiles = nightTiles;
+
+        // 2. Spawn exactly ONE night tile right where the shop tile ends
+        SpawnTile();
+    }
+
     // ------------------------------------------------
     // CHANGE TILE SET
     // ------------------------------------------------
@@ -173,10 +184,6 @@ public class GroundTileGenerator : MonoBehaviour
     // SHOP TILE
     // ------------------------------------------------
 
-    // FIX: Was using raw Instantiate with a null prefab stored in the activeTiles queue,
-    // making ClearAllTiles() brittle (it had to special-case null prefabs).
-    // Now the shop tile is tracked in its own field and destroyed explicitly.
-    // This keeps the activeTiles queue clean (all entries have valid prefabs).
     public void SpawnShopTile()
     {
         if (shopTile == null)
