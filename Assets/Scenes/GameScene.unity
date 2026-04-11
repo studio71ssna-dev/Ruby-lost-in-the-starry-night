@@ -486,13 +486,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileSet_Night
       objectReference: {fileID: 0}
+    - target: {fileID: 1181877458479443497, guid: 04bad24fd76cd634bbf6c38d70956fe0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2118862448979062967, guid: 04bad24fd76cd634bbf6c38d70956fe0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 183.03569
       objectReference: {fileID: 0}
     - target: {fileID: 2118862448979062967, guid: 04bad24fd76cd634bbf6c38d70956fe0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.71337
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2118862448979062967, guid: 04bad24fd76cd634bbf6c38d70956fe0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -920,6 +924,10 @@ PrefabInstance:
     - target: {fileID: 4573683942854838535, guid: 72f9901af88e18b4da7f5215e005bc98, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860599153494890851, guid: 72f9901af88e18b4da7f5215e005bc98, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6463229254757579749, guid: 72f9901af88e18b4da7f5215e005bc98, type: 3}
       propertyPath: m_AnchorMax.y
