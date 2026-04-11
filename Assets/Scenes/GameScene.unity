@@ -486,10 +486,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileSet_Night
       objectReference: {fileID: 0}
-    - target: {fileID: 1181877458479443497, guid: 04bad24fd76cd634bbf6c38d70956fe0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2118862448979062967, guid: 04bad24fd76cd634bbf6c38d70956fe0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 183.03569
@@ -530,6 +526,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3079167299622557282, guid: 04bad24fd76cd634bbf6c38d70956fe0, type: 3}
+      propertyPath: songController
+      value: 
+      objectReference: {fileID: 2056079104}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1151,6 +1151,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 363367482294413013, guid: 7d937e89f0ee7f44b8fecf477d92f865, type: 3}
   m_PrefabInstance: {fileID: 2725444319977793070}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2056079104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1768289240991621773, guid: 7d937e89f0ee7f44b8fecf477d92f865, type: 3}
+  m_PrefabInstance: {fileID: 2725444319977793070}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524d4f010d646454e85b0b42c2c2881f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SongController
 --- !u!224 &2061485672 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5552158500759735875, guid: 72f9901af88e18b4da7f5215e005bc98, type: 3}
@@ -5902,6 +5913,7 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 3684272108328485015}
   - {fileID: 5405400942752616220}
+  - {fileID: 748369041}
   - {fileID: 7838041887424901865}
   - {fileID: 7980402391403697507}
   - {fileID: 406270678}
@@ -5915,4 +5927,3 @@ SceneRoots:
   - {fileID: 6449795579508340761}
   - {fileID: 1784609754308771245}
   - {fileID: 2071268823}
-  - {fileID: 748369041}
