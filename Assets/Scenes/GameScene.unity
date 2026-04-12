@@ -209,6 +209,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64886951a73f1a6409f1273ae81e44f9, type: 3}
+--- !u!114 &406270679 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3862950129383285288, guid: 64886951a73f1a6409f1273ae81e44f9, type: 3}
+  m_PrefabInstance: {fileID: 406270678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3ac8fa203f15c409340b27e2be9d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620698374659828382, guid: 04bad24fd76cd634bbf6c38d70956fe0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.53
+      value: 3.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3614,6 +3625,10 @@ PrefabInstance:
       propertyPath: noteManager
       value: 
       objectReference: {fileID: 2056079100}
+    - target: {fileID: 8632467531468524447, guid: 6f27fc4d04dcea745825686ddfdbbd43, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 406270679}
     - target: {fileID: 9117857878175064505, guid: 6f27fc4d04dcea745825686ddfdbbd43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
