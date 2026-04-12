@@ -4,6 +4,7 @@ public class WolfInteractable : MonoBehaviour,IInteractable
 {
     [SerializeField]private SongController songController;
     [SerializeField]private SongData[] songs;
+    [SerializeField]private GameObject MusicUI;
 
     private void Awake()
     {
@@ -13,6 +14,7 @@ public class WolfInteractable : MonoBehaviour,IInteractable
 
     public void Interact(PlayerController player)
     {
+        MusicUI.SetActive(true);
         if (songController == null)
         {
             Debug.LogError("SongController NOT FOUND!");

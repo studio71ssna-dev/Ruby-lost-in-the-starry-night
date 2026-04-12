@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Transform nightSpawnPoint;         // Where Ruby teleports when night starts
     public Transform morningSpawnPoint;       // Where Ruby teleports when a new day starts
     public float DayDuration = 60f;
+    public GameObject Wolf;
     GameStateMachine stateMachine;
 
     public MorningState MorningState { get; private set; }

@@ -5,10 +5,10 @@ using UnityEngine.Events;
 public class QuizManager : MonoBehaviour
 {
     [SerializeField] private GameObject choicePanel;
-
+    [SerializeField] private GameObject Wolf;
     [SerializeField] private TMP_Text questionText;
     [SerializeField] private TMP_Text[] optionTexts; // size = 3
-    GameObject Wolf;
+    
     [SerializeField] private QuestionChoiceData[] questions;
     public UnityEvent WrongChoice;
 
@@ -67,11 +67,6 @@ public class QuizManager : MonoBehaviour
             Debug.Log("Wrong");
             GameOver();
         }
-    }
-
-    private void Update()
-    {
-        Wolf=GameObject.FindGameObjectWithTag("Wolf");
     }
 
     void ContinueGame()

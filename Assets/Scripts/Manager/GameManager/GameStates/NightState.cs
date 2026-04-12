@@ -12,6 +12,7 @@ public class NightState : IGameState
 
         // 1. Erase the procedural world left behind
         gm.tileGenerator.ResetWorld();
+        gm.Wolf.SetActive(true);
 
         // 2. Turn ON the permanent night environment
         if (gm.staticNightEnvironment != null)
