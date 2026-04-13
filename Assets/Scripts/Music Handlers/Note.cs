@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI; // Required in case your notes are UI Images
+using UnityEngine.UI;
 
 public class Note : MonoBehaviour
 {
@@ -7,7 +7,6 @@ public class Note : MonoBehaviour
     private double spawnTime;
     private Vector3 spawnPos;
     private Vector3 hitPos;
-
     private SongController songController;
 
     public int NoteFret { get; private set; }
@@ -22,29 +21,29 @@ public class Note : MonoBehaviour
         SongController controller,
         int fret,
         int lane,
-        Color noteColor) // The new color parameter
+        Color noteColor)
     {
         this.hitTime = hitTime;
         this.spawnTime = spawnTime;
         this.spawnPos = spawnPos;
         this.hitPos = hitPos;
         this.songController = controller;
-
         this.NoteFret = fret;
         this.Lane = lane;
+
         transform.position = spawnPos;
 
-        // Apply the color to either a SpriteRenderer or a UI Image
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        // Search children too — handles prefabs where renderer is on a child object
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
         if (sr != null)
         {
             sr.color = noteColor;
+            return;
         }
-        else
-        {
-            Image img = GetComponent<Image>();
-            if (img != null) img.color = noteColor;
-        }
+
+        Image img = GetComponentInChildren<Image>();
+        if (img != null)
+            img.color = noteColor;
     }
 
     private void Update()
@@ -53,7 +52,6 @@ public class Note : MonoBehaviour
 
         double songTime = songController.SongTime;
         float t = (float)((songTime - spawnTime) / (hitTime - spawnTime));
-
         transform.position = Vector3.LerpUnclamped(spawnPos, hitPos, t);
     }
 }

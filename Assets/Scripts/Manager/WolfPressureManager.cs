@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ScoreManager : MonoBehaviour
+public class WolfPressureManager : MonoBehaviour
 {
     [SerializeField] private Slider pressureBar;
     [Header("Bar Behaviour")]
@@ -29,11 +29,13 @@ public class ScoreManager : MonoBehaviour
 
     public void Perfect()
     {
+        Debug.Log("Perfect() called on WolfPressureManager");
         ReduceBar(perfectReduction);
     }
 
     public void Good()
     {
+        Debug.Log("Good() called on WolfPressureManager");
         ReduceBar(goodReduction);
     }
     public void ActivateBarUI()
@@ -51,8 +53,8 @@ public class ScoreManager : MonoBehaviour
     }
     private void ReduceBar(float amount)
     {
+        Debug.Log($"ReduceBar: barActive={barActive} amount={amount} current={pressureBar.value}");
         if (!barActive || pressureBar == null) return;
-
         pressureBar.value = Mathf.Clamp01(pressureBar.value - amount);
     }
 

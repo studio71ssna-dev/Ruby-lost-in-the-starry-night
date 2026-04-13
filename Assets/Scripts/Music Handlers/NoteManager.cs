@@ -5,7 +5,6 @@ public class NoteManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject notePrefab;
-    [SerializeField] private Transform notesParent;
     [SerializeField] private RectTransform[] lanes;
     [SerializeField] private RectTransform[] hitCircles;
     [SerializeField] private Camera gameCamera;
@@ -15,13 +14,20 @@ public class NoteManager : MonoBehaviour
     [SerializeField] private float spawnLeadTime = 1f;
     [SerializeField] private float missWindow = 0.15f;
 
-    [Header("Fret Colors")]
-    [Tooltip("Color 0 = Fret 1, Color 1 = Fret 2, Color 2 = Fret 3")]
-    [SerializeField] private Color[] fretColors = new Color[3];
+    [Header("Note Colors")]
+    [Tooltip("Index 0=white(neutral)  1=brown(left)  2=green(down)  3=purple(right)")]
+    [SerializeField]
+    private Color[] noteColors = new Color[4]
+    {
+        Color.white,
+        new Color(0.6f, 0.3f, 0.1f),
+        new Color(0.2f, 0.8f, 0.2f),
+        new Color(0.6f, 0.2f, 0.8f),
+    };
 
+    private Transform notesContainer;
     private List<NoteData> songNotes;
     private int nextIndex;
-
     private Queue<Note>[] laneQueues = new Queue<Note>[3];
 
     public System.Action OnMiss;
@@ -30,6 +36,8 @@ public class NoteManager : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
             laneQueues[i] = new Queue<Note>();
+
+        notesContainer = new GameObject("NotesContainer").transform;
     }
 
     public void LoadSong(SongData song)
@@ -37,7 +45,7 @@ public class NoteManager : MonoBehaviour
         songNotes = song.notes;
         nextIndex = 0;
 
-        foreach (Transform child in notesParent)
+        foreach (Transform child in notesContainer)
             Destroy(child.gameObject);
 
         foreach (var q in laneQueues)
@@ -46,10 +54,11 @@ public class NoteManager : MonoBehaviour
 
     public void ProcessSpawning(double songTime)
     {
+        if (songNotes == null) return;
+
         while (nextIndex < songNotes.Count)
         {
             var note = songNotes[nextIndex];
-
             if (songTime >= note.time - spawnLeadTime)
             {
                 Spawn(note);
@@ -64,19 +73,14 @@ public class NoteManager : MonoBehaviour
         Vector3 spawnPos = UIToWorld(lanes[data.lane]);
         Vector3 hitPos = UIToWorld(hitCircles[data.lane]);
 
-        GameObject obj = Instantiate(notePrefab, spawnPos, Quaternion.identity, notesParent);
+        GameObject obj = Instantiate(notePrefab, spawnPos, Quaternion.identity, notesContainer);
         Note note = obj.GetComponent<Note>();
 
-        // Determine the correct color based on the fret number
+        // noteFret is 0-based: 0=white, 1=brown, 2=green, 3=purple
         Color colorToApply = Color.white;
-        int colorIndex = data.noteFret - 1; // Convert Fret 1-3 to Index 0-2
+        if (data.noteFret >= 0 && data.noteFret < noteColors.Length)
+            colorToApply = noteColors[data.noteFret];
 
-        if (colorIndex >= 0 && colorIndex < fretColors.Length)
-        {
-            colorToApply = fretColors[colorIndex];
-        }
-
-        // Pass the color into the Note's Init method
         note.Init(
             data.time,
             data.time - spawnLeadTime,
@@ -96,14 +100,11 @@ public class NoteManager : MonoBehaviour
         for (int lane = 0; lane < laneQueues.Length; lane++)
         {
             if (laneQueues[lane].Count == 0) continue;
-
             Note note = laneQueues[lane].Peek();
-
             if (songTime - note.HitTime > missWindow)
             {
                 laneQueues[lane].Dequeue();
                 Destroy(note.gameObject);
-
                 OnMiss?.Invoke();
             }
         }
@@ -126,9 +127,9 @@ public class NoteManager : MonoBehaviour
 
     public bool AllNotesCleared()
     {
+        if (songNotes == null) return true;
         foreach (var q in laneQueues)
             if (q.Count > 0) return false;
-
         return nextIndex >= songNotes.Count;
     }
 

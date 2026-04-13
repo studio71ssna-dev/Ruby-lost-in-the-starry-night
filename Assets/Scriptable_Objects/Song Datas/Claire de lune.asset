@@ -16,7 +16,10 @@ MonoBehaviour:
   notes:
   - time: 2.5
     lane: 0
-    noteFret: 0
+    noteFret: 1
+  - time: 2.5
+    lane: 0
+    noteFret: 1
   - time: 3.5
     lane: 0
     noteFret: 1
@@ -70,10 +73,10 @@ MonoBehaviour:
     noteFret: 3
   - time: 21
     lane: 2
-    noteFret: 0
+    noteFret: 1
   - time: 22
     lane: 0
-    noteFret: 0
+    noteFret: 1
   - time: 23
     lane: 1
     noteFret: 1
@@ -106,10 +109,10 @@ MonoBehaviour:
     noteFret: 1
   - time: 35.5
     lane: 0
-    noteFret: 0
+    noteFret: 1
   - time: 36.5
     lane: 0
-    noteFret: 0
+    noteFret: 1
   - time: 37.5
     lane: 0
     noteFret: 3
@@ -139,10 +142,10 @@ MonoBehaviour:
     noteFret: 1
   - time: 51
     lane: 2
-    noteFret: 0
+    noteFret: 1
   - time: 52
     lane: 1
-    noteFret: 0
+    noteFret: 1
   - time: 53
     lane: 1
     noteFret: 3
@@ -151,13 +154,13 @@ MonoBehaviour:
     noteFret: 3
   - time: 55
     lane: 0
-    noteFret: 0
+    noteFret: 1
   - time: 56
     lane: 1
-    noteFret: 0
+    noteFret: 1
   - time: 57.5
     lane: 2
-    noteFret: 0
+    noteFret: 1
   - time: 58.5
     lane: 2
     noteFret: 3
@@ -193,13 +196,10 @@ MonoBehaviour:
     noteFret: 3
   - time: 70
     lane: 0
-    noteFret: 0
-  - time: 2.5
-    lane: 0
-    noteFret: 0
+    noteFret: 1
   - time: 71.5
     lane: 0
-    noteFret: 0
+    noteFret: 1
   - time: 73
     lane: 1
     noteFret: 1
@@ -217,19 +217,19 @@ MonoBehaviour:
     noteFret: 3
   - time: 78
     lane: 1
-    noteFret: 0
+    noteFret: 1
   - time: 79.5
     lane: 0
-    noteFret: 0
+    noteFret: 1
   - time: 81
     lane: 1
-    noteFret: 0
+    noteFret: 1
   - time: 82.5
     lane: 2
-    noteFret: 0
+    noteFret: 1
   - time: 84
     lane: 0
-    noteFret: 0
+    noteFret: 1
   - time: 86
     lane: 0
     noteFret: 3

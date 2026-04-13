@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: eefaaa593c9a0ec4e98e7752e7ef9380
+guid: 21eb284cd32eaf5409d6cf579743b4d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 433930667117794361
-    second: NoteIcon_0
+      213: -4656135248737031344
+    second: Wolf_Bar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NoteIcon_0
+      name: Wolf_Bar_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 294
-        height: 302
+        width: 82
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93454b684a1a50600800000000000000
-      internalID: 433930667117794361
+      spriteID: 05baad819a5126fb0800000000000000
+      internalID: -4656135248737031344
       vertices: []
       indices: 
       edges: []
@@ -177,7 +177,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      NoteIcon_0: 433930667117794361
+      Wolf_Bar_0: -4656135248737031344
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

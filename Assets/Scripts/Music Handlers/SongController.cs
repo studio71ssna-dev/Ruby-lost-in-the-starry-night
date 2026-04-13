@@ -16,13 +16,19 @@ public class SongController : MonoBehaviour
 
     public void StartSong(SongData song)
     {
-        InputHandler.Instance.SwitchActionMap("Player_Music");
         currentSong = song;
 
+        // Load notes and start audio BEFORE invoking OnSongStart
+        // so any listeners (like ActivateBarUI) fire after everything is ready
         noteManager.LoadSong(song);
         player.Play(song.music);
 
+        InputHandler.Instance.SwitchActionMap("Player_Music");
+
         isPlaying = true;
+
+        // OnSongStart should ONLY have: WolfPressureManager.ActivateBarUI
+        // Do NOT wire AudioClip-based calls here
         OnSongStart?.Invoke();
     }
 
@@ -47,5 +53,13 @@ public class SongController : MonoBehaviour
     {
         isPlaying = false;
         player.Stop();
+        InputHandler.Instance.SwitchActionMap("Player_Movement");
+    }
+
+    // Call this from WolfPressureManager.WolfPressureUp event
+    // AND from OnSongEnd to clean up
+    public void EndEncounter()
+    {
+        StopSong();
     }
 }
