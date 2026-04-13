@@ -9,8 +9,9 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-       GameManager.Instance.DayStartEvent.Invoke();
-        GameManager.Instance.StartMorning();
+        Time.timeScale = 1f;
+        GameManager.Instance.DayStartEvent.Invoke();
+       GameManager.Instance.StartMorning();
     }
 
     public void QuitGame()
