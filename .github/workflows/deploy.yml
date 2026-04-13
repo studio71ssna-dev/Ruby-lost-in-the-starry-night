@@ -75,24 +75,21 @@ jobs:
         if: matrix.targetPlatform == 'StandaloneWindows64'
         run: |
           cd build/StandaloneWindows64
-          zip -r StandaloneWindows64.zip .
-          mv StandaloneWindows64.zip ../
+          zip -r ../StandaloneWindows64.zip .
 
       # 🌐 WebGL Zip (IMPORTANT)
       - name: Zip Build (WebGL)
         if: matrix.targetPlatform == 'WebGL'
         run: |
           cd build/WebGL
-          zip -r WebGL.zip *
-          mv WebGL.zip ../
+          zip -r ../WebGL.zip *
 
       # 🤖 Android Zip (APK/AAB)
       - name: Zip Build (Android)
         if: matrix.targetPlatform == 'Android'
         run: |
           cd build/Android
-          zip -r Android.zip .
-          mv Android.zip ../
+          zip -r ../Android.zip .
 
       # 6️⃣ Upload Artifact (backup)
       - name: Upload Build Artifact
@@ -101,22 +98,12 @@ jobs:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}.zip
 
-      # 7️⃣ Upload to itch (latest)
-      - name: Push to itch.io (latest)
+      # 7️⃣ Upload to itch
+      - name: Push to itch.io
         uses: manleydev/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
           CHANNEL: ${{ matrix.itchChannel }}
-          ITCH_GAME: ${{ env.ITCH_GAME }}
-          ITCH_USER: ${{ env.ITCH_USER }}
-          PACKAGE: build/${{ matrix.targetPlatform }}.zip
-
-      # 8️⃣ Upload to itch (versioned)
-      - name: Push to itch.io (versioned)
-        uses: manleydev/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
-          CHANNEL: ${{ matrix.itchChannel }}-${{ github.run_number }}
           ITCH_GAME: ${{ env.ITCH_GAME }}
           ITCH_USER: ${{ env.ITCH_USER }}
           PACKAGE: build/${{ matrix.targetPlatform }}.zip
