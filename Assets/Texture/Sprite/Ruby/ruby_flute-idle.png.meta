@@ -1,0 +1,821 @@
+fileFormatVersion: 2
+guid: 45426a99aded5ef4fa239f3bcaa32aaa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6866029388859818717
+    second: ruby_flute-idle_0
+  - first:
+      213: 5384868115087324971
+    second: ruby_flute-idle_1
+  - first:
+      213: 5009275932634377877
+    second: ruby_flute-idle_2
+  - first:
+      213: -4709922868626852236
+    second: ruby_flute-idle_3
+  - first:
+      213: -707407737876615570
+    second: ruby_flute-idle_4
+  - first:
+      213: 761430965218037327
+    second: ruby_flute-idle_5
+  - first:
+      213: -5477701915943649624
+    second: ruby_flute-idle_6
+  - first:
+      213: -1297906297539427948
+    second: ruby_flute-idle_7
+  - first:
+      213: -9037980541623137265
+    second: ruby_flute-idle_8
+  - first:
+      213: 4952886294072794564
+    second: ruby_flute-idle_9
+  - first:
+      213: 9207292158743432332
+    second: ruby_flute-idle_10
+  - first:
+      213: 6058652081382500583
+    second: ruby_flute-idle_11
+  - first:
+      213: 6958258304170020231
+    second: ruby_flute-idle_12
+  - first:
+      213: 5771294338611474514
+    second: ruby_flute-idle_13
+  - first:
+      213: -1939392817891065029
+    second: ruby_flute-idle_14
+  - first:
+      213: 3986712777998997726
+    second: ruby_flute-idle_15
+  - first:
+      213: -1896000031409287587
+    second: ruby_flute-idle_16
+  - first:
+      213: -1870279234209252795
+    second: ruby_flute-idle_17
+  - first:
+      213: -3564644911394348669
+    second: ruby_flute-idle_18
+  - first:
+      213: 6591434298076967213
+    second: ruby_flute-idle_19
+  - first:
+      213: -5267277238004162672
+    second: ruby_flute-idle_20
+  - first:
+      213: 5012179279311119820
+    second: ruby_flute-idle_21
+  - first:
+      213: 6683746502366415409
+    second: ruby_flute-idle_22
+  - first:
+      213: -4751812863561728865
+    second: ruby_flute-idle_23
+  - first:
+      213: -1170168273690809414
+    second: ruby_flute-idle_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ruby_flute-idle_0
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1075
+        width: 77
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd2c164f959094f50800000000000000
+      internalID: 6866029388859818717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_1
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1075
+        width: 77
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b277b1a3505eaba40800000000000000
+      internalID: 5384868115087324971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_2
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 1075
+        width: 76
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ee592abe5848540800000000000000
+      internalID: 5009275932634377877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_3
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 1075
+        width: 76
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 476f100fa1ef2aeb0800000000000000
+      internalID: -4709922868626852236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_4
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 1075
+        width: 76
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6e60801968ce26f0800000000000000
+      internalID: -707407737876615570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_5
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 819
+        width: 75
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4ecdcabd65219a00800000000000000
+      internalID: 761430965218037327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_6
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 819
+        width: 75
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aeb3ba212b4bf3b0800000000000000
+      internalID: -5477701915943649624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_7
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 819
+        width: 76
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4918b675919ecfde0800000000000000
+      internalID: -1297906297539427948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_8
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 819
+        width: 76
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0c09a92594a29280800000000000000
+      internalID: -9037980541623137265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_9
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 819
+        width: 78
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd1c1bc7df2cb440800000000000000
+      internalID: 4952886294072794564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_10
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 563
+        width: 78
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8c4421af6fd6cf70800000000000000
+      internalID: 9207292158743432332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_11
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 563
+        width: 79
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e82c78c7f7a41450800000000000000
+      internalID: 6058652081382500583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_12
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 563
+        width: 78
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d477baf03b09060800000000000000
+      internalID: 6958258304170020231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_13
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 563
+        width: 78
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 250f8239f91c71050800000000000000
+      internalID: 5771294338611474514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_14
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 563
+        width: 78
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33c8a9e184e515e0800000000000000
+      internalID: -1939392817891065029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_15
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 307
+        width: 77
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8142a2626a35730800000000000000
+      internalID: 3986712777998997726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_16
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 307
+        width: 77
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5e48b1540e00b5e0800000000000000
+      internalID: -1896000031409287587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_17
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 307
+        width: 76
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54afa2612fe6b06e0800000000000000
+      internalID: -1870279234209252795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_18
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 307
+        width: 76
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 381afe1e656d78ec0800000000000000
+      internalID: -3564644911394348669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_19
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 307
+        width: 76
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d213439329a797b50800000000000000
+      internalID: 6591434298076967213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_20
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 51
+        width: 76
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09fd24f524fd6e6b0800000000000000
+      internalID: -5267277238004162672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_21
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 51
+        width: 76
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc5a9e5bf76de8540800000000000000
+      internalID: 5012179279311119820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_22
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 51
+        width: 76
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13a4f4a280071cc50800000000000000
+      internalID: 6683746502366415409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_23
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 51
+        width: 77
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9c7544706b2e0eb0800000000000000
+      internalID: -4751812863561728865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ruby_flute-idle_24
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 51
+        width: 77
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abb2a37a72ab2cfe0800000000000000
+      internalID: -1170168273690809414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e9be79447e632cb469fca5432e759622
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      ruby_flute-idle_0: 6866029388859818717
+      ruby_flute-idle_1: 5384868115087324971
+      ruby_flute-idle_10: 9207292158743432332
+      ruby_flute-idle_11: 6058652081382500583
+      ruby_flute-idle_12: 6958258304170020231
+      ruby_flute-idle_13: 5771294338611474514
+      ruby_flute-idle_14: -1939392817891065029
+      ruby_flute-idle_15: 3986712777998997726
+      ruby_flute-idle_16: -1896000031409287587
+      ruby_flute-idle_17: -1870279234209252795
+      ruby_flute-idle_18: -3564644911394348669
+      ruby_flute-idle_19: 6591434298076967213
+      ruby_flute-idle_2: 5009275932634377877
+      ruby_flute-idle_20: -5267277238004162672
+      ruby_flute-idle_21: 5012179279311119820
+      ruby_flute-idle_22: 6683746502366415409
+      ruby_flute-idle_23: -4751812863561728865
+      ruby_flute-idle_24: -1170168273690809414
+      ruby_flute-idle_3: -4709922868626852236
+      ruby_flute-idle_4: -707407737876615570
+      ruby_flute-idle_5: 761430965218037327
+      ruby_flute-idle_6: -5477701915943649624
+      ruby_flute-idle_7: -1297906297539427948
+      ruby_flute-idle_8: -9037980541623137265
+      ruby_flute-idle_9: 4952886294072794564
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
